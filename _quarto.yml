@@ -1,0 +1,23 @@
+project:
+  type: website
+  output-dir: docs
+  exclude:
+    - "solutions/**"
+
+site:
+  title: "Intro to Linux and R"
+  description: "Course materials: practicals, slides, scripts and resources."
+
+format:
+  html: default
+
+navbar:
+  left:
+    - text: "Home"
+      href: index.qmd
+    - text: "Practicals"
+      href: practicals.md
+    - text: "Slides"
+      href: slides.md
+    - text: "Resources"
+      href: resources/

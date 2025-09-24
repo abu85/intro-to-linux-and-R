@@ -1,0 +1,12 @@
+---
+title: "Practical 01 — Intro to Linux"
+---
+
+## Goals
+
+- Learn basic shell commands
+- Practice editing files
+
+```{bash}
+# example: list files
+ls -la
