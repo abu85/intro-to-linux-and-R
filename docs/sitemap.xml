@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://yourdomain.com/index.html</loc>
-    <lastmod>2025-09-25T11:04:36.026Z</lastmod>
+    <lastmod>2025-09-25T19:17:49.850Z</lastmod>
   </url>
   <url>
     <loc>https://yourdomain.com/slides.html</loc>
@@ -10,7 +10,7 @@
   </url>
   <url>
     <loc>https://yourdomain.com/scripts/01_intro_to_linux.html</loc>
-    <lastmod>2025-09-25T10:31:28.766Z</lastmod>
+    <lastmod>2025-09-25T14:52:28.451Z</lastmod>
   </url>
   <url>
     <loc>https://yourdomain.com/index - Copy.html</loc>
@@ -26,7 +26,7 @@
   </url>
   <url>
     <loc>https://yourdomain.com/scripts/00_precourse.html</loc>
-    <lastmod>2025-09-25T11:14:23.889Z</lastmod>
+    <lastmod>2025-09-25T19:28:17.530Z</lastmod>
   </url>
   <url>
     <loc>https://yourdomain.com/practicals/excercise/data_handling_part_1.html</loc>
@@ -34,6 +34,10 @@
   </url>
   <url>
     <loc>https://yourdomain.com/practicals/excercise/data_handling_part_2_v1.html</loc>
-    <lastmod>2025-09-25T11:14:29.828Z</lastmod>
+    <lastmod>2025-09-25T19:27:02.413Z</lastmod>
+  </url>
+  <url>
+    <loc>https://yourdomain.com/slides/slides.html</loc>
+    <lastmod>2025-09-24T14:09:23.041Z</lastmod>
   </url>
 </urlset>

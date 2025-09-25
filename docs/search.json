@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Intro to Linux & R",
     "section": "",
-    "text": "For linux we will follow The Unix Shell tutorial\n\n\n\nLinux/WSL/Unix/Ubuntu/Shell\nR (version ≥ 4.0)\nRStudio\nRecommended packages: tidyverse ???\nPlink(https://zzz.bwh.harvard.edu/plink/dist/plink-latest.zip)\n\nscripts/: Lecture R scripts for each topic\nPracticals: RMarkdown files for hands-on exercises\ndata/: Sample genotype and phenotype datasets\nslides/: Lecture slides\nresources/: Additional resources and cheat sheets\nsolutions/: Solutions to practical exercises\n\n\n\n\n\nClone this repository:\n\ngit clone https://github.com/YOUR_USERNAME/intro-to-R-genomic-selection.git\ncd intro-to-R-genomic-selection\n\nOpen the project in RStudio.\nInstall required packages:\n\ninstall.packages(c(\"tidyverse\"??????)) \n\nAfter Lunch (Start with the practicals in the practicals/ folder.)\n\n\n\n\nFor questions or feedback, contact at abu.siddique@slu.se\n\nPracticals\n\nSlides"
+    "text": "Welcome to the Day1"
   },
   {
     "objectID": "index.html#requirements",
@@ -17,22 +17,22 @@
     "objectID": "index.html#contents",
     "href": "index.html#contents",
     "title": "Intro to Linux & R",
-    "section": "",
-    "text": "scripts/: Lecture R scripts for each topic\nPracticals: RMarkdown files for hands-on exercises\ndata/: Sample genotype and phenotype datasets\nslides/: Lecture slides\nresources/: Additional resources and cheat sheets\nsolutions/: Solutions to practical exercises"
+    "section": "📚 Contents",
+    "text": "📚 Contents\n\nslides/: Lecture slides\nscripts/: Lecture R scripts for each topic\nPracticals: RMarkdown files for hands-on exercises\ndata/: Sample genotype and phenotype datasets\nresources/: Additional resources and cheat sheets\nsolutions/: Solutions to practical exercises"
   },
   {
     "objectID": "index.html#getting-started",
     "href": "index.html#getting-started",
     "title": "Intro to Linux & R",
-    "section": "",
-    "text": "Clone this repository:\n\ngit clone https://github.com/YOUR_USERNAME/intro-to-R-genomic-selection.git\ncd intro-to-R-genomic-selection\n\nOpen the project in RStudio.\nInstall required packages:\n\ninstall.packages(c(\"tidyverse\"??????)) \n\nAfter Lunch (Start with the practicals in the practicals/ folder.)"
+    "section": "🚀 Getting Started",
+    "text": "🚀 Getting Started\n\n1. Download this repository:\nwget https://github.com/abu85/intro-to-linux-and-R/archive/refs/heads/main.zip . # download with 'wget' command\n\n\n2. Extract and enter into the repository folder📁\n\nunzip main.zip            # extract everything from the zip file to folder\n\nls                        # see the file folder\n\ncd intro-to-linux-and-R   # change and enter into the folder(directory)\nOr Clone this repository if are using (git):\ngit clone https://github.com/YOUR_USERNAME/intro-to-R-genomic-selection.git\ncd intro-to-linux-and-R\n\n\n📚 Contents of the 📁 intro-to-linux-and-R\nls -la         # see the content\nIt will be look like as follows\n_quarto.yml _quarto_old.yml\ndocs\nindex_files practicals.md\nslides _quarto_new.txt _site index.qmd practicals scripts\nstyles.css\n\nImportant folders for you\n\nslides/: Lecture slides\nscripts/: Lecture R scripts for each topic\nPracticals: RMarkdown files for hands-on exercises\npracticals/exercise/data/: Sample genotype and phenotype datasets\n\n\n\n3. Open the project in RStudio.\n\n\n4. Install required packages:\ninstall.packages(c(\"tidyverse\"??????)) \n\n\n5. After Lunch (Start with the practicals in the practicals/ folder.)\n\n\n6. Extras:\n\nresources/: Additional resources and cheat sheets\nsolutions/: Solutions to practical exercises\n\n\n\n📬 For questions or feedback, contact at abu.siddique@slu.se\n🔴 End 🔴"
   },
   {
     "objectID": "index.html#contact",
     "href": "index.html#contact",
     "title": "Intro to Linux & R",
-    "section": "",
-    "text": "For questions or feedback, contact at abu.siddique@slu.se\n\nPracticals\n\nSlides"
+    "section": "📬 Contact",
+    "text": "📬 Contact\nFor questions or feedback, contact at abu.siddique@slu.se"
   },
   {
     "objectID": "slides.html",
@@ -44,9 +44,9 @@
   {
     "objectID": "scripts/01_intro_to_linux.html",
     "href": "scripts/01_intro_to_linux.html",
-    "title": "Intro to Linux and R",
+    "title": "",
     "section": "",
-    "text": "open the terminal or wsl command line\nwhere am I (print working directory)\ncreate a directory (folder)\nchange working directory\nlist view (different styles)\narguments\ncopy and paste\nmove\nrename\ndelete files or folders\ndownload tools\nunzip or extract\n\nBasic linux commands: ls, cd, mkdir, cp, mv, rm.\nWorkshop oriented commands:\ncd, mkdir, wget (for plinks tool), tar or unzip, use of \\, arguments,\nls\nTools: Plink"
+    "text": "Summary and Setup 1. Introducing the Shell 2. Navigating Files and Directories 3. Working With Files and Directories 4. Pipes and Filters 5. Loops 6. Shell Scripts 7. Finding Things\n\nopen the terminal or wsl command line\nwhere am I (print working directory)\ncreate a directory (folder)\nchange working directory\nlist view (different styles)\narguments\ncopy and paste\nmove\nrename\ndelete files or folders\ndownload tools\nunzip or extract\n\nBasic linux commands: ls, cd, mkdir, cp, mv, rm.\nWorkshop oriented commands:\ncd, mkdir, wget (for plinks tool), tar or unzip, use of \\, arguments,\nls\nTools: Plink"
   },
   {
     "objectID": "index - Copy.html",
@@ -72,16 +72,16 @@
   {
     "objectID": "scripts/00_precourse.html",
     "href": "scripts/00_precourse.html",
-    "title": "Intro to Linux and R",
+    "title": "",
     "section": "",
     "text": "Install or activate WSL Unix, and install R and RStudio if you do not have them already before 1st meeting.\nWe strongly recommend for those not yet familiar with UNIX and/or R to take this opportunity and take these online tutorials, since those are requirements for the workshop. This will help you to develop your programming skills and we can always learn a few tricks here and there, even if you are already experienced.\n\n\n\n\n\n\n\n\nTask & Tools\nNote\nLink\n\n\n\n\nInstall & activate WSL or Unix\nFor Windows user only\nUNIX\n\n\nInstall R itself and RStudio Desktop\nall participants\nR & RStudio"
   },
   {
     "objectID": "scripts/01_intro_to_linux.html#intro-to-linux",
     "href": "scripts/01_intro_to_linux.html#intro-to-linux",
-    "title": "Intro to Linux and R",
+    "title": "",
     "section": "",
-    "text": "open the terminal or wsl command line\nwhere am I (print working directory)\ncreate a directory (folder)\nchange working directory\nlist view (different styles)\narguments\ncopy and paste\nmove\nrename\ndelete files or folders\ndownload tools\nunzip or extract\n\nBasic linux commands: ls, cd, mkdir, cp, mv, rm.\nWorkshop oriented commands:\ncd, mkdir, wget (for plinks tool), tar or unzip, use of \\, arguments,\nls\nTools: Plink"
+    "text": "Summary and Setup 1. Introducing the Shell 2. Navigating Files and Directories 3. Working With Files and Directories 4. Pipes and Filters 5. Loops 6. Shell Scripts 7. Finding Things\n\nopen the terminal or wsl command line\nwhere am I (print working directory)\ncreate a directory (folder)\nchange working directory\nlist view (different styles)\narguments\ncopy and paste\nmove\nrename\ndelete files or folders\ndownload tools\nunzip or extract\n\nBasic linux commands: ls, cd, mkdir, cp, mv, rm.\nWorkshop oriented commands:\ncd, mkdir, wget (for plinks tool), tar or unzip, use of \\, arguments,\nls\nTools: Plink"
   },
   {
     "objectID": "scripts/02_intro_R.html#intro-to-r",
@@ -93,7 +93,7 @@
   {
     "objectID": "scripts/00_precourse.html#precourse-materials",
     "href": "scripts/00_precourse.html#precourse-materials",
-    "title": "Intro to Linux and R",
+    "title": "",
     "section": "",
     "text": "Install or activate WSL Unix, and install R and RStudio if you do not have them already before 1st meeting.\nWe strongly recommend for those not yet familiar with UNIX and/or R to take this opportunity and take these online tutorials, since those are requirements for the workshop. This will help you to develop your programming skills and we can always learn a few tricks here and there, even if you are already experienced.\n\n\n\n\n\n\n\n\nTask & Tools\nNote\nLink\n\n\n\n\nInstall & activate WSL or Unix\nFor Windows user only\nUNIX\n\n\nInstall R itself and RStudio Desktop\nall participants\nR & RStudio"
   },
@@ -138,5 +138,33 @@
     "title": "data_handling_part2",
     "section": "Running Code",
     "text": "Running Code\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code. # Read in a data file\n———————** End :) **——————–"
+  },
+  {
+    "objectID": "index.html#schedule",
+    "href": "index.html#schedule",
+    "title": "Intro to Linux & R",
+    "section": "",
+    "text": "Day 1, Time\nTopic\nInstructor\n\n\n\n\n10.30-11.30\nUnix (CLI)\nAbu\n\n\n11.45-12.30\nR & R Studio\nAbu\n\n\n13.30-15.30\nLab (practical)\nAbu"
+  },
+  {
+    "objectID": "index.html#before-day-1",
+    "href": "index.html#before-day-1",
+    "title": "Intro to Linux & R",
+    "section": "🧰 Before Day 1",
+    "text": "🧰 Before Day 1\nRead the pre-course ⬆️ and be prepared accordingly. You need following tools in the day 1:\n\nWSL/Unix/Ubuntu/Shell The Unix Shell tutorial\nR (version ≥ 4.0)\nRStudio\nRecommended packages in RStudio: tidyverse\nPlink at Linux (https://zzz.bwh.harvard.edu/plink/dist/plink-latest.zip)"
+  },
+  {
+    "objectID": "index.html#schedule-of-day-1",
+    "href": "index.html#schedule-of-day-1",
+    "title": "Intro to Linux & R",
+    "section": "📅 Schedule of Day 1",
+    "text": "📅 Schedule of Day 1\n\n\n\n\n\n\n\n\nDay 1, Time\nTopic\nInstructor\n\n\n\n\n10.30-11.30\nUnix (CLI)\nAbu\n\n\n11.45-12.30\nR & R Studio\nAbu\n\n\n13.30-15.30\nLab (practical)\nAbu"
+  },
+  {
+    "objectID": "slides/slides.html",
+    "href": "slides/slides.html",
+    "title": "",
+    "section": "",
+    "text": "title: “Slides”\nSlide sources go in the slides/ folder."
   }
 ]

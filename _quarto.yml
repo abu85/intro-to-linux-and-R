@@ -2,7 +2,6 @@ project:
   type: website
   output-dir: docs
 website:
-  title: "Intro to Linux and R"
   site-url: "https://yourdomain.com"
   description: "Personal website of a biologist and bioinformatician"
   favicon: "images/favicon.ico"

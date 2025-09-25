@@ -1,4 +1,4 @@
-## Intro to R
+## Intro to R (under development)
 
 Recommended packages: `tidyverse`
 

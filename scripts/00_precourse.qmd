@@ -11,7 +11,6 @@ We strongly recommend for **those not yet familiar with UNIX and/or R to take th
 | Task & Tools                      | Note                        | Link               |
 |---------------------------|------------------------------------|----------------|
 | Install & activate `WSL` or `Unix`| *For Windows user only*| [UNIX](http://swcarpentry.github.io/shell-novice/)|
-| Install `R` itself and `RStudio` Desktop | all participants | [R & RStudio](https://swcarpentry.github.io/r-novice-inflammation/)| 
-
-
+| Install `R` itself and `RStudio` Desktop | all participants | [R & RStudio](https://swcarpentry.github.io/r-novice-inflammation/)|
+| Reading | Basic R | ![A (very) short introduction to R.pdf]("./resources\A (very) short introduction to R.pdf")|
 

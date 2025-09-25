@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Intro to Linux &amp; R – Intro to Linux and R</title>
+<title>Intro to Linux &amp; R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -106,7 +106,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="assets/css/home.css">
+<link rel="stylesheet" href="./styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -115,11 +115,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Intro to Linux and R</span>
-    </a>
-  </div>
             <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
@@ -193,50 +188,132 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="introduction-to-linux-and-r" class="level1">
-<h1>Introduction to Linux and R</h1>
-<p>For linux we will follow <a href="https://swcarpentry.github.io/shell-novice/">The Unix Shell</a> tutorial</p>
-<section id="requirements" class="level2">
-<h2 class="anchored" data-anchor-id="requirements">🧰 Requirements</h2>
+<p>Welcome to the Day1</p>
+<section id="before-day-1" class="level2">
+<h2 class="anchored" data-anchor-id="before-day-1">🧰 <code>Before Day 1</code></h2>
+<p>Read the <code>pre-course</code> ⬆️ and be prepared accordingly. You need following <code>tools</code> in the day 1:</p>
 <ul>
-<li>Linux/WSL/Unix/Ubuntu/Shell</li>
-<li>R (version ≥ 4.0)</li>
-<li>RStudio</li>
-<li>Recommended packages: <code>tidyverse</code> ???</li>
-<li>Plink(https://zzz.bwh.harvard.edu/plink/dist/plink-latest.zip)</li>
-<li><h2 id="contents" class="anchored">📚 Contents</h2></li>
+<li><code>WSL</code>/<code>Unix</code>/<code>Ubuntu</code>/<code>Shell</code> <a href="https://swcarpentry.github.io/shell-novice/">The Unix Shell</a> tutorial</li>
+<li><code>R</code> (version ≥ 4.0)</li>
+<li><code>RStudio</code></li>
+<li>Recommended packages in RStudio: <code>tidyverse</code></li>
+<li><code>Plink</code> at Linux (https://zzz.bwh.harvard.edu/plink/dist/plink-latest.zip)</li>
+</ul>
+</section>
+<section id="schedule-of-day-1" class="level2">
+<h2 class="anchored" data-anchor-id="schedule-of-day-1">📅 <code>Schedule of Day 1</code></h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 45%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Day 1, Time</th>
+<th>Topic</th>
+<th>Instructor</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>10.30-11.30</td>
+<td>Unix (CLI)</td>
+<td>Abu</td>
+</tr>
+<tr class="even">
+<td>11.45-12.30</td>
+<td>R &amp; R Studio</td>
+<td>Abu</td>
+</tr>
+<tr class="odd">
+<td>13.30-15.30</td>
+<td>Lab (practical)</td>
+<td>Abu</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="at-day-1" class="level1">
+<h1>🟢<code>At Day 1</code></h1>
+<p>Linux, R, Lab. See up bar headers ⬆️</p>
+</section>
+<section id="course-materieals" class="level1">
+<h1>📚 Course materieals</h1>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+👉 or 🖱️ Course materieals
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<section id="download-this-repository" class="level5">
+<h5 class="anchored" data-anchor-id="download-this-repository">1. Download this repository:</h5>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://github.com/abu85/intro-to-linux-and-R/archive/refs/heads/main.zip . <span class="co"># download with 'wget' command</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="extract-and-enter-into-the-repository-folder" class="level5">
+<h5 class="anchored" data-anchor-id="extract-and-enter-into-the-repository-folder">2. Extract and enter into the repository folder📁</h5>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">unzip</span> main.zip            <span class="co"># extract everything from the zip file to folder</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span>                        <span class="co"># see the file folder</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> intro-to-linux-and-R   <span class="co"># change and enter into the folder(directory)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Or Clone this repository if are using (git):</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/YOUR_USERNAME/intro-to-R-genomic-selection.git</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> intro-to-linux-and-R</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="contents-of-the-intro-to-linux-and-r" class="level4">
+<h4 class="anchored" data-anchor-id="contents-of-the-intro-to-linux-and-r">📚 Contents of the 📁 <strong>intro-to-linux-and-R</strong></h4>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-la</span>         <span class="co"># see the content</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>It will be look like as follows</p>
+<p>_quarto.yml _quarto_old.yml<br>
+docs<br>
+index_files practicals.md<br>
+<code>slides</code> _quarto_new.txt _site index.qmd <code>practicals</code> <code>scripts</code><br>
+styles.css</p>
+<section id="important-folders-for-you" class="level5">
+<h5 class="anchored" data-anchor-id="important-folders-for-you">Important folders for you</h5>
+<ul>
+<li><code>slides/</code>: Lecture slides</li>
 <li><code>scripts/</code>: Lecture R scripts for each topic</li>
 <li><a href="./practicals/practical_01_intro.html">Practicals</a>: RMarkdown files for hands-on exercises</li>
-<li><code>data/</code>: Sample genotype and phenotype datasets</li>
-<li><code>slides/</code>: Lecture slides</li>
+<li><code>practicals/exercise/data/</code>: Sample genotype and phenotype datasets</li>
+</ul>
+</section>
+<section id="open-the-project-in-rstudio." class="level5">
+<h5 class="anchored" data-anchor-id="open-the-project-in-rstudio.">3. Open the project in RStudio.</h5>
+</section>
+<section id="install-required-packages" class="level5">
+<h5 class="anchored" data-anchor-id="install-required-packages">4. Install required packages:</h5>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"tidyverse"</span>??????)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="after-lunch-start-with-the-practicals-in-the-practicals-folder." class="level5">
+<h5 class="anchored" data-anchor-id="after-lunch-start-with-the-practicals-in-the-practicals-folder.">5. After Lunch (Start with the practicals in the <code>practicals/</code> folder.)</h5>
+</section>
+<section id="extras" class="level5">
+<h5 class="anchored" data-anchor-id="extras">6. Extras:</h5>
+<ul>
 <li><code>resources/</code>: Additional resources and cheat sheets</li>
 <li><code>solutions/</code>: Solutions to practical exercises</li>
 </ul>
 </section>
-<section id="getting-started" class="level2">
-<h2 class="anchored" data-anchor-id="getting-started">🚀 Getting Started</h2>
-<ol type="1">
-<li>Clone this repository:</li>
-</ol>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/YOUR_USERNAME/intro-to-R-genomic-selection.git</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> intro-to-R-genomic-selection</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ol start="2" type="1">
-<li><p>Open the project in RStudio.</p></li>
-<li><p>Install required packages:</p></li>
-</ol>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"tidyverse"</span>??????)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ol start="4" type="1">
-<li>After Lunch (Start with the practicals in the <code>practicals/</code> folder.)</li>
-</ol>
 </section>
-<section id="contact" class="level2">
-<h2 class="anchored" data-anchor-id="contact">📬 Contact</h2>
-<p>For questions or feedback, contact at abu.siddique@slu.se</p>
-<ul>
-<li><a href="./practicals/practical_01_intro.html">Practicals</a></li>
-<li></li>
-<li><a href="./slides.html">Slides</a></li>
-</ul>
+</div>
+</div>
+</div>
+<section id="for-questions-or-feedback-contact-at-abu.siddiqueslu.se" class="level5">
+<h5 class="anchored" data-anchor-id="for-questions-or-feedback-contact-at-abu.siddiqueslu.se">📬 For questions or feedback, contact at <code>abu.siddique@slu.se</code></h5>
+<p>🔴 End 🔴</p>
+</section>
+<section id="license" class="level4">
+<h4 class="anchored" data-anchor-id="license">License</h4>
+<p>This work is licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
 
 
 </section>

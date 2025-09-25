@@ -1,6 +1,15 @@
-## Intro to Linux
+## Intro to Linux (under development)
 
 #### Topics: 
+
+0. Setup: Installation
+1. Introducing the Shell: What & Why shell? CLI vs GUI
+2. Navigating Files and Directories
+3. Working With Files and Directories
+4. Pipes 
+6. Shell Scripts
+7. Finding Things
+
 
 - open the terminal or wsl command line
 - where am I (print working directory)
@@ -16,12 +25,13 @@
 - unzip or extract
 
 
-Basic linux commands: ls, cd, mkdir, cp, mv, rm.
+Basic linux commands: ls, cd, pwd, mkdir, cp, mv, rm.
 
 
 Workshop oriented commands:
 
-`cd`, `mkdir`, `wget` (for plinks tool), `tar` or `unzip`, use of `\`, arguments,
+`ls` , `cd`, `mkdir`, `wget` (for plinks tool), `tar` or `unzip`, use of `\`, arguments,
+
 
 ```bash
 ls

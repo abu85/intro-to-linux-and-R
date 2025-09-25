@@ -7,7 +7,7 @@ sidebar: false
 image: "assets/images/seo.webp"
 format:
   html:
-    css: "assets/css/home.css"
+    css: "./styles.css"
     number-sections: false
     title-block-banner: false
     page-layout: full
@@ -15,49 +15,106 @@ execute:
   freeze: false
 ---
 
-# Introduction to Linux and R 
+Welcome to the Day1
 
-For linux we will follow [The Unix Shell](https://swcarpentry.github.io/shell-novice/) tutorial
+## 🧰 `Before Day 1`
+Read the `pre-course` ⬆️ and be prepared accordingly. You need following `tools` in the day 1:
 
-## 🧰 Requirements
-- Linux/WSL/Unix/Ubuntu/Shell
-- R (version ≥ 4.0)
-- RStudio
-- Recommended packages: `tidyverse` ???
-- Plink(https://zzz.bwh.harvard.edu/plink/dist/plink-latest.zip)
-- 
-## 📚 Contents
-
-- `scripts/`: Lecture R scripts for each topic
-- [Practicals](./practicals/practical_01_intro.html): RMarkdown files for hands-on exercises
-- `data/`: Sample genotype and phenotype datasets
-- `slides/`: Lecture slides
-- `resources/`: Additional resources and cheat sheets
-- `solutions/`: Solutions to practical exercises
+- `WSL`/`Unix`/`Ubuntu`/`Shell` [The Unix Shell](https://swcarpentry.github.io/shell-novice/) tutorial
+- `R` (version ≥ 4.0)
+- `RStudio`
+- Recommended packages in RStudio: `tidyverse`
+- `Plink` at Linux (https://zzz.bwh.harvard.edu/plink/dist/plink-latest.zip)
 
 
-## 🚀 Getting Started
+## 📅 `Schedule of Day 1`
+| Day 1, Time                      | Topic                        | Instructor              |
+|---------------------------|------------------------------------|----------------|
+| 10.30-11.30| Unix (CLI) | Abu|
+| 11.45-12.30| R & R Studio | Abu|
+| 13.30-15.30| Lab (practical)| Abu| 
 
-1. Clone this repository:
+
+
+# 🟢`At Day 1` 
+Linux, R, Lab. See up bar headers ⬆️
+
+# 📚 Course materieals
+::: {.callout-note collapse=true}
+
+##### 👉 or 🖱️ Course materieals
+
+##### 1. Download this repository:
+
 ```bash
-git clone https://github.com/YOUR_USERNAME/intro-to-R-genomic-selection.git
-cd intro-to-R-genomic-selection
+wget https://github.com/abu85/intro-to-linux-and-R/archive/refs/heads/main.zip . # download with 'wget' command
 ```
 
-2. Open the project in RStudio.
+##### 2. Extract and enter into the repository folder📁
+```bash
 
-3. Install required packages:
+unzip main.zip            # extract everything from the zip file to folder
+
+ls                        # see the file folder
+
+cd intro-to-linux-and-R   # change and enter into the folder(directory)
+```
+
+Or Clone this repository if are using (git):
+```bash
+git clone https://github.com/YOUR_USERNAME/intro-to-R-genomic-selection.git
+cd intro-to-linux-and-R
+```
+
+#### 📚 Contents of the 📁 **intro-to-linux-and-R**
+
+```bash
+ls -la         # see the content
+```
+It will be look like as follows
+
+_quarto.yml
+_quarto_old.yml  
+docs       
+index_files 
+practicals.md  
+`slides`
+_quarto_new.txt 
+_site
+index.qmd 
+`practicals`
+`scripts`        
+styles.css
+
+##### Important folders for you
+- `slides/`: Lecture slides
+- `scripts/`: Lecture R scripts for each topic
+- [Practicals](./practicals/practical_01_intro.html): RMarkdown files for hands-on exercises
+- `practicals/exercise/data/`: Sample genotype and phenotype datasets
+
+
+
+#####  3. Open the project in RStudio.
+
+##### 4. Install required packages:
 
 ```r
 install.packages(c("tidyverse"??????)) 
 ```
 
-4. After Lunch (Start with the practicals in the `practicals/` folder.)
+##### 5. After Lunch (Start with the practicals in the `practicals/` folder.)
 
-## 📬 Contact
+##### 6. Extras:
 
-For questions or feedback, contact at abu.siddique@slu.se
+- `resources/`: Additional resources and cheat sheets
+- `solutions/`: Solutions to practical exercises
 
-- [Practicals](./practicals/practical_01_intro.html)
-- 
-- [Slides](slides.md)
+:::
+
+##### 📬 For questions or feedback, contact at `abu.siddique@slu.se`
+
+🔴 End 🔴
+
+#### License
+
+This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
