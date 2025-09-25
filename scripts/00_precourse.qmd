@@ -1,16 +1,16 @@
 ## Precourse materials
 
-Install or activate WSL Unix, and **install R and RStudio if you do not have them already before 1st meeting**.
+Install or activate **WSL or Unix**, and install **R and RStudio if you do not have them already before 1st meeting**.
 
 We strongly recommend for **those not yet familiar with UNIX and/or R to take this opportunity and take these online tutorials**, since those are requirements for the workshop. This will help you to develop your programming skills and we can always learn a few tricks here and there, even if you are already experienced.
 
-#### `Before 1st meeting`: Make sure you have all tools in your PC
+#### `Before 1st meeting`: Make sure you have installed Unix, R, RStudio in your PC
 
 ### Tutorials:
  
 | Task & Tools                      | Note                        | Link               |
 |---------------------------|------------------------------------|----------------|
+| Book Reading (pdf) | chapter 1-9 | [A (very) short introduction to R.pdf](https://github.com/ClaudiaBrauer/A-very-short-introduction-to-R/blob/8cbcfb1faa909b1d1fe044ae664e317ef29d278e/documents/A%20(very)%20short%20introduction%20to%20R.pdf)|
 | Install & activate `WSL` or `Unix`| *For Windows user only*| [UNIX](http://swcarpentry.github.io/shell-novice/)|
 | Install `R` itself and `RStudio` Desktop | all participants | [R & RStudio](https://swcarpentry.github.io/r-novice-inflammation/)|
-| Reading | Basic R | [A (very) short introduction to R.pdf](https://github.com/ClaudiaBrauer/A-very-short-introduction-to-R/blob/8cbcfb1faa909b1d1fe044ae664e317ef29d278e/documents/A%20(very)%20short%20introduction%20to%20R.pdf)|
 
