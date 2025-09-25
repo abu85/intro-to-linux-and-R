@@ -1,23 +1,75 @@
 project:
   type: website
-  output-dir: docs
-  exclude:
-    - "solutions/**"
 
-site:
+website:
   title: "Intro to Linux and R"
-  description: "Course materials: practicals, slides, scripts and resources."
+  site-url: "https://yourdomain.com"
+  description: "Personal website of a biologist and bioinformatician"
+  favicon: "images/favicon.ico"
+
+  navbar:
+    background: primary
+    search: true
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "Precourse"
+        href: ./scripts/00_precourse.qmd
+      - text: "Linux"
+        href: ./scripts/01_intro_to_linux.qmd
+      - text: "R"
+        href: ./scripts/02_intro_to_R.qmd
+      - text: "Lab"
+        href: ./practicals/excercise/data_handling_part_2_v1.qmd
+    right:
+      - icon: softwerecarpentry
+        href: https://swcarpentry.github.io/shell-novice/
+      - icon: envelope
+        href: mailto:your.email@example.com
+
+  sidebar:
+    - title: "Tutorials"
+      style: "docked"
+      background: light
+      contents:
+        - tutorials.qmd
+        - tutorial-1.qmd
+        - tutorial-2.qmd
+        - r_tutorial_v14.Rmd
+
+    - title: "How-To Guides"
+      contents:
+        - howto.qmd
+        - howto-rmarkdown.qmd
+        - howto-quarto.qmd
+
+    - title: "Fundamentals"
+      contents:
+        - fundamentals.qmd
+        - bioinformatics_basics.qmd
+        - statistics_for_biology.qmd
+
+    - title: "Registration"
+      contents:
+        - https://forms.gle/7eZoXnm8NmceRjUw8
+
+    - title: "Blog"
+      contents:
+        - blog.qmd
+        - posts/post-1.qmd
+        - posts/post-2.qmd
+
+    - title: "Publications"
+      contents:
+        - publications.qmd
 
 format:
-  html: default
-
-navbar:
-  left:
-    - text: "Home"
-      href: index.qmd
-    - text: "Practicals"
-      href: practicals.md
-    - text: "Slides"
-      href: slides.md
-    - text: "Resources"
-      href: resources/
+  html:
+    theme:
+      light: flatly
+      dark: darkly
+    css: styles.css
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github

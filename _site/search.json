@@ -1,0 +1,142 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Intro to Linux & R",
+    "section": "",
+    "text": "For linux we will follow The Unix Shell tutorial\n\n\n\nLinux/WSL/Unix/Ubuntu/Shell\nR (version ≥ 4.0)\nRStudio\nRecommended packages: tidyverse ???\nPlink(https://zzz.bwh.harvard.edu/plink/dist/plink-latest.zip)\n\nscripts/: Lecture R scripts for each topic\nPracticals: RMarkdown files for hands-on exercises\ndata/: Sample genotype and phenotype datasets\nslides/: Lecture slides\nresources/: Additional resources and cheat sheets\nsolutions/: Solutions to practical exercises\n\n\n\n\n\nClone this repository:\n\ngit clone https://github.com/YOUR_USERNAME/intro-to-R-genomic-selection.git\ncd intro-to-R-genomic-selection\n\nOpen the project in RStudio.\nInstall required packages:\n\ninstall.packages(c(\"tidyverse\"??????)) \n\nAfter Lunch (Start with the practicals in the practicals/ folder.)\n\n\n\n\nFor questions or feedback, contact at abu.siddique@slu.se\n\nPracticals\n\nSlides"
+  },
+  {
+    "objectID": "index.html#requirements",
+    "href": "index.html#requirements",
+    "title": "Intro to Linux & R",
+    "section": "",
+    "text": "Linux/WSL/Unix/Ubuntu/Shell\nR (version ≥ 4.0)\nRStudio\nRecommended packages: tidyverse ???\nPlink(https://zzz.bwh.harvard.edu/plink/dist/plink-latest.zip)\n\nscripts/: Lecture R scripts for each topic\nPracticals: RMarkdown files for hands-on exercises\ndata/: Sample genotype and phenotype datasets\nslides/: Lecture slides\nresources/: Additional resources and cheat sheets\nsolutions/: Solutions to practical exercises"
+  },
+  {
+    "objectID": "index.html#contents",
+    "href": "index.html#contents",
+    "title": "Intro to Linux & R",
+    "section": "",
+    "text": "scripts/: Lecture R scripts for each topic\nPracticals: RMarkdown files for hands-on exercises\ndata/: Sample genotype and phenotype datasets\nslides/: Lecture slides\nresources/: Additional resources and cheat sheets\nsolutions/: Solutions to practical exercises"
+  },
+  {
+    "objectID": "index.html#getting-started",
+    "href": "index.html#getting-started",
+    "title": "Intro to Linux & R",
+    "section": "",
+    "text": "Clone this repository:\n\ngit clone https://github.com/YOUR_USERNAME/intro-to-R-genomic-selection.git\ncd intro-to-R-genomic-selection\n\nOpen the project in RStudio.\nInstall required packages:\n\ninstall.packages(c(\"tidyverse\"??????)) \n\nAfter Lunch (Start with the practicals in the practicals/ folder.)"
+  },
+  {
+    "objectID": "index.html#contact",
+    "href": "index.html#contact",
+    "title": "Intro to Linux & R",
+    "section": "",
+    "text": "For questions or feedback, contact at abu.siddique@slu.se\n\nPracticals\n\nSlides"
+  },
+  {
+    "objectID": "slides.html",
+    "href": "slides.html",
+    "title": "Intro to Linux and R",
+    "section": "",
+    "text": "title: “Slides”\nSlide sources go in the slides/ folder."
+  },
+  {
+    "objectID": "scripts/01_intro_to_linux.html",
+    "href": "scripts/01_intro_to_linux.html",
+    "title": "Intro to Linux and R",
+    "section": "",
+    "text": "open the terminal or wsl command line\nwhere am I (print working directory)\ncreate a directory (folder)\nchange working directory\nlist view (different styles)\narguments\ncopy and paste\nmove\nrename\ndelete files or folders\ndownload tools\nunzip or extract\n\nBasic linux commands: ls, cd, mkdir, cp, mv, rm.\nWorkshop oriented commands:\ncd, mkdir, wget (for plinks tool), tar or unzip, use of \\, arguments,\nls\nTools: Plink"
+  },
+  {
+    "objectID": "index - Copy.html",
+    "href": "index - Copy.html",
+    "title": "Intro to Linux & R",
+    "section": "",
+    "text": "Welcome! This site holds the course practicals, slides and resources.\n\nPracticals\nSlides"
+  },
+  {
+    "objectID": "practicals.html",
+    "href": "practicals.html",
+    "title": "Practicals",
+    "section": "",
+    "text": "Practicals list\n\nPractical 01 — Intro"
+  },
+  {
+    "objectID": "scripts/02_intro_R.html",
+    "href": "scripts/02_intro_R.html",
+    "title": "Intro to Linux and R",
+    "section": "",
+    "text": "Recommended packages: tidyverse\n\n\n\nset working directory,\nprint path of the current working directory,\nupload data,\nsubset data,\ntidy data\ntransform data,\nplot,\nsaving plot\n\nCodes: setwd, getwd, read_table, read_csv, pvot_longer, pvot_wider, select, mutate, summarize, summary.\nExample R code:\n\nsummary(cars)\n\n     speed           dist       \n Min.   : 4.0   Min.   :  2.00  \n 1st Qu.:12.0   1st Qu.: 26.00  \n Median :15.0   Median : 36.00  \n Mean   :15.4   Mean   : 42.98  \n 3rd Qu.:19.0   3rd Qu.: 56.00  \n Max.   :25.0   Max.   :120.00"
+  },
+  {
+    "objectID": "scripts/00_precourse.html",
+    "href": "scripts/00_precourse.html",
+    "title": "Intro to Linux and R",
+    "section": "",
+    "text": "Install or activate WSL Unix, and install R and RStudio if you do not have them already before 1st meeting.\nWe strongly recommend for those not yet familiar with UNIX and/or R to take this opportunity and take these online tutorials, since those are requirements for the workshop. This will help you to develop your programming skills and we can always learn a few tricks here and there, even if you are already experienced.\n\n\n\n\n\n\n\n\nTask & Tools\nNote\nLink\n\n\n\n\nInstall & activate WSL or Unix\nFor Windows user only\nUNIX\n\n\nInstall R itself and RStudio Desktop\nall participants\nR & RStudio"
+  },
+  {
+    "objectID": "scripts/01_intro_to_linux.html#intro-to-linux",
+    "href": "scripts/01_intro_to_linux.html#intro-to-linux",
+    "title": "Intro to Linux and R",
+    "section": "",
+    "text": "open the terminal or wsl command line\nwhere am I (print working directory)\ncreate a directory (folder)\nchange working directory\nlist view (different styles)\narguments\ncopy and paste\nmove\nrename\ndelete files or folders\ndownload tools\nunzip or extract\n\nBasic linux commands: ls, cd, mkdir, cp, mv, rm.\nWorkshop oriented commands:\ncd, mkdir, wget (for plinks tool), tar or unzip, use of \\, arguments,\nls\nTools: Plink"
+  },
+  {
+    "objectID": "scripts/02_intro_R.html#intro-to-r",
+    "href": "scripts/02_intro_R.html#intro-to-r",
+    "title": "Intro to Linux and R",
+    "section": "",
+    "text": "Recommended packages: tidyverse\n\n\n\nset working directory,\nprint path of the current working directory,\nupload data,\nsubset data,\ntidy data\ntransform data,\nplot,\nsaving plot\n\nCodes: setwd, getwd, read_table, read_csv, pvot_longer, pvot_wider, select, mutate, summarize, summary.\nExample R code:\n\nsummary(cars)\n\n     speed           dist       \n Min.   : 4.0   Min.   :  2.00  \n 1st Qu.:12.0   1st Qu.: 26.00  \n Median :15.0   Median : 36.00  \n Mean   :15.4   Mean   : 42.98  \n 3rd Qu.:19.0   3rd Qu.: 56.00  \n Max.   :25.0   Max.   :120.00"
+  },
+  {
+    "objectID": "scripts/00_precourse.html#precourse-materials",
+    "href": "scripts/00_precourse.html#precourse-materials",
+    "title": "Intro to Linux and R",
+    "section": "",
+    "text": "Install or activate WSL Unix, and install R and RStudio if you do not have them already before 1st meeting.\nWe strongly recommend for those not yet familiar with UNIX and/or R to take this opportunity and take these online tutorials, since those are requirements for the workshop. This will help you to develop your programming skills and we can always learn a few tricks here and there, even if you are already experienced.\n\n\n\n\n\n\n\n\nTask & Tools\nNote\nLink\n\n\n\n\nInstall & activate WSL or Unix\nFor Windows user only\nUNIX\n\n\nInstall R itself and RStudio Desktop\nall participants\nR & RStudio"
+  },
+  {
+    "objectID": "practicals/excercise/data_handling_part_1.html",
+    "href": "practicals/excercise/data_handling_part_1.html",
+    "title": "data_handling_part1",
+    "section": "",
+    "text": "Help in R\nThere are three ways to get help in R:_ 1. The help() command, which can be abbreviated by ?, 2. The help.search() function, which can be abbreviated by ?? looks for function already installed on your computer, 3. The RSiteSearch() command will open a browser to a searchable database of\nquestions and answers posted on the R-help mailing list.\n\nhelp(c)      # or ?c\n\nstarting httpd help server ... done\n\n??merge    # or help.search(merge)\n\n\n\nData types in R\n\nstr(cars)\n\n'data.frame':   50 obs. of  2 variables:\n $ speed: num  4 4 7 7 8 9 10 10 10 11 ...\n $ dist : num  2 10 4 22 16 10 18 26 34 17 ...\n\n\n\n\nMissing Values\nIn R, missing values are represented by the string NA: We must use the builtin is.na function, which will return TRUE if a value is missing and FALSE otherwise.\nMany functions (like mean, min, max, sd, quantile, etc.) accept an na.rm=TRUE argument, that tells the function to remove any missing values before performing the computation:\nWe just need to remember to always use is.na whenever we are testing to see if a value is a missing value.\n\nx = c(1,4,7,NA,12,19,15,21,20)\nmean(x)\n\n[1] NA\n\nmean(x, na.rm=TRUE)\n\n[1] 12.375\n\nis.na(x)\n\n[1] FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE\n\n!is.na(x)\n\n[1]  TRUE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE\n\n\nBy combining a call to is.na to the logical “not” operator ! we can filter out missing values in cases where no na.rm= argument is available.\n\n\nMatrices\nA very common way of storing data is in a matrix. A matrix of 4 rows, 3 columns.\n\nmymat = matrix(1:12,4,3)\nmymat = matrix(1:12,ncol=3)\n\nTo create a matrix by rows instead of by columns, the byrow=TRUE argument can be used:\n\nmymat = matrix(1:12, ncol=3, byrow=TRUE)\nmymat\n\n     [,1] [,2] [,3]\n[1,]    1    2    3\n[2,]    4    5    6\n[3,]    7    8    9\n[4,]   10   11   12\n\nmymat[4,1]  # element in row=4, col=1\n\n[1] 10\n\nmymat[,1]  # column 1, \n\n[1]  1  4  7 10\n\nmymat[4,]  # row 4 \n\n[1] 10 11 12\n\n\n\nacknoledgement:\nscript. author: “F. Isik”"
+  },
+  {
+    "objectID": "practicals/excercise/data_handling_part_2_v1.html",
+    "href": "practicals/excercise/data_handling_part_2_v1.html",
+    "title": "data_handling_part2",
+    "section": "",
+    "text": "Lets clean our environment first"
+  },
+  {
+    "objectID": "practicals/excercise/data_handling_part_2_v1.html#reasons-not-reset-the-working-directory",
+    "href": "practicals/excercise/data_handling_part_2_v1.html#reasons-not-reset-the-working-directory",
+    "title": "data_handling_part2",
+    "section": "Reasons not reset the working directory",
+    "text": "Reasons not reset the working directory\n\nMaybe my working directory is reserved for other files or custom functions I’ve written.\nMaybe I’ve been clever about how I store files, and files that do different things are stored in different places\nMaybe I work with tons of files and don’t want to crowd up my working directory with loose files\nMaybe I want to reserve the output of R functions like “write.csv” for my working directory- input files go elsewhere.\n\nThe clever way is to assign the directory of interest to a variable so you don’t need to type as much let’s call it wd.\n\nwd&lt;-\"C:/Users/auue0001/OneDrive - Sveriges lantbruksuniversitet/slubi/proj/2025/GS_course/website/intro-to-linux-and-R/practicalsexcercise/data/\"\nwd\n\n[1] \"C:/Users/auue0001/OneDrive - Sveriges lantbruksuniversitet/slubi/proj/2025/GS_course/website/intro-to-linux-and-R/practicalsexcercise/data/\"\n\n\nNow the directory containing our file is located in the variable ‘wd’. When you do a lot of work with R, you want it to be easy to find your files. Use a directory that is easy to find, and a directory structure that makes sense.\nFor example, organize your files into folders labelled with project names. In this case I want to bring in the dataset Pine_provenance.csv."
+  },
+  {
+    "objectID": "practicals/excercise/data_handling_part_2_v1.html#session-info",
+    "href": "practicals/excercise/data_handling_part_2_v1.html#session-info",
+    "title": "data_handling_part2",
+    "section": "Session info",
+    "text": "Session info\nFinally we want to which packages we used in this excercises\n\n\nR version 4.4.1 (2024-06-14 ucrt)\nPlatform: x86_64-w64-mingw32/x64\nRunning under: Windows 11 x64 (build 26100)\n\nMatrix products: default\n\n\nlocale:\n[1] LC_COLLATE=English_Sweden.utf8  LC_CTYPE=English_Sweden.utf8   \n[3] LC_MONETARY=English_Sweden.utf8 LC_NUMERIC=C                   \n[5] LC_TIME=English_Sweden.utf8    \n\ntime zone: Europe/Stockholm\ntzcode source: internal\n\nattached base packages:\n[1] stats     graphics  grDevices utils     datasets  methods   base     \n\nother attached packages:\n[1] dplyr_1.1.4   writexl_1.5.4 psych_2.5.6  \n\nloaded via a namespace (and not attached):\n [1] vctrs_0.6.5       nlme_3.1-164      cli_3.6.3         knitr_1.50       \n [5] rlang_1.1.4       xfun_0.53         generics_0.1.4    jsonlite_1.8.9   \n [9] glue_1.8.0        htmltools_0.5.8.1 rmarkdown_2.29    grid_4.4.1       \n[13] evaluate_1.0.5    tibble_3.2.1      fastmap_1.2.0     yaml_2.3.10      \n[17] lifecycle_1.0.4   compiler_4.4.1    htmlwidgets_1.6.4 pkgconfig_2.0.3  \n[21] rstudioapi_0.17.1 lattice_0.22-6    digest_0.6.37     R6_2.6.1         \n[25] tidyselect_1.2.1  pillar_1.11.1     mnormt_2.1.1      parallel_4.4.1   \n[29] magrittr_2.0.3    tools_4.4.1"
+  },
+  {
+    "objectID": "practicals/excercise/data_handling_part_2_v1.html#quarto",
+    "href": "practicals/excercise/data_handling_part_2_v1.html#quarto",
+    "title": "data_handling_part2",
+    "section": "Quarto",
+    "text": "Quarto\nQuarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
+  },
+  {
+    "objectID": "practicals/excercise/data_handling_part_2_v1.html#running-code",
+    "href": "practicals/excercise/data_handling_part_2_v1.html#running-code",
+    "title": "data_handling_part2",
+    "section": "Running Code",
+    "text": "Running Code\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code. # Read in a data file\n———————** End :) **——————–"
+  }
+]

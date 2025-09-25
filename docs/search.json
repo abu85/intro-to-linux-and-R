@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Intro to Linux & R",
+    "section": "",
+    "text": "Welcome! This site holds the course practicals, slides and resources.\n\nPracticals\nSlides"
+  },
+  {
+    "objectID": "practicals/practical_01_intro.html",
+    "href": "practicals/practical_01_intro.html",
+    "title": "Practical 01 — Intro to Linux",
+    "section": "",
+    "text": "Learn basic shell commands\nPractice editing files\n\n# example: list files\nls -la"
+  },
+  {
+    "objectID": "practicals/practical_01_intro.html#goals",
+    "href": "practicals/practical_01_intro.html#goals",
+    "title": "Practical 01 — Intro to Linux",
+    "section": "",
+    "text": "Learn basic shell commands\nPractice editing files\n\n# example: list files\nls -la"
+  }
+]

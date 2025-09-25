@@ -1,7 +1,26 @@
-title: "02 — Intro to R"
+## Intro to R"
 
-Example R snippet:
+Recommended packages: `tidyverse`
 
+#### Topics: 
+
+- set working directory, 
+- print path of the current working directory, 
+- upload data, 
+- subset data, 
+- tidy data
+- transform data, 
+- plot, 
+- saving plot
+
+Codes: 
+`setwd, getwd, read_table, read_csv, pvot_longer, pvot_wider, select, mutate, summarize, summary`. 
+
+Example R code:
+
+```{r}
 summary(cars)
+
+```
 
 

@@ -1,0 +1,254 @@
+---
+title: "data_handling_part2"
+format: html
+editor: visual
+---
+
+Lets clean our environment first
+
+```{r include=FALSE}
+rm(list = ls())
+```
+
+# Packages
+
+```{r}
+# install.packages("psych")
+library("psych")
+library("writexl")
+```
+
+# Read in a data file
+
+There is an easy way to do this and a more nuanced way to do this. I will cover the nuanced way first.
+
+Let's say I don't want to reset my working directory.
+
+## Reasons not reset the working directory
+
+-   Maybe my working directory is reserved for other files or custom functions I've written.
+-   Maybe I've been clever about how I store files, and files that do different things are stored in different places
+-   Maybe I work with tons of files and don't want to crowd up my working directory with loose files
+-   Maybe I want to reserve the output of R functions like "write.csv" for my working directory- input files go elsewhere.
+
+The clever way is to assign the directory of interest to a variable so you don't need to type as much let's call it wd.
+
+```{r}
+wd<-"C:/Users/auue0001/OneDrive - Sveriges lantbruksuniversitet/slubi/proj/2025/GS_course/website/intro-to-linux-and-R/practicalsexcercise/data/"
+wd
+
+```
+
+Now the directory containing our file is located in the variable 'wd'. When you do a lot of work with R, you want it to be easy to find your files. Use a directory that is easy to find, and a directory structure that makes sense.
+
+For example, organize your files into folders labelled with project names. In this case I want to bring in the dataset **Pine_provenance.csv**.
+
+# The source directory
+
+We are going to hold all the filenames in this directory in an object called "files". The function **list.files** displays the filenames of each file in the directory. I assign the output of this function to the variable"files". If I don't assign the output to the variable, the results are simply printed to the screen.
+
+```{r}
+files<-list.files(wd)
+```
+
+Let's look at the files in the directory. Simply type **files** and press enter: `files`
+
+It looks like there are multiple files here of different file types. I am only interested in .csv files Let's modify the output of "list.files" a little bit by giving it the "pattern" argument. We will overwrite the "files" object with a new object of the same name,
+
+```{r}
+files<-list.files(wd,pattern="csv")
+files
+```
+
+# Reading data
+
+The **easier** and less nuanced way to move around the filesystem of your computer using R is to simply reset your working directory This is accomplished via the function **setwd()**.
+
+After I reset the working directory, I can use read.csv without specifying the directory; it's now implicit (a global option).
+
+```{r}
+setwd("C:/Users/auue0001/OneDrive - Sveriges lantbruksuniversitet/slubi/proj/2025/GS_course/website/intro-to-linux-and-R/practicals/excercise/")
+pine <-read.csv("./data/Pine_provenance.csv")
+```
+
+The *red.table* and '*read.csv* are two common functions to read data.frames
+
+One shortcoming of vectors and matrices is that they can only hold one mode of data; they don't allow us to mix, say, numbers and character strings. But *data frames* can have different models of data
+
+```{r}
+head(pine)
+tail(pine)
+names(pine)
+sapply(pine,mode)
+sapply(pine,class)
+str(pine)
+
+```
+
+# Subsetting data and summarizing
+
+The subset function requires two arguments: the first is a data frame, the second is the condition that you want to use to create the subset. An optional third argument called *select=* allows you to specify which of the variables in the data frame you're interested in.
+
+Example: subset data with the provenance (origin) number \< 12, `prov10 <- subset(pine, prov<12)`.
+
+subset data with two conditions: `prov.sub <- subset(pine, prov<11, select = c('prov','height') )`
+
+Sort data by height: `sort(prov.sub$height, decreasing=TRUE)`.
+
+Display data summary: `summary(pine, c('height','diameter'))`.
+
+# More data summary
+
+We will be using the package "dplyr" to produce some summary tables. This package is particular useful for vectorised operations like grouping and summarising by groups You may need to install this package first. use `install.packages("dplyr")`.
+
+```{r}
+library(dplyr)
+```
+
+First, we check what the '**structure**' of the data frame is using str(). This will tell us what kind of variable each column in the data set is considered to be. `str(pine)`
+
+Notice that treeid is correctly considered a factor variable, but the other factors we want to include in a linear model (female, prov, block in particular) are considered integer ('int') variables (**round number**), which are a special type of numeric variable. We coerce these variables to be factors with as.factor() function:
+
+```{r}
+pine$female <- as.factor(pine$female) 
+pine$prov <- as.factor(pine$prov)
+pine$block <- as.factor(pine$block)
+```
+
+Now, we re-check the structure of the data frame to be certain these commands did what we want:
+
+```{r}
+str(pine)
+```
+
+OK, this looks good. Let's use a few other functions to inspect the data set before proceeding to analysis:
+
+get the names of the levels of 'female' in the order they first appear, note these are returned as a factor vector
+
+```{r}
+unique(pine$female) 
+```
+
+Get the names of the levels of 'female' in sorted order, returned as a vector of character strings
+
+```{r}
+levels(pine$female) 
+```
+
+Check how many individual progeny trees tested from each female parent:
+
+```{r}
+table(pine$female)
+
+# This table may be easier to read as a data frame:
+fem.freq <-as.data.frame(table(pine$female))
+names(fem.freq) <- c('female','counts')
+fem.freq
+```
+
+# Outlier Detection
+
+Make a scatterplot of height and volume to check for outliers:
+
+```{r}
+plot(x = pine$volume, y = pine$height, 
+     xlab = "Volume (cubic inches)", ylab = "Height (feet)",
+     main = " ", col = "blue")
+```
+
+# Outlier detection using *psych* package
+
+One way to detect unusual data is to consider how far each data point is from the multivariate centroid of the data. That is, find the squared Mahalanobis distance for each data point and then compare these to the expected values of $χ^2$. $$D^2 = (x-\mu)'\sigma^{-1}(x-u)$$, where $\sigma$ is the covariance of the x matrix.
+
+Large $D^2$ values, compared to the expected Chi Square values indicate an unusual response pattern. The mahalanobis function in stats does not handle missing data.\
+This produces a Q-Q (quantle-quantile) plot with the n most extreme data points labeled. We combine the outliers with the data frame and plot it with the outliers. Outliers are highlighted in blue. bad=5 labels the worst five values.
+
+```{r}
+library(psych)
+d2 <- outlier(pine[,7:9], bad = 5, na.rm = TRUE)
+sat.d2 <- data.frame(pine[,7:9], d2)
+pairs.panels(sat.d2,bg=c("lightgreen","blue")[(d2 > 25)+1],pch=21)
+```
+
+# R Graphics
+
+We can visualize data with R base functions. The stem function produces simple text histogram.
+
+```{r}
+stem(pine$height)
+```
+
+```{r}
+hist(pine$height, col='lightgreen')
+```
+
+```{r}
+plot(pine$height,pine$diameter, col='blue')
+```
+
+```{r}
+plot(density(pine$height))
+```
+
+```{r}
+plot(pine[,7:9] )
+```
+
+```{r}
+boxplot(pine$height)
+boxplot(split(pine$height, pine$prov),col=2)
+```
+
+# Export plots
+
+in ggplot: ggsave("path/to/your/saving/plots/figure_1a.png", plot = p1, bg ="white")
+
+or
+
+in base r plot: dev.print (device=jpeg, file="path/to/your/saving/plots/figure_1a.jpg", width=par("din")\[1\]\*300, res=300, quality=100)
+
+As we plotted bas plots so far so use 'dev.print' function
+
+```{r}
+#base r plot
+boxplot(split(pine$height, pine$prov),col=2)
+dev.print (device=jpeg, file="C:/Users/auue0001/OneDrive - Sveriges lantbruksuniversitet/slubi/proj/2025/GS_course/website/intro-to-linux-and-R/practicals/excercise/fig_1a.png", width=par("din")[1]*300, res=300, quality=100)
+```
+
+# Export results or data
+
+For csv
+
+write.csv(df , file = "path/to/your/saving/folder/df.csv")
+
+For creating excel file
+
+writexl::write_xlsx (test_df, path = "C:/Users/your_username/test_df.xlsx", col_names = TRUE, format_headers = TRUE)
+
+```{r}
+# writexl::write_xlsx (sat.d2, path = "C:/Users/auue0001/OneDrive - Sveriges lantbruksuniversitet/slubi/proj/GS_course/excercise/test_df.xlsx", col_names = TRUE, format_headers = TRUE)
+```
+
+## Session info
+
+Finally we want to which packages we used in this excercises
+
+```{r}
+#| echo: false
+
+sessionInfo()
+```
+
+# Notes
+
+main author of the script is "F. Isik"
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+## Running Code
+
+When you click the **Render** button a document will be generated that includes both content and the output of embedded code. \# Read in a data file
+
+---------------------\*\* End :) \*\*--------------------

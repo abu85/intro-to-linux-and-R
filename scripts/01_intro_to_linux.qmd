@@ -1,3 +1,32 @@
-title: "01 — Intro to Linux"
+## Intro to Linux
+
+#### Topics: 
+
+- open the terminal or wsl command line
+- where am I (print working directory)
+- create a directory (folder)
+- change working directory
+- list view (different styles)
+- arguments
+- copy and paste
+- move
+- rename
+- delete files or folders
+- download tools
+- unzip or extract
+
 
 Basic linux commands: ls, cd, mkdir, cp, mv, rm.
+
+
+Workshop oriented commands:
+
+`cd`, `mkdir`, `wget` (for plinks tool), `tar` or `unzip`, use of `\`, arguments,
+
+```bash
+ls
+```
+
+
+Tools: [Plink](https://zzz.bwh.harvard.edu/plink/dist/plink-latest.zip)
+

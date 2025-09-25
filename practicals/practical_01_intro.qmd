@@ -7,6 +7,8 @@ title: "Practical 01 — Intro to Linux"
 - Learn basic shell commands
 - Practice editing files
 
-```{bash}
+```bash
 # example: list files
 ls -la
+```
+

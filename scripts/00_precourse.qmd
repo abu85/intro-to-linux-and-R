@@ -1,0 +1,17 @@
+## Precourse materials
+
+Install or activate WSL Unix, and **install R and RStudio if you do not have them already before 1st meeting**.
+
+We strongly recommend for **those not yet familiar with UNIX and/or R to take this opportunity and take these online tutorials**, since those are requirements for the workshop. This will help you to develop your programming skills and we can always learn a few tricks here and there, even if you are already experienced.
+
+#### `Before 1st meeting`: Make sure you have all tools in your PC
+
+### Tutorials:
+ 
+| Task & Tools                      | Note                        | Link               |
+|---------------------------|------------------------------------|----------------|
+| Install & activate `WSL` or `Unix`| *For Windows user only*| [UNIX](http://swcarpentry.github.io/shell-novice/)|
+| Install `R` itself and `RStudio` Desktop | all participants | [R & RStudio](https://swcarpentry.github.io/r-novice-inflammation/)| 
+
+
+

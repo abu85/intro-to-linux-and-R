@@ -1,8 +1,63 @@
 ---
 title: "Intro to Linux & R"
+subtitle: ""
+toc: false
+date: ""
+sidebar: false
+image: "assets/images/seo.webp"
+format:
+  html:
+    css: "assets/css/home.css"
+    number-sections: false
+    title-block-banner: false
+    page-layout: full
+execute:
+  freeze: false
 ---
 
-Welcome! This site holds the course practicals, slides and resources.
+# Introduction to Linux and R 
 
-- [Practicals](practicals.md)
+For linux we will follow [The Unix Shell](https://swcarpentry.github.io/shell-novice/) tutorial
+
+## 🧰 Requirements
+- Linux/WSL/Unix/Ubuntu/Shell
+- R (version ≥ 4.0)
+- RStudio
+- Recommended packages: `tidyverse` ???
+- Plink(https://zzz.bwh.harvard.edu/plink/dist/plink-latest.zip)
+- 
+## 📚 Contents
+
+- `scripts/`: Lecture R scripts for each topic
+- [Practicals](./practicals/practical_01_intro.html): RMarkdown files for hands-on exercises
+- `data/`: Sample genotype and phenotype datasets
+- `slides/`: Lecture slides
+- `resources/`: Additional resources and cheat sheets
+- `solutions/`: Solutions to practical exercises
+
+
+## 🚀 Getting Started
+
+1. Clone this repository:
+```bash
+git clone https://github.com/YOUR_USERNAME/intro-to-R-genomic-selection.git
+cd intro-to-R-genomic-selection
+```
+
+2. Open the project in RStudio.
+
+3. Install required packages:
+
+```r
+install.packages(c("tidyverse"??????)) 
+```
+
+4. After Lunch (Start with the practicals in the `practicals/` folder.)
+
+## 📬 Contact
+
+For questions or feedback, contact at abu.siddique@slu.se
+
+- [Practicals](./practicals/practical_01_intro.html)
+- 
 - [Slides](slides.md)
