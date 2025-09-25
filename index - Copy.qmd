@@ -1,8 +1,0 @@
----
-title: "Intro to Linux & R"
----
-
-Welcome! This site holds the course practicals, slides and resources.
-
-- [Practicals](practicals.md)
-- [Slides](slides.md)
