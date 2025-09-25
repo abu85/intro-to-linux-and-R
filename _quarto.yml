@@ -1,6 +1,6 @@
 project:
   type: website
-
+  output-dir: docs
 website:
   title: "Intro to Linux and R"
   site-url: "https://yourdomain.com"
