@@ -1,6 +1,6 @@
 ## Intro to Linux (under development)
 
-#### Topics: 
+### Topics 
 
 0. Setup: Installation
 1. Introducing the Shell: What & Why shell? CLI vs GUI
@@ -10,13 +10,13 @@
 6. Shell Scripts
 7. Finding Things
 
-Tasks: 
+### Tasks 
 
 - open the terminal or wsl command line
 - where am I (print working directory)
 - create a directory (folder)
-- change working directory
-- absolute/relative paths
+- change working directory to the new directory
+- absolute/relative paths of that directory
 - list view (different styles)
 - arguments
 - copy and paste
@@ -27,14 +27,15 @@ Tasks:
 - unzip or extract
 
 
-Basic linux commands: ls, cd, pwd, mkdir, cp, mv, rm.
+### Basic linux commands 
+ls, cd, pwd, mkdir, cp, mv, rm.
 
 
-Workshop oriented commands:
+### Workshop oriented commands
 
 `ls` , `cd`, `mkdir`, `wget` (for plinks tool), `tar` or `unzip`, `nano`, `less`, `head`, use of `\`, arguments,
 
-### Advanced commands: 
+### Advanced commands
 
 - `less` – view a file
 - `nano` – view and edit a file
@@ -46,11 +47,11 @@ Workshop oriented commands:
 - `man` – manual pages or
 - anycommand `--help`
 
-Example:
+### Example
 ```bash
 ls
 ```
 
 
-Tools: [Plink](https://zzz.bwh.harvard.edu/plink/dist/plink-latest.zip)
+#### Tools: [Plink](https://zzz.bwh.harvard.edu/plink/dist/plink-latest.zip)
 

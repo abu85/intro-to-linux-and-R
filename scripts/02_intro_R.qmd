@@ -1,9 +1,18 @@
 ## Intro to R (under development)
 
-Recommended packages: `tidyverse`
+### Topics 
+- About R, R vs Rstudio, Timeline
+- Setting a project or working directory
+- Interacting with R
+- Packages
+- Assign values or objects
+- Data types, structures
+- How to import and export data or results
+- Handle large data sets
+- Housekeeping
+- Outliers
 
-#### Topics: 
-
+### Tasks 
 - set working directory, 
 - print path of the current working directory, 
 - upload data, 
@@ -13,10 +22,19 @@ Recommended packages: `tidyverse`
 - plot, 
 - saving plot
 
-Codes: 
+### R built-in function  
 `setwd, getwd, read_table, read_csv, pvot_longer, pvot_wider, select, mutate, summarize, summary`. 
 
-Example R code:
+### Recommended packages 
+Install **Tidyverse** package
+
+```r
+install.packages("tidyverse")
+
+library("tidyverse")
+```
+
+### Example R code
 
 ```{r}
 summary(cars)

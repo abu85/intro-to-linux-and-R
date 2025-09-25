@@ -20,12 +20,15 @@ Welcome to the Day1
 ## 🧰 `Before Day 1`
 Read the `pre-course` ⬆️ and be prepared accordingly. You need following `tools` in the day 1:
 
+::: {.callout-important collapse=true}
+## 👉Tools needed:
+
 - `WSL`/`Unix`/`Ubuntu`/`Shell` [The Unix Shell](https://swcarpentry.github.io/shell-novice/) tutorial
 - `R` (version ≥ 4.0)
 - `RStudio`
 - Recommended packages in RStudio: `tidyverse`
 - `Plink` at Linux (https://zzz.bwh.harvard.edu/plink/dist/plink-latest.zip)
-
+:::
 
 ## 📅 `Schedule of Day 1`
 | Day 1, Time                      | Topic                        | Instructor              |
@@ -36,13 +39,13 @@ Read the `pre-course` ⬆️ and be prepared accordingly. You need following `to
 
 
 
-# 🟢`At Day 1` 
-Linux, R, Lab. See up bar headers ⬆️
+## 🟢`At Day 1` 
+Linux, R, Lab. 
+See up, bar headers ⬆️
 
-# 📚 Course materieals
-::: {.callout-note collapse=true}
-
-##### 👉 or 🖱️ Course materieals
+## 📚 Course materieals
+::: {.callout-important collapse=true}
+### 👉️ [Course materieals]()
 
 ##### 1. Download this repository:
 
@@ -111,10 +114,15 @@ install.packages(c("tidyverse"??????))
 
 :::
 
-##### 📬 For questions or feedback, contact at `abu.siddique@slu.se`
 
-🔴 End 🔴
+::: {.callout-tip}
+## Tip
 
-#### License
+## 📬 For questions or feedback, contact at `abu.siddique@slu.se`
+
+:::
+
+
+## License
 
 This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).

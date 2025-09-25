@@ -1,5 +1,5 @@
 ---
-title: "data_handling (under development)"
+title: "Data_handling (under development)"
 format: html
 editor: visual
 ---
@@ -14,8 +14,12 @@ rm(list = ls())
 
 ```{r}
 # install.packages("psych")
+# install.packages("writexl")
+# install.packages("tidyverse")
+
 library("psych")
 library("writexl")
+library("tidyverse")
 ```
 
 # Read in a data file

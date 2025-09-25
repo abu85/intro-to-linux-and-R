@@ -169,7 +169,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#intro-to-r-under-development" id="toc-intro-to-r-under-development" class="nav-link active" data-scroll-target="#intro-to-r-under-development">Intro to R (under development)</a></li>
+  <li><a href="#intro-to-r-under-development" id="toc-intro-to-r-under-development" class="nav-link active" data-scroll-target="#intro-to-r-under-development">Intro to R (under development)</a>
+  <ul class="collapse">
+  <li><a href="#topics" id="toc-topics" class="nav-link" data-scroll-target="#topics">Topics</a></li>
+  <li><a href="#tasks" id="toc-tasks" class="nav-link" data-scroll-target="#tasks">Tasks</a></li>
+  <li><a href="#r-built-in-function" id="toc-r-built-in-function" class="nav-link" data-scroll-target="#r-built-in-function">R built-in function</a></li>
+  <li><a href="#recommended-packages" id="toc-recommended-packages" class="nav-link" data-scroll-target="#recommended-packages">Recommended packages</a></li>
+  <li><a href="#example-r-code" id="toc-example-r-code" class="nav-link" data-scroll-target="#example-r-code">Example R code</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -181,9 +188,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="intro-to-r-under-development" class="level2">
 <h2 class="anchored" data-anchor-id="intro-to-r-under-development">Intro to R (under development)</h2>
-<p>Recommended packages: <code>tidyverse</code></p>
-<section id="topics" class="level4">
-<h4 class="anchored" data-anchor-id="topics">Topics:</h4>
+<section id="topics" class="level3">
+<h3 class="anchored" data-anchor-id="topics">Topics</h3>
+<ul>
+<li>About R, R vs Rstudio, Timeline</li>
+<li>Setting a project or working directory</li>
+<li>Interacting with R</li>
+<li>Packages</li>
+<li>Assign values or objects</li>
+<li>Data types, structures</li>
+<li>How to import and export data or results</li>
+<li>Handle large data sets</li>
+<li>Housekeeping</li>
+<li>Outliers</li>
+</ul>
+</section>
+<section id="tasks" class="level3">
+<h3 class="anchored" data-anchor-id="tasks">Tasks</h3>
 <ul>
 <li>set working directory,</li>
 <li>print path of the current working directory,</li>
@@ -194,10 +215,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>plot,</li>
 <li>saving plot</li>
 </ul>
-<p>Codes: <code>setwd, getwd, read_table, read_csv, pvot_longer, pvot_wider, select, mutate, summarize, summary</code>.</p>
-<p>Example R code:</p>
+</section>
+<section id="r-built-in-function" class="level3">
+<h3 class="anchored" data-anchor-id="r-built-in-function">R built-in function</h3>
+<p><code>setwd, getwd, read_table, read_csv, pvot_longer, pvot_wider, select, mutate, summarize, summary</code>.</p>
+</section>
+<section id="recommended-packages" class="level3">
+<h3 class="anchored" data-anchor-id="recommended-packages">Recommended packages</h3>
+<p>Install <strong>Tidyverse</strong> package</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"tidyverse"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="example-r-code" class="level3">
+<h3 class="anchored" data-anchor-id="example-r-code">Example R code</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(cars)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(cars)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     speed           dist       
  Min.   : 4.0   Min.   :  2.00  

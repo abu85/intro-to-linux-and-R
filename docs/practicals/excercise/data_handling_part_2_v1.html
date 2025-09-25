@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>data_handling (under development)</title>
+<title>Data_handling (under development)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -228,7 +228,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">data_handling (under development)</h1>
+<h1 class="title">Data_handling (under development)</h1>
 </div>
 
 
@@ -250,13 +250,34 @@ window.Quarto = {
 <h1>Packages</h1>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("psych")</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"psych"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("writexl")</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("tidyverse")</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"psych"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: package 'psych' was built under R version 4.4.3</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"writexl"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: package 'writexl' was built under R version 4.4.3</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"tidyverse"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'ggplot2' was built under R version 4.4.3</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.5
+✔ forcats   1.0.0     ✔ stringr   1.5.1
+✔ ggplot2   4.0.0     ✔ tibble    3.2.1
+✔ lubridate 1.9.3     ✔ tidyr     1.3.1
+✔ purrr     1.0.2     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ ggplot2::%+%()   masks psych::%+%()
+✖ ggplot2::alpha() masks psych::alpha()
+✖ dplyr::filter()  masks stats::filter()
+✖ dplyr::lag()     masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
 </div>
 </div>
 </section>
@@ -274,8 +295,8 @@ window.Quarto = {
 </ul>
 <p>The clever way is to assign the directory of interest to a variable so you don’t need to type as much let’s call it wd.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>wd<span class="ot">&lt;-</span><span class="st">"C:/Users/auue0001/OneDrive - Sveriges lantbruksuniversitet/slubi/proj/2025/GS_course/website/intro-to-linux-and-R/practicalsexcercise/data/"</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>wd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>wd<span class="ot">&lt;-</span><span class="st">"C:/Users/auue0001/OneDrive - Sveriges lantbruksuniversitet/slubi/proj/2025/GS_course/website/intro-to-linux-and-R/practicalsexcercise/data/"</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>wd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "C:/Users/auue0001/OneDrive - Sveriges lantbruksuniversitet/slubi/proj/2025/GS_course/website/intro-to-linux-and-R/practicalsexcercise/data/"</code></pre>
 </div>
@@ -288,13 +309,13 @@ window.Quarto = {
 <h1>The source directory</h1>
 <p>We are going to hold all the filenames in this directory in an object called “files”. The function <strong>list.files</strong> displays the filenames of each file in the directory. I assign the output of this function to the variable”files”. If I don’t assign the output to the variable, the results are simply printed to the screen.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>files<span class="ot">&lt;-</span><span class="fu">list.files</span>(wd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>files<span class="ot">&lt;-</span><span class="fu">list.files</span>(wd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Let’s look at the files in the directory. Simply type <strong>files</strong> and press enter: <code>files</code></p>
 <p>It looks like there are multiple files here of different file types. I am only interested in .csv files Let’s modify the output of “list.files” a little bit by giving it the “pattern” argument. We will overwrite the “files” object with a new object of the same name,</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>files<span class="ot">&lt;-</span><span class="fu">list.files</span>(wd,<span class="at">pattern=</span><span class="st">"csv"</span>)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>files</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>files<span class="ot">&lt;-</span><span class="fu">list.files</span>(wd,<span class="at">pattern=</span><span class="st">"csv"</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>files</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>character(0)</code></pre>
 </div>
@@ -305,13 +326,13 @@ window.Quarto = {
 <p>The <strong>easier</strong> and less nuanced way to move around the filesystem of your computer using R is to simply reset your working directory This is accomplished via the function <strong>setwd()</strong>.</p>
 <p>After I reset the working directory, I can use read.csv without specifying the directory; it’s now implicit (a global option).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">"C:/Users/auue0001/OneDrive - Sveriges lantbruksuniversitet/slubi/proj/2025/GS_course/website/intro-to-linux-and-R/practicals/excercise/"</span>)</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>pine <span class="ot">&lt;-</span><span class="fu">read.csv</span>(<span class="st">"./data/Pine_provenance.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">"C:/Users/auue0001/OneDrive - Sveriges lantbruksuniversitet/slubi/proj/2025/GS_course/website/intro-to-linux-and-R/practicals/excercise/"</span>)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>pine <span class="ot">&lt;-</span><span class="fu">read.csv</span>(<span class="st">"./data/Pine_provenance.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The <em>red.table</em> and ’<em>read.csv</em> are two common functions to read data.frames</p>
 <p>One shortcoming of vectors and matrices is that they can only hold one mode of data; they don’t allow us to mix, say, numbers and character strings. But <em>data frames</em> can have different models of data</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(pine)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(pine)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  treeid female male prov block plot height diameter volume
 1  170.1    170    0   10     1    3   12.5     19.6 0.1441
@@ -321,7 +342,7 @@ window.Quarto = {
 5  170.5    170    0   10     2   84   10.6     17.5 0.0974
 6  170.6    170    0   10     2   84   10.7     18.6 0.1111</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(pine)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(pine)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    treeid female male prov block plot height diameter volume
 909 253.19    253    0   13     5  205   11.0     20.5 0.1387
@@ -331,26 +352,26 @@ window.Quarto = {
 913 253.23    253    0   13     5  205   11.2     21.4 0.1539
 914 253.24    253    0   13     1   30    8.0     16.0 0.0614</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(pine)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(pine)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "treeid"   "female"   "male"     "prov"     "block"    "plot"     "height"  
 [8] "diameter" "volume"  </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sapply</span>(pine,mode)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sapply</span>(pine,mode)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   treeid    female      male      prov     block      plot    height  diameter 
 "numeric" "numeric" "numeric" "numeric" "numeric" "numeric" "numeric" "numeric" 
    volume 
 "numeric" </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sapply</span>(pine,class)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sapply</span>(pine,class)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   treeid    female      male      prov     block      plot    height  diameter 
 "numeric" "integer" "integer" "integer" "integer" "integer" "numeric" "numeric" 
    volume 
 "numeric" </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(pine)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(pine)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>'data.frame':   914 obs. of  9 variables:
  $ treeid  : num  170 170 170 170 170 ...
@@ -377,21 +398,7 @@ window.Quarto = {
 <h1>More data summary</h1>
 <p>We will be using the package “dplyr” to produce some summary tables. This package is particular useful for vectorised operations like grouping and summarising by groups You may need to install this package first. use <code>install.packages("dplyr")</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>
-Attaching package: 'dplyr'</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following objects are masked from 'package:stats':
-
-    filter, lag</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following objects are masked from 'package:base':
-
-    intersect, setdiff, setequal, union</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>First, we check what the ‘<strong>structure</strong>’ of the data frame is using str(). This will tell us what kind of variable each column in the data set is considered to be. <code>str(pine)</code></p>
 <p>Notice that treeid is correctly considered a factor variable, but the other factors we want to include in a linear model (female, prov, block in particular) are considered integer (‘int’) variables (<strong>round number</strong>), which are a special type of numeric variable. We coerce these variables to be factors with as.factor() function:</p>
@@ -670,17 +677,21 @@ attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
-[1] dplyr_1.1.4   writexl_1.5.4 psych_2.5.6  
+ [1] lubridate_1.9.3 forcats_1.0.0   stringr_1.5.1   dplyr_1.1.4    
+ [5] purrr_1.0.2     readr_2.1.5     tidyr_1.3.1     tibble_3.2.1   
+ [9] ggplot2_4.0.0   tidyverse_2.0.0 writexl_1.5.4   psych_2.5.6    
 
 loaded via a namespace (and not attached):
- [1] vctrs_0.6.5       nlme_3.1-164      cli_3.6.3         knitr_1.50       
- [5] rlang_1.1.4       xfun_0.53         generics_0.1.4    jsonlite_1.8.9   
- [9] glue_1.8.0        htmltools_0.5.8.1 rmarkdown_2.29    grid_4.4.1       
-[13] evaluate_1.0.5    tibble_3.2.1      fastmap_1.2.0     yaml_2.3.10      
-[17] lifecycle_1.0.4   compiler_4.4.1    htmlwidgets_1.6.4 pkgconfig_2.0.3  
-[21] rstudioapi_0.17.1 lattice_0.22-6    digest_0.6.37     R6_2.6.1         
-[25] tidyselect_1.2.1  pillar_1.11.1     mnormt_2.1.1      parallel_4.4.1   
-[29] magrittr_2.0.3    tools_4.4.1      </code></pre>
+ [1] gtable_0.3.6       jsonlite_1.8.9     compiler_4.4.1     tidyselect_1.2.1  
+ [5] parallel_4.4.1     dichromat_2.0-0.1  scales_1.4.0       yaml_2.3.10       
+ [9] fastmap_1.2.0      lattice_0.22-6     R6_2.6.1           generics_0.1.4    
+[13] knitr_1.50         htmlwidgets_1.6.4  tzdb_0.4.0         pillar_1.11.1     
+[17] RColorBrewer_1.1-3 rlang_1.1.4        stringi_1.8.4      xfun_0.53         
+[21] S7_0.2.0           timechange_0.3.0   cli_3.6.3          withr_3.0.2       
+[25] magrittr_2.0.3     digest_0.6.37      grid_4.4.1         rstudioapi_0.17.1 
+[29] hms_1.1.3          lifecycle_1.0.4    nlme_3.1-164       vctrs_0.6.5       
+[33] mnormt_2.1.1       evaluate_1.0.5     glue_1.8.0         farver_2.1.2      
+[37] rmarkdown_2.29     tools_4.4.1        pkgconfig_2.0.3    htmltools_0.5.8.1 </code></pre>
 </div>
 </div>
 </section>
