@@ -21,7 +21,7 @@ Welcome to the Day1
 Read the `pre-course` ⬆️ and be prepared accordingly. You need following `tools` in the day 1:
 
 ::: {.callout-important collapse=true}
-## 👉Tools needed:
+## 👉Tools
 
 - `WSL`/`Unix`/`Ubuntu`/`Shell` [The Unix Shell](https://swcarpentry.github.io/shell-novice/) tutorial
 - `R` (version ≥ 4.0)

@@ -199,10 +199,8 @@ window.Quarto = {
    
   <ul>
   <li><a href="#packages" id="toc-packages" class="nav-link active" data-scroll-target="#packages">Packages</a></li>
-  <li><a href="#read-in-a-data-file" id="toc-read-in-a-data-file" class="nav-link" data-scroll-target="#read-in-a-data-file">Read in a data file</a>
-  <ul class="collapse">
+  <li><a href="#read-in-a-data-file" id="toc-read-in-a-data-file" class="nav-link" data-scroll-target="#read-in-a-data-file">Read in a data file</a></li>
   <li><a href="#reasons-not-reset-the-working-directory" id="toc-reasons-not-reset-the-working-directory" class="nav-link" data-scroll-target="#reasons-not-reset-the-working-directory">Reasons not reset the working directory</a></li>
-  </ul></li>
   <li><a href="#the-source-directory" id="toc-the-source-directory" class="nav-link" data-scroll-target="#the-source-directory">The source directory</a></li>
   <li><a href="#reading-data" id="toc-reading-data" class="nav-link" data-scroll-target="#reading-data">Reading data</a></li>
   <li><a href="#subsetting-data-and-summarizing" id="toc-subsetting-data-and-summarizing" class="nav-link" data-scroll-target="#subsetting-data-and-summarizing">Subsetting data and summarizing</a></li>
@@ -214,11 +212,7 @@ window.Quarto = {
   <li><a href="#export-results-or-data" id="toc-export-results-or-data" class="nav-link" data-scroll-target="#export-results-or-data">Export results or data</a>
   <ul class="collapse">
   <li><a href="#session-info" id="toc-session-info" class="nav-link" data-scroll-target="#session-info">Session info</a></li>
-  </ul></li>
-  <li><a href="#notes" id="toc-notes" class="nav-link" data-scroll-target="#notes">Notes</a>
-  <ul class="collapse">
-  <li><a href="#quarto" id="toc-quarto" class="nav-link" data-scroll-target="#quarto">Quarto</a></li>
-  <li><a href="#running-code" id="toc-running-code" class="nav-link" data-scroll-target="#running-code">Running Code</a></li>
+  <li><a href="#notes" id="toc-notes" class="nav-link" data-scroll-target="#notes">Notes</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -245,23 +239,41 @@ window.Quarto = {
 </header>
 
 
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Clen up
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p>Lets clean our environment first</p>
-<section id="packages" class="level1">
-<h1>Packages</h1>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("psych")</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("writexl")</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("tidyverse")</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"psych"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+<section id="packages" class="level2">
+<h2 class="anchored" data-anchor-id="packages">Packages</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("psych")</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("writexl")</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("tidyverse")</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"psych"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: package 'psych' was built under R version 4.4.3</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"writexl"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"writexl"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: package 'writexl' was built under R version 4.4.3</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"tidyverse"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"tidyverse"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: package 'ggplot2' was built under R version 4.4.3</code></pre>
 </div>
@@ -281,10 +293,11 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="read-in-a-data-file" class="level1">
-<h1>Read in a data file</h1>
+<section id="read-in-a-data-file" class="level2">
+<h2 class="anchored" data-anchor-id="read-in-a-data-file">Read in a data file</h2>
 <p>There is an easy way to do this and a more nuanced way to do this. I will cover the nuanced way first.</p>
 <p>Let’s say I don’t want to reset my working directory.</p>
+</section>
 <section id="reasons-not-reset-the-working-directory" class="level2">
 <h2 class="anchored" data-anchor-id="reasons-not-reset-the-working-directory">Reasons not reset the working directory</h2>
 <ul>
@@ -295,8 +308,8 @@ window.Quarto = {
 </ul>
 <p>The clever way is to assign the directory of interest to a variable so you don’t need to type as much let’s call it wd.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>wd<span class="ot">&lt;-</span><span class="st">"C:/Users/auue0001/OneDrive - Sveriges lantbruksuniversitet/slubi/proj/2025/GS_course/website/intro-to-linux-and-R/practicalsexcercise/data/"</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>wd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>wd<span class="ot">&lt;-</span><span class="st">"C:/Users/auue0001/OneDrive - Sveriges lantbruksuniversitet/slubi/proj/2025/GS_course/website/intro-to-linux-and-R/practicalsexcercise/data/"</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>wd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "C:/Users/auue0001/OneDrive - Sveriges lantbruksuniversitet/slubi/proj/2025/GS_course/website/intro-to-linux-and-R/practicalsexcercise/data/"</code></pre>
 </div>
@@ -304,35 +317,34 @@ window.Quarto = {
 <p>Now the directory containing our file is located in the variable ‘wd’. When you do a lot of work with R, you want it to be easy to find your files. Use a directory that is easy to find, and a directory structure that makes sense.</p>
 <p>For example, organize your files into folders labelled with project names. In this case I want to bring in the dataset <strong>Pine_provenance.csv</strong>.</p>
 </section>
-</section>
-<section id="the-source-directory" class="level1">
-<h1>The source directory</h1>
+<section id="the-source-directory" class="level2">
+<h2 class="anchored" data-anchor-id="the-source-directory">The source directory</h2>
 <p>We are going to hold all the filenames in this directory in an object called “files”. The function <strong>list.files</strong> displays the filenames of each file in the directory. I assign the output of this function to the variable”files”. If I don’t assign the output to the variable, the results are simply printed to the screen.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>files<span class="ot">&lt;-</span><span class="fu">list.files</span>(wd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>files<span class="ot">&lt;-</span><span class="fu">list.files</span>(wd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Let’s look at the files in the directory. Simply type <strong>files</strong> and press enter: <code>files</code></p>
 <p>It looks like there are multiple files here of different file types. I am only interested in .csv files Let’s modify the output of “list.files” a little bit by giving it the “pattern” argument. We will overwrite the “files” object with a new object of the same name,</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>files<span class="ot">&lt;-</span><span class="fu">list.files</span>(wd,<span class="at">pattern=</span><span class="st">"csv"</span>)</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>files</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>files<span class="ot">&lt;-</span><span class="fu">list.files</span>(wd,<span class="at">pattern=</span><span class="st">"csv"</span>)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>files</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>character(0)</code></pre>
 </div>
 </div>
 </section>
-<section id="reading-data" class="level1">
-<h1>Reading data</h1>
+<section id="reading-data" class="level2">
+<h2 class="anchored" data-anchor-id="reading-data">Reading data</h2>
 <p>The <strong>easier</strong> and less nuanced way to move around the filesystem of your computer using R is to simply reset your working directory This is accomplished via the function <strong>setwd()</strong>.</p>
 <p>After I reset the working directory, I can use read.csv without specifying the directory; it’s now implicit (a global option).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">"C:/Users/auue0001/OneDrive - Sveriges lantbruksuniversitet/slubi/proj/2025/GS_course/website/intro-to-linux-and-R/practicals/excercise/"</span>)</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>pine <span class="ot">&lt;-</span><span class="fu">read.csv</span>(<span class="st">"./data/Pine_provenance.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">"C:/Users/auue0001/OneDrive - Sveriges lantbruksuniversitet/slubi/proj/2025/GS_course/website/intro-to-linux-and-R/practicals/excercise/"</span>)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>pine <span class="ot">&lt;-</span><span class="fu">read.csv</span>(<span class="st">"./data/Pine_provenance.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The <em>red.table</em> and ’<em>read.csv</em> are two common functions to read data.frames</p>
 <p>One shortcoming of vectors and matrices is that they can only hold one mode of data; they don’t allow us to mix, say, numbers and character strings. But <em>data frames</em> can have different models of data</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(pine)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(pine)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  treeid female male prov block plot height diameter volume
 1  170.1    170    0   10     1    3   12.5     19.6 0.1441
@@ -342,7 +354,7 @@ window.Quarto = {
 5  170.5    170    0   10     2   84   10.6     17.5 0.0974
 6  170.6    170    0   10     2   84   10.7     18.6 0.1111</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(pine)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(pine)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    treeid female male prov block plot height diameter volume
 909 253.19    253    0   13     5  205   11.0     20.5 0.1387
@@ -352,26 +364,26 @@ window.Quarto = {
 913 253.23    253    0   13     5  205   11.2     21.4 0.1539
 914 253.24    253    0   13     1   30    8.0     16.0 0.0614</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(pine)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(pine)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "treeid"   "female"   "male"     "prov"     "block"    "plot"     "height"  
 [8] "diameter" "volume"  </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sapply</span>(pine,mode)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sapply</span>(pine,mode)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   treeid    female      male      prov     block      plot    height  diameter 
 "numeric" "numeric" "numeric" "numeric" "numeric" "numeric" "numeric" "numeric" 
    volume 
 "numeric" </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sapply</span>(pine,class)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sapply</span>(pine,class)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   treeid    female      male      prov     block      plot    height  diameter 
 "numeric" "integer" "integer" "integer" "integer" "integer" "numeric" "numeric" 
    volume 
 "numeric" </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(pine)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(pine)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>'data.frame':   914 obs. of  9 variables:
  $ treeid  : num  170 170 170 170 170 ...
@@ -386,30 +398,30 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="subsetting-data-and-summarizing" class="level1">
-<h1>Subsetting data and summarizing</h1>
+<section id="subsetting-data-and-summarizing" class="level2">
+<h2 class="anchored" data-anchor-id="subsetting-data-and-summarizing">Subsetting data and summarizing</h2>
 <p>The subset function requires two arguments: the first is a data frame, the second is the condition that you want to use to create the subset. An optional third argument called <em>select=</em> allows you to specify which of the variables in the data frame you’re interested in.</p>
 <p>Example: subset data with the provenance (origin) number &lt; 12, <code>prov10 &lt;- subset(pine, prov&lt;12)</code>.</p>
 <p>subset data with two conditions: <code>prov.sub &lt;- subset(pine, prov&lt;11, select = c('prov','height') )</code></p>
 <p>Sort data by height: <code>sort(prov.sub$height, decreasing=TRUE)</code>.</p>
 <p>Display data summary: <code>summary(pine, c('height','diameter'))</code>.</p>
 </section>
-<section id="more-data-summary" class="level1">
-<h1>More data summary</h1>
+<section id="more-data-summary" class="level2">
+<h2 class="anchored" data-anchor-id="more-data-summary">More data summary</h2>
 <p>We will be using the package “dplyr” to produce some summary tables. This package is particular useful for vectorised operations like grouping and summarising by groups You may need to install this package first. use <code>install.packages("dplyr")</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>First, we check what the ‘<strong>structure</strong>’ of the data frame is using str(). This will tell us what kind of variable each column in the data set is considered to be. <code>str(pine)</code></p>
 <p>Notice that treeid is correctly considered a factor variable, but the other factors we want to include in a linear model (female, prov, block in particular) are considered integer (‘int’) variables (<strong>round number</strong>), which are a special type of numeric variable. We coerce these variables to be factors with as.factor() function:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>pine<span class="sc">$</span>female <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(pine<span class="sc">$</span>female) </span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>pine<span class="sc">$</span>prov <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(pine<span class="sc">$</span>prov)</span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>pine<span class="sc">$</span>block <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(pine<span class="sc">$</span>block)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>pine<span class="sc">$</span>female <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(pine<span class="sc">$</span>female) </span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>pine<span class="sc">$</span>prov <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(pine<span class="sc">$</span>prov)</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>pine<span class="sc">$</span>block <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(pine<span class="sc">$</span>block)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now, we re-check the structure of the data frame to be certain these commands did what we want:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(pine)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(pine)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>'data.frame':   914 obs. of  9 variables:
  $ treeid  : num  170 170 170 170 170 ...
@@ -426,7 +438,7 @@ window.Quarto = {
 <p>OK, this looks good. Let’s use a few other functions to inspect the data set before proceeding to analysis:</p>
 <p>get the names of the levels of ‘female’ in the order they first appear, note these are returned as a factor vector</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(pine<span class="sc">$</span>female) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(pine<span class="sc">$</span>female) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] 170 191 192 196 197 198 200 201 202 203 204 205 206 207 210 211 212 213 216
 [20] 217 218 219 224 225 226 227 231 232 233 238 239 245 247 251 252 253
@@ -435,7 +447,7 @@ window.Quarto = {
 </div>
 <p>Get the names of the levels of ‘female’ in sorted order, returned as a vector of character strings</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(pine<span class="sc">$</span>female) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(pine<span class="sc">$</span>female) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] "170" "191" "192" "196" "197" "198" "200" "201" "202" "203" "204" "205"
 [13] "206" "207" "210" "211" "212" "213" "216" "217" "218" "219" "224" "225"
@@ -444,7 +456,7 @@ window.Quarto = {
 </div>
 <p>Check how many individual progeny trees tested from each female parent:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(pine<span class="sc">$</span>female)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(pine<span class="sc">$</span>female)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 170 191 192 196 197 198 200 201 202 203 204 205 206 207 210 211 212 213 216 217 
@@ -452,10 +464,10 @@ window.Quarto = {
 218 219 224 225 226 227 231 232 233 238 239 245 247 251 252 253 
  30  24  27  27  23  21  24  29  26  28  27  27  27  26  26  24 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This table may be easier to read as a data frame:</span></span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>fem.freq <span class="ot">&lt;-</span><span class="fu">as.data.frame</span>(<span class="fu">table</span>(pine<span class="sc">$</span>female))</span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(fem.freq) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'female'</span>,<span class="st">'counts'</span>)</span>
-<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>fem.freq</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This table may be easier to read as a data frame:</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>fem.freq <span class="ot">&lt;-</span><span class="fu">as.data.frame</span>(<span class="fu">table</span>(pine<span class="sc">$</span>female))</span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(fem.freq) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'female'</span>,<span class="st">'counts'</span>)</span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>fem.freq</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   female counts
 1     170     23
@@ -497,13 +509,13 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="outlier-detection" class="level1">
-<h1>Outlier Detection</h1>
+<section id="outlier-detection" class="level2">
+<h2 class="anchored" data-anchor-id="outlier-detection">Outlier Detection</h2>
 <p>Make a scatterplot of height and volume to check for outliers:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x =</span> pine<span class="sc">$</span>volume, <span class="at">y =</span> pine<span class="sc">$</span>height, </span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Volume (cubic inches)"</span>, <span class="at">ylab =</span> <span class="st">"Height (feet)"</span>,</span>
-<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">" "</span>, <span class="at">col =</span> <span class="st">"blue"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x =</span> pine<span class="sc">$</span>volume, <span class="at">y =</span> pine<span class="sc">$</span>height, </span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Volume (cubic inches)"</span>, <span class="at">ylab =</span> <span class="st">"Height (feet)"</span>,</span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">" "</span>, <span class="at">col =</span> <span class="st">"blue"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -513,14 +525,14 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="outlier-detection-using-psych-package" class="level1">
-<h1>Outlier detection using <em>psych</em> package</h1>
+<section id="outlier-detection-using-psych-package" class="level2">
+<h2 class="anchored" data-anchor-id="outlier-detection-using-psych-package">Outlier detection using <em>psych</em> package</h2>
 <p>One way to detect unusual data is to consider how far each data point is from the multivariate centroid of the data. That is, find the squared Mahalanobis distance for each data point and then compare these to the expected values of <span class="math inline">\(χ^2\)</span>. <span class="math display">\[D^2 = (x-\mu)'\sigma^{-1}(x-u)\]</span>, where <span class="math inline">\(\sigma\)</span> is the covariance of the x matrix.</p>
 <p>Large <span class="math inline">\(D^2\)</span> values, compared to the expected Chi Square values indicate an unusual response pattern. The mahalanobis function in stats does not handle missing data.<br>
 This produces a Q-Q (quantle-quantile) plot with the n most extreme data points labeled. We combine the outliers with the data frame and plot it with the outliers. Outliers are highlighted in blue. bad=5 labels the worst five values.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(psych)</span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>d2 <span class="ot">&lt;-</span> <span class="fu">outlier</span>(pine[,<span class="dv">7</span><span class="sc">:</span><span class="dv">9</span>], <span class="at">bad =</span> <span class="dv">5</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(psych)</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>d2 <span class="ot">&lt;-</span> <span class="fu">outlier</span>(pine[,<span class="dv">7</span><span class="sc">:</span><span class="dv">9</span>], <span class="at">bad =</span> <span class="dv">5</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -528,8 +540,8 @@ This produces a Q-Q (quantle-quantile) plot with the n most extreme data points 
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>sat.d2 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(pine[,<span class="dv">7</span><span class="sc">:</span><span class="dv">9</span>], d2)</span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="fu">pairs.panels</span>(sat.d2,<span class="at">bg=</span><span class="fu">c</span>(<span class="st">"lightgreen"</span>,<span class="st">"blue"</span>)[(d2 <span class="sc">&gt;</span> <span class="dv">25</span>)<span class="sc">+</span><span class="dv">1</span>],<span class="at">pch=</span><span class="dv">21</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>sat.d2 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(pine[,<span class="dv">7</span><span class="sc">:</span><span class="dv">9</span>], d2)</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="fu">pairs.panels</span>(sat.d2,<span class="at">bg=</span><span class="fu">c</span>(<span class="st">"lightgreen"</span>,<span class="st">"blue"</span>)[(d2 <span class="sc">&gt;</span> <span class="dv">25</span>)<span class="sc">+</span><span class="dv">1</span>],<span class="at">pch=</span><span class="dv">21</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -539,11 +551,11 @@ This produces a Q-Q (quantle-quantile) plot with the n most extreme data points 
 </div>
 </div>
 </section>
-<section id="r-graphics" class="level1">
-<h1>R Graphics</h1>
+<section id="r-graphics" class="level2">
+<h2 class="anchored" data-anchor-id="r-graphics">R Graphics</h2>
 <p>We can visualize data with R base functions. The stem function produces simple text histogram.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">stem</span>(pine<span class="sc">$</span>height)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">stem</span>(pine<span class="sc">$</span>height)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
   The decimal point is at the |
@@ -563,7 +575,7 @@ This produces a Q-Q (quantle-quantile) plot with the n most extreme data points 
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(pine<span class="sc">$</span>height, <span class="at">col=</span><span class="st">'lightgreen'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(pine<span class="sc">$</span>height, <span class="at">col=</span><span class="st">'lightgreen'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -573,7 +585,7 @@ This produces a Q-Q (quantle-quantile) plot with the n most extreme data points 
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(pine<span class="sc">$</span>height,pine<span class="sc">$</span>diameter, <span class="at">col=</span><span class="st">'blue'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(pine<span class="sc">$</span>height,pine<span class="sc">$</span>diameter, <span class="at">col=</span><span class="st">'blue'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -583,7 +595,7 @@ This produces a Q-Q (quantle-quantile) plot with the n most extreme data points 
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">density</span>(pine<span class="sc">$</span>height))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">density</span>(pine<span class="sc">$</span>height))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -593,7 +605,7 @@ This produces a Q-Q (quantle-quantile) plot with the n most extreme data points 
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(pine[,<span class="dv">7</span><span class="sc">:</span><span class="dv">9</span>] )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(pine[,<span class="dv">7</span><span class="sc">:</span><span class="dv">9</span>] )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -603,7 +615,7 @@ This produces a Q-Q (quantle-quantile) plot with the n most extreme data points 
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(pine<span class="sc">$</span>height)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(pine<span class="sc">$</span>height)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -611,7 +623,7 @@ This produces a Q-Q (quantle-quantile) plot with the n most extreme data points 
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(<span class="fu">split</span>(pine<span class="sc">$</span>height, pine<span class="sc">$</span>prov),<span class="at">col=</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(<span class="fu">split</span>(pine<span class="sc">$</span>height, pine<span class="sc">$</span>prov),<span class="at">col=</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -621,15 +633,15 @@ This produces a Q-Q (quantle-quantile) plot with the n most extreme data points 
 </div>
 </div>
 </section>
-<section id="export-plots" class="level1">
-<h1>Export plots</h1>
+<section id="export-plots" class="level2">
+<h2 class="anchored" data-anchor-id="export-plots">Export plots</h2>
 <p>in ggplot: ggsave(“path/to/your/saving/plots/figure_1a.png”, plot = p1, bg =“white”)</p>
 <p>or</p>
 <p>in base r plot: dev.print (device=jpeg, file=“path/to/your/saving/plots/figure_1a.jpg”, width=par(“din”)[1]*300, res=300, quality=100)</p>
 <p>As we plotted bas plots so far so use ‘dev.print’ function</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co">#base r plot</span></span>
-<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(<span class="fu">split</span>(pine<span class="sc">$</span>height, pine<span class="sc">$</span>prov),<span class="at">col=</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="co">#base r plot</span></span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(<span class="fu">split</span>(pine<span class="sc">$</span>height, pine<span class="sc">$</span>prov),<span class="at">col=</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -637,24 +649,24 @@ This produces a Q-Q (quantle-quantile) plot with the n most extreme data points 
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.print</span> (<span class="at">device=</span>jpeg, <span class="at">file=</span><span class="st">"C:/Users/auue0001/OneDrive - Sveriges lantbruksuniversitet/slubi/proj/2025/GS_course/website/intro-to-linux-and-R/practicals/excercise/fig_1a.png"</span>, <span class="at">width=</span><span class="fu">par</span>(<span class="st">"din"</span>)[<span class="dv">1</span>]<span class="sc">*</span><span class="dv">300</span>, <span class="at">res=</span><span class="dv">300</span>, <span class="at">quality=</span><span class="dv">100</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.print</span> (<span class="at">device=</span>jpeg, <span class="at">file=</span><span class="st">"C:/Users/auue0001/OneDrive - Sveriges lantbruksuniversitet/slubi/proj/2025/GS_course/website/intro-to-linux-and-R/practicals/excercise/fig_1a.png"</span>, <span class="at">width=</span><span class="fu">par</span>(<span class="st">"din"</span>)[<span class="dv">1</span>]<span class="sc">*</span><span class="dv">300</span>, <span class="at">res=</span><span class="dv">300</span>, <span class="at">quality=</span><span class="dv">100</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>png 
   2 </code></pre>
 </div>
 </div>
 </section>
-<section id="export-results-or-data" class="level1">
-<h1>Export results or data</h1>
+<section id="export-results-or-data" class="level2">
+<h2 class="anchored" data-anchor-id="export-results-or-data">Export results or data</h2>
 <p>For csv</p>
 <p>write.csv(df , file = “path/to/your/saving/folder/df.csv”)</p>
 <p>For creating excel file</p>
 <p>writexl::write_xlsx (test_df, path = “C:/Users/your_username/test_df.xlsx”, col_names = TRUE, format_headers = TRUE)</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="co"># writexl::write_xlsx (sat.d2, path = "C:/Users/auue0001/OneDrive - Sveriges lantbruksuniversitet/slubi/proj/GS_course/excercise/test_df.xlsx", col_names = TRUE, format_headers = TRUE)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="co"># writexl::write_xlsx (sat.d2, path = "C:/Users/auue0001/OneDrive - Sveriges lantbruksuniversitet/slubi/proj/GS_course/excercise/test_df.xlsx", col_names = TRUE, format_headers = TRUE)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="session-info" class="level2">
-<h2 class="anchored" data-anchor-id="session-info">Session info</h2>
+<section id="session-info" class="level3">
+<h3 class="anchored" data-anchor-id="session-info">Session info</h3>
 <p>Finally we want to which packages we used in this excercises</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -695,18 +707,9 @@ loaded via a namespace (and not attached):
 </div>
 </div>
 </section>
-</section>
-<section id="notes" class="level1">
-<h1>Notes</h1>
+<section id="notes" class="level3">
+<h3 class="anchored" data-anchor-id="notes">Notes</h3>
 <p>main author of the script is “F. Isik”</p>
-<section id="quarto" class="level2">
-<h2 class="anchored" data-anchor-id="quarto">Quarto</h2>
-<p>Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <a href="https://quarto.org" class="uri">https://quarto.org</a>.</p>
-</section>
-<section id="running-code" class="level2">
-<h2 class="anchored" data-anchor-id="running-code">Running Code</h2>
-<p>When you click the <strong>Render</strong> button a document will be generated that includes both content and the output of embedded code. # Read in a data file</p>
-<p>———————** End :) **——————–</p>
 
 
 </section>

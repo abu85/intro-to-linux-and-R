@@ -1,16 +1,20 @@
 ---
-title: "Data_handling (under development)"
+Tittle: Data_handling (under development)
 format: html
 editor: visual
 ---
 
+::: {.callout-tip collapse=true}
+#### Clen up
+
 Lets clean our environment first
 
-```{r include=FALSE}
+```{r}
 rm(list = ls())
 ```
+::: 
 
-# Packages
+## Packages
 
 ```{r}
 # install.packages("psych")
@@ -22,7 +26,7 @@ library("writexl")
 library("tidyverse")
 ```
 
-# Read in a data file
+## Read in a data file
 
 There is an easy way to do this and a more nuanced way to do this. I will cover the nuanced way first.
 
@@ -47,7 +51,7 @@ Now the directory containing our file is located in the variable 'wd'. When you 
 
 For example, organize your files into folders labelled with project names. In this case I want to bring in the dataset **Pine_provenance.csv**.
 
-# The source directory
+## The source directory
 
 We are going to hold all the filenames in this directory in an object called "files". The function **list.files** displays the filenames of each file in the directory. I assign the output of this function to the variable"files". If I don't assign the output to the variable, the results are simply printed to the screen.
 
@@ -64,7 +68,7 @@ files<-list.files(wd,pattern="csv")
 files
 ```
 
-# Reading data
+## Reading data
 
 The **easier** and less nuanced way to move around the filesystem of your computer using R is to simply reset your working directory This is accomplished via the function **setwd()**.
 
@@ -89,7 +93,7 @@ str(pine)
 
 ```
 
-# Subsetting data and summarizing
+## Subsetting data and summarizing
 
 The subset function requires two arguments: the first is a data frame, the second is the condition that you want to use to create the subset. An optional third argument called *select=* allows you to specify which of the variables in the data frame you're interested in.
 
@@ -101,7 +105,7 @@ Sort data by height: `sort(prov.sub$height, decreasing=TRUE)`.
 
 Display data summary: `summary(pine, c('height','diameter'))`.
 
-# More data summary
+## More data summary
 
 We will be using the package "dplyr" to produce some summary tables. This package is particular useful for vectorised operations like grouping and summarising by groups You may need to install this package first. use `install.packages("dplyr")`.
 
@@ -150,7 +154,7 @@ names(fem.freq) <- c('female','counts')
 fem.freq
 ```
 
-# Outlier Detection
+## Outlier Detection
 
 Make a scatterplot of height and volume to check for outliers:
 
@@ -160,7 +164,7 @@ plot(x = pine$volume, y = pine$height,
      main = " ", col = "blue")
 ```
 
-# Outlier detection using *psych* package
+## Outlier detection using *psych* package
 
 One way to detect unusual data is to consider how far each data point is from the multivariate centroid of the data. That is, find the squared Mahalanobis distance for each data point and then compare these to the expected values of $χ^2$. $$D^2 = (x-\mu)'\sigma^{-1}(x-u)$$, where $\sigma$ is the covariance of the x matrix.
 
@@ -174,7 +178,7 @@ sat.d2 <- data.frame(pine[,7:9], d2)
 pairs.panels(sat.d2,bg=c("lightgreen","blue")[(d2 > 25)+1],pch=21)
 ```
 
-# R Graphics
+## R Graphics
 
 We can visualize data with R base functions. The stem function produces simple text histogram.
 
@@ -203,7 +207,7 @@ boxplot(pine$height)
 boxplot(split(pine$height, pine$prov),col=2)
 ```
 
-# Export plots
+## Export plots
 
 in ggplot: ggsave("path/to/your/saving/plots/figure_1a.png", plot = p1, bg ="white")
 
@@ -219,7 +223,7 @@ boxplot(split(pine$height, pine$prov),col=2)
 dev.print (device=jpeg, file="C:/Users/auue0001/OneDrive - Sveriges lantbruksuniversitet/slubi/proj/2025/GS_course/website/intro-to-linux-and-R/practicals/excercise/fig_1a.png", width=par("din")[1]*300, res=300, quality=100)
 ```
 
-# Export results or data
+## Export results or data
 
 For csv
 
@@ -233,7 +237,7 @@ writexl::write_xlsx (test_df, path = "C:/Users/your_username/test_df.xlsx", col_
 # writexl::write_xlsx (sat.d2, path = "C:/Users/auue0001/OneDrive - Sveriges lantbruksuniversitet/slubi/proj/GS_course/excercise/test_df.xlsx", col_names = TRUE, format_headers = TRUE)
 ```
 
-## Session info
+### Session info
 
 Finally we want to which packages we used in this excercises
 
@@ -243,16 +247,6 @@ Finally we want to which packages we used in this excercises
 sessionInfo()
 ```
 
-# Notes
+### Notes
 
 main author of the script is "F. Isik"
-
-## Quarto
-
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
-
-## Running Code
-
-When you click the **Render** button a document will be generated that includes both content and the output of embedded code. \# Read in a data file
-
----------------------\*\* End :) \*\*--------------------
