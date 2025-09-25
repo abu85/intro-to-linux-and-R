@@ -14,13 +14,13 @@ website:
       - text: "Home"
         href: index.qmd
       - text: "Precourse"
-        href: ./scripts/00_precourse.qmd
+        href: ./scripts/00_precourse.html
       - text: "Linux"
-        href: ./scripts/01_intro_to_linux.qmd
+        href: ./scripts/01_intro_to_linux.qmhtmld
       - text: "R"
         href: ./scripts/02_intro_to_R.qmd
       - text: "Lab"
-        href: ./practicals/excercise/data_handling_part_2_v1.qmd
+        href: ./practicals/excercise/data_handling_part_2_v1.html
     right:
       - icon: softwerecarpentry
         href: https://swcarpentry.github.io/shell-novice/
