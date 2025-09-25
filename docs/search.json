@@ -46,7 +46,7 @@
     "href": "scripts/01_intro_to_linux.html",
     "title": "",
     "section": "",
-    "text": "Summary and Setup 1. Introducing the Shell 2. Navigating Files and Directories 3. Working With Files and Directories 4. Pipes and Filters 5. Loops 6. Shell Scripts 7. Finding Things\n\nopen the terminal or wsl command line\nwhere am I (print working directory)\ncreate a directory (folder)\nchange working directory\nlist view (different styles)\narguments\ncopy and paste\nmove\nrename\ndelete files or folders\ndownload tools\nunzip or extract\n\nBasic linux commands: ls, cd, mkdir, cp, mv, rm.\nWorkshop oriented commands:\ncd, mkdir, wget (for plinks tool), tar or unzip, use of \\, arguments,\nls\nTools: Plink"
+    "text": "Setup: Installation\nIntroducing the Shell: What & Why shell? CLI vs GUI\nNavigating Files and Directories\nWorking With Files and Directories\nPipes\nShell Scripts\nFinding Things\n\n\nopen the terminal or wsl command line\nwhere am I (print working directory)\ncreate a directory (folder)\nchange working directory\nlist view (different styles)\narguments\ncopy and paste\nmove\nrename\ndelete files or folders\ndownload tools\nunzip or extract\n\nBasic linux commands: ls, cd, pwd, mkdir, cp, mv, rm.\nWorkshop oriented commands:\nls , cd, mkdir, wget (for plinks tool), tar or unzip, use of \\, arguments,\nls\nTools: Plink"
   },
   {
     "objectID": "index - Copy.html",
@@ -65,7 +65,7 @@
   {
     "objectID": "scripts/02_intro_R.html",
     "href": "scripts/02_intro_R.html",
-    "title": "Intro to Linux and R",
+    "title": "",
     "section": "",
     "text": "Recommended packages: tidyverse\n\n\n\nset working directory,\nprint path of the current working directory,\nupload data,\nsubset data,\ntidy data\ntransform data,\nplot,\nsaving plot\n\nCodes: setwd, getwd, read_table, read_csv, pvot_longer, pvot_wider, select, mutate, summarize, summary.\nExample R code:\n\nsummary(cars)\n\n     speed           dist       \n Min.   : 4.0   Min.   :  2.00  \n 1st Qu.:12.0   1st Qu.: 26.00  \n Median :15.0   Median : 36.00  \n Mean   :15.4   Mean   : 42.98  \n 3rd Qu.:19.0   3rd Qu.: 56.00  \n Max.   :25.0   Max.   :120.00"
   },
@@ -74,7 +74,7 @@
     "href": "scripts/00_precourse.html",
     "title": "",
     "section": "",
-    "text": "Install or activate WSL Unix, and install R and RStudio if you do not have them already before 1st meeting.\nWe strongly recommend for those not yet familiar with UNIX and/or R to take this opportunity and take these online tutorials, since those are requirements for the workshop. This will help you to develop your programming skills and we can always learn a few tricks here and there, even if you are already experienced.\n\n\n\n\n\n\n\n\nTask & Tools\nNote\nLink\n\n\n\n\nInstall & activate WSL or Unix\nFor Windows user only\nUNIX\n\n\nInstall R itself and RStudio Desktop\nall participants\nR & RStudio"
+    "text": "Install or activate WSL Unix, and install R and RStudio if you do not have them already before 1st meeting.\nWe strongly recommend for those not yet familiar with UNIX and/or R to take this opportunity and take these online tutorials, since those are requirements for the workshop. This will help you to develop your programming skills and we can always learn a few tricks here and there, even if you are already experienced.\n\n\n\n\n\n\n\n\nTask & Tools\nNote\nLink\n\n\n\n\nInstall & activate WSL or Unix\nFor Windows user only\nUNIX\n\n\nInstall R itself and RStudio Desktop\nall participants\nR & RStudio\n\n\nReading\nBasic R\nA (very) short introduction to R.pdf"
   },
   {
     "objectID": "scripts/01_intro_to_linux.html#intro-to-linux",
@@ -86,7 +86,7 @@
   {
     "objectID": "scripts/02_intro_R.html#intro-to-r",
     "href": "scripts/02_intro_R.html#intro-to-r",
-    "title": "Intro to Linux and R",
+    "title": "",
     "section": "",
     "text": "Recommended packages: tidyverse\n\n\n\nset working directory,\nprint path of the current working directory,\nupload data,\nsubset data,\ntidy data\ntransform data,\nplot,\nsaving plot\n\nCodes: setwd, getwd, read_table, read_csv, pvot_longer, pvot_wider, select, mutate, summarize, summary.\nExample R code:\n\nsummary(cars)\n\n     speed           dist       \n Min.   : 4.0   Min.   :  2.00  \n 1st Qu.:12.0   1st Qu.: 26.00  \n Median :15.0   Median : 36.00  \n Mean   :15.4   Mean   : 42.98  \n 3rd Qu.:19.0   3rd Qu.: 56.00  \n Max.   :25.0   Max.   :120.00"
   },
@@ -95,7 +95,7 @@
     "href": "scripts/00_precourse.html#precourse-materials",
     "title": "",
     "section": "",
-    "text": "Install or activate WSL Unix, and install R and RStudio if you do not have them already before 1st meeting.\nWe strongly recommend for those not yet familiar with UNIX and/or R to take this opportunity and take these online tutorials, since those are requirements for the workshop. This will help you to develop your programming skills and we can always learn a few tricks here and there, even if you are already experienced.\n\n\n\n\n\n\n\n\nTask & Tools\nNote\nLink\n\n\n\n\nInstall & activate WSL or Unix\nFor Windows user only\nUNIX\n\n\nInstall R itself and RStudio Desktop\nall participants\nR & RStudio"
+    "text": "Install or activate WSL Unix, and install R and RStudio if you do not have them already before 1st meeting.\nWe strongly recommend for those not yet familiar with UNIX and/or R to take this opportunity and take these online tutorials, since those are requirements for the workshop. This will help you to develop your programming skills and we can always learn a few tricks here and there, even if you are already experienced.\n\n\n\n\n\n\n\n\nTask & Tools\nNote\nLink\n\n\n\n\nInstall & activate WSL or Unix\nFor Windows user only\nUNIX\n\n\nInstall R itself and RStudio Desktop\nall participants\nR & RStudio\n\n\nReading\nBasic R\nA (very) short introduction to R.pdf"
   },
   {
     "objectID": "practicals/excercise/data_handling_part_1.html",
@@ -166,5 +166,19 @@
     "title": "",
     "section": "",
     "text": "title: “Slides”\nSlide sources go in the slides/ folder."
+  },
+  {
+    "objectID": "scripts/01_intro_to_linux.html#intro-to-linux-under-development",
+    "href": "scripts/01_intro_to_linux.html#intro-to-linux-under-development",
+    "title": "",
+    "section": "",
+    "text": "Setup: Installation\nIntroducing the Shell: What & Why shell? CLI vs GUI\nNavigating Files and Directories\nWorking With Files and Directories\nPipes\nShell Scripts\nFinding Things\n\n\nopen the terminal or wsl command line\nwhere am I (print working directory)\ncreate a directory (folder)\nchange working directory\nlist view (different styles)\narguments\ncopy and paste\nmove\nrename\ndelete files or folders\ndownload tools\nunzip or extract\n\nBasic linux commands: ls, cd, pwd, mkdir, cp, mv, rm.\nWorkshop oriented commands:\nls , cd, mkdir, wget (for plinks tool), tar or unzip, use of \\, arguments,\nls\nTools: Plink"
+  },
+  {
+    "objectID": "scripts/02_intro_R.html#intro-to-r-under-development",
+    "href": "scripts/02_intro_R.html#intro-to-r-under-development",
+    "title": "",
+    "section": "",
+    "text": "Recommended packages: tidyverse\n\n\n\nset working directory,\nprint path of the current working directory,\nupload data,\nsubset data,\ntidy data\ntransform data,\nplot,\nsaving plot\n\nCodes: setwd, getwd, read_table, read_csv, pvot_longer, pvot_wider, select, mutate, summarize, summary.\nExample R code:\n\nsummary(cars)\n\n     speed           dist       \n Min.   : 4.0   Min.   :  2.00  \n 1st Qu.:12.0   1st Qu.: 26.00  \n Median :15.0   Median : 36.00  \n Mean   :15.4   Mean   : 42.98  \n 3rd Qu.:19.0   3rd Qu.: 56.00  \n Max.   :25.0   Max.   :120.00"
   }
 ]
