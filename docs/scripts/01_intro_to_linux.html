@@ -169,7 +169,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#intro-to-linux-under-development" id="toc-intro-to-linux-under-development" class="nav-link active" data-scroll-target="#intro-to-linux-under-development">Intro to Linux (under development)</a></li>
+  <li><a href="#intro-to-linux-under-development" id="toc-intro-to-linux-under-development" class="nav-link active" data-scroll-target="#intro-to-linux-under-development">Intro to Linux (under development)</a>
+  <ul class="collapse">
+  <li><a href="#advanced-commands" id="toc-advanced-commands" class="nav-link" data-scroll-target="#advanced-commands">Advanced commands:</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -192,11 +195,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Shell Scripts</li>
 <li>Finding Things</li>
 </ol>
+<p>Tasks:</p>
 <ul>
 <li>open the terminal or wsl command line</li>
 <li>where am I (print working directory)</li>
 <li>create a directory (folder)</li>
 <li>change working directory</li>
+<li>absolute/relative paths</li>
 <li>list view (different styles)</li>
 <li>arguments</li>
 <li>copy and paste</li>
@@ -208,7 +213,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p>Basic linux commands: ls, cd, pwd, mkdir, cp, mv, rm.</p>
 <p>Workshop oriented commands:</p>
-<p><code>ls</code> , <code>cd</code>, <code>mkdir</code>, <code>wget</code> (for plinks tool), <code>tar</code> or <code>unzip</code>, use of <code>\</code>, arguments,</p>
+<p><code>ls</code> , <code>cd</code>, <code>mkdir</code>, <code>wget</code> (for plinks tool), <code>tar</code> or <code>unzip</code>, <code>nano</code>, <code>less</code>, <code>head</code>, use of <code>\</code>, arguments,</p>
+</section>
+<section id="advanced-commands" class="level3">
+<h3 class="anchored" data-anchor-id="advanced-commands">Advanced commands:</h3>
+<ul>
+<li><code>less</code> – view a file</li>
+<li><code>nano</code> – view and edit a file</li>
+<li><code>head</code> / <code>tail</code></li>
+<li><code>grep</code></li>
+<li><code>find</code></li>
+<li><code>wildcards</code></li>
+<li>tab completion – use it!!!</li>
+<li><code>man</code> – manual pages or</li>
+<li>anycommand <code>--help</code></li>
+</ul>
+<p>Example:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Tools: <a href="https://zzz.bwh.harvard.edu/plink/dist/plink-latest.zip">Plink</a></p>
 

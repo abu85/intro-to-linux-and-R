@@ -46,7 +46,7 @@
     "href": "scripts/01_intro_to_linux.html",
     "title": "",
     "section": "",
-    "text": "Setup: Installation\nIntroducing the Shell: What & Why shell? CLI vs GUI\nNavigating Files and Directories\nWorking With Files and Directories\nPipes\nShell Scripts\nFinding Things\n\n\nopen the terminal or wsl command line\nwhere am I (print working directory)\ncreate a directory (folder)\nchange working directory\nlist view (different styles)\narguments\ncopy and paste\nmove\nrename\ndelete files or folders\ndownload tools\nunzip or extract\n\nBasic linux commands: ls, cd, pwd, mkdir, cp, mv, rm.\nWorkshop oriented commands:\nls , cd, mkdir, wget (for plinks tool), tar or unzip, use of \\, arguments,\nls\nTools: Plink"
+    "text": "Setup: Installation\nIntroducing the Shell: What & Why shell? CLI vs GUI\nNavigating Files and Directories\nWorking With Files and Directories\nPipes\nShell Scripts\nFinding Things\n\nTasks:\n\nopen the terminal or wsl command line\nwhere am I (print working directory)\ncreate a directory (folder)\nchange working directory\nabsolute/relative paths\nlist view (different styles)\narguments\ncopy and paste\nmove\nrename\ndelete files or folders\ndownload tools\nunzip or extract\n\nBasic linux commands: ls, cd, pwd, mkdir, cp, mv, rm.\nWorkshop oriented commands:\nls , cd, mkdir, wget (for plinks tool), tar or unzip, nano, less, head, use of \\, arguments,\n\n\n\n\nless – view a file\nnano – view and edit a file\nhead / tail\ngrep\nfind\nwildcards\ntab completion – use it!!!\nman – manual pages or\nanycommand --help\n\nExample:\nls\nTools: Plink"
   },
   {
     "objectID": "index - Copy.html",
@@ -107,35 +107,35 @@
   {
     "objectID": "practicals/excercise/data_handling_part_2_v1.html",
     "href": "practicals/excercise/data_handling_part_2_v1.html",
-    "title": "data_handling_part2",
+    "title": "data_handling (under development)",
     "section": "",
     "text": "Lets clean our environment first"
   },
   {
     "objectID": "practicals/excercise/data_handling_part_2_v1.html#reasons-not-reset-the-working-directory",
     "href": "practicals/excercise/data_handling_part_2_v1.html#reasons-not-reset-the-working-directory",
-    "title": "data_handling_part2",
+    "title": "data_handling (under development)",
     "section": "Reasons not reset the working directory",
     "text": "Reasons not reset the working directory\n\nMaybe my working directory is reserved for other files or custom functions I’ve written.\nMaybe I’ve been clever about how I store files, and files that do different things are stored in different places\nMaybe I work with tons of files and don’t want to crowd up my working directory with loose files\nMaybe I want to reserve the output of R functions like “write.csv” for my working directory- input files go elsewhere.\n\nThe clever way is to assign the directory of interest to a variable so you don’t need to type as much let’s call it wd.\n\nwd&lt;-\"C:/Users/auue0001/OneDrive - Sveriges lantbruksuniversitet/slubi/proj/2025/GS_course/website/intro-to-linux-and-R/practicalsexcercise/data/\"\nwd\n\n[1] \"C:/Users/auue0001/OneDrive - Sveriges lantbruksuniversitet/slubi/proj/2025/GS_course/website/intro-to-linux-and-R/practicalsexcercise/data/\"\n\n\nNow the directory containing our file is located in the variable ‘wd’. When you do a lot of work with R, you want it to be easy to find your files. Use a directory that is easy to find, and a directory structure that makes sense.\nFor example, organize your files into folders labelled with project names. In this case I want to bring in the dataset Pine_provenance.csv."
   },
   {
     "objectID": "practicals/excercise/data_handling_part_2_v1.html#session-info",
     "href": "practicals/excercise/data_handling_part_2_v1.html#session-info",
-    "title": "data_handling_part2",
+    "title": "data_handling (under development)",
     "section": "Session info",
     "text": "Session info\nFinally we want to which packages we used in this excercises\n\n\nR version 4.4.1 (2024-06-14 ucrt)\nPlatform: x86_64-w64-mingw32/x64\nRunning under: Windows 11 x64 (build 26100)\n\nMatrix products: default\n\n\nlocale:\n[1] LC_COLLATE=English_Sweden.utf8  LC_CTYPE=English_Sweden.utf8   \n[3] LC_MONETARY=English_Sweden.utf8 LC_NUMERIC=C                   \n[5] LC_TIME=English_Sweden.utf8    \n\ntime zone: Europe/Stockholm\ntzcode source: internal\n\nattached base packages:\n[1] stats     graphics  grDevices utils     datasets  methods   base     \n\nother attached packages:\n[1] dplyr_1.1.4   writexl_1.5.4 psych_2.5.6  \n\nloaded via a namespace (and not attached):\n [1] vctrs_0.6.5       nlme_3.1-164      cli_3.6.3         knitr_1.50       \n [5] rlang_1.1.4       xfun_0.53         generics_0.1.4    jsonlite_1.8.9   \n [9] glue_1.8.0        htmltools_0.5.8.1 rmarkdown_2.29    grid_4.4.1       \n[13] evaluate_1.0.5    tibble_3.2.1      fastmap_1.2.0     yaml_2.3.10      \n[17] lifecycle_1.0.4   compiler_4.4.1    htmlwidgets_1.6.4 pkgconfig_2.0.3  \n[21] rstudioapi_0.17.1 lattice_0.22-6    digest_0.6.37     R6_2.6.1         \n[25] tidyselect_1.2.1  pillar_1.11.1     mnormt_2.1.1      parallel_4.4.1   \n[29] magrittr_2.0.3    tools_4.4.1"
   },
   {
     "objectID": "practicals/excercise/data_handling_part_2_v1.html#quarto",
     "href": "practicals/excercise/data_handling_part_2_v1.html#quarto",
-    "title": "data_handling_part2",
+    "title": "data_handling (under development)",
     "section": "Quarto",
     "text": "Quarto\nQuarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
   },
   {
     "objectID": "practicals/excercise/data_handling_part_2_v1.html#running-code",
     "href": "practicals/excercise/data_handling_part_2_v1.html#running-code",
-    "title": "data_handling_part2",
+    "title": "data_handling (under development)",
     "section": "Running Code",
     "text": "Running Code\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code. # Read in a data file\n———————** End :) **——————–"
   },
@@ -172,7 +172,7 @@
     "href": "scripts/01_intro_to_linux.html#intro-to-linux-under-development",
     "title": "",
     "section": "",
-    "text": "Setup: Installation\nIntroducing the Shell: What & Why shell? CLI vs GUI\nNavigating Files and Directories\nWorking With Files and Directories\nPipes\nShell Scripts\nFinding Things\n\n\nopen the terminal or wsl command line\nwhere am I (print working directory)\ncreate a directory (folder)\nchange working directory\nlist view (different styles)\narguments\ncopy and paste\nmove\nrename\ndelete files or folders\ndownload tools\nunzip or extract\n\nBasic linux commands: ls, cd, pwd, mkdir, cp, mv, rm.\nWorkshop oriented commands:\nls , cd, mkdir, wget (for plinks tool), tar or unzip, use of \\, arguments,\nls\nTools: Plink"
+    "text": "Setup: Installation\nIntroducing the Shell: What & Why shell? CLI vs GUI\nNavigating Files and Directories\nWorking With Files and Directories\nPipes\nShell Scripts\nFinding Things\n\nTasks:\n\nopen the terminal or wsl command line\nwhere am I (print working directory)\ncreate a directory (folder)\nchange working directory\nabsolute/relative paths\nlist view (different styles)\narguments\ncopy and paste\nmove\nrename\ndelete files or folders\ndownload tools\nunzip or extract\n\nBasic linux commands: ls, cd, pwd, mkdir, cp, mv, rm.\nWorkshop oriented commands:\nls , cd, mkdir, wget (for plinks tool), tar or unzip, nano, less, head, use of \\, arguments,\n\n\n\n\nless – view a file\nnano – view and edit a file\nhead / tail\ngrep\nfind\nwildcards\ntab completion – use it!!!\nman – manual pages or\nanycommand --help\n\nExample:\nls\nTools: Plink"
   },
   {
     "objectID": "scripts/02_intro_R.html#intro-to-r-under-development",

@@ -10,11 +10,13 @@
 6. Shell Scripts
 7. Finding Things
 
+Tasks: 
 
 - open the terminal or wsl command line
 - where am I (print working directory)
 - create a directory (folder)
 - change working directory
+- absolute/relative paths
 - list view (different styles)
 - arguments
 - copy and paste
@@ -30,9 +32,21 @@ Basic linux commands: ls, cd, pwd, mkdir, cp, mv, rm.
 
 Workshop oriented commands:
 
-`ls` , `cd`, `mkdir`, `wget` (for plinks tool), `tar` or `unzip`, use of `\`, arguments,
+`ls` , `cd`, `mkdir`, `wget` (for plinks tool), `tar` or `unzip`, `nano`, `less`, `head`, use of `\`, arguments,
 
+### Advanced commands: 
 
+- `less` – view a file
+- `nano` – view and edit a file
+- `head` / `tail`
+- `grep`
+- `find`
+- `wildcards`
+- tab completion – use it!!!
+- `man` – manual pages or
+- anycommand `--help`
+
+Example:
 ```bash
 ls
 ```
