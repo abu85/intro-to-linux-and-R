@@ -16,9 +16,9 @@ website:
       - text: "Precourse"
         href: ./scripts/00_precourse.html
       - text: "Linux"
-        href: ./scripts/01_intro_to_linux.qmhtmld
+        href: ./scripts/01_intro_to_linux.html
       - text: "R"
-        href: ./scripts/02_intro_to_R.qmd
+        href: ./scripts/02_intro_to_R.html
       - text: "Lab"
         href: ./practicals/excercise/data_handling_part_2_v1.html
     right:
