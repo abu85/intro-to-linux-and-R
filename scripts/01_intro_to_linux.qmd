@@ -1,11 +1,15 @@
-## Install softweres
-Plink, vcftools, bcftools, bedtools
+## Softwares installation
 
-::: {.callout-tip title="Solution & explanation" collapse="true"}
+- `Plink` 
+- `vcftools`
+- `BCFtools` 
+- `Bedtools`
 
-Go to *terminal* from your `mac` or `windows` PC
+::: {.callout-tip title="Softwares installation" collapse="true"}
 
-make directory & Download softwere files in there
+1. go to *terminal* from your `mac` or `windows` PC (see pre-course if cant open)
+
+2. make directory & Download software files in there
 ```bash
 cd --
 
@@ -18,17 +22,17 @@ cd ~/tools/plink
 wget https://s3.amazonaws.com/plink1-assets/plink_linux_x86_64_20250819.zip
 ```
 
-Unzip files
+3. unzip files
 ```bash
 unzip plink_linux_x86_64_20250819.zip
 ```
-change permision
+4. change permission
 ```bash
 ll
 chmod +x plink
 ll
 ```
-activate plink
+5. activate plink
 ```bash
 echo 'export PATH=$PATH:~/tools/plink' >> ~/.bashrc
 
@@ -37,7 +41,7 @@ echo 'export PATH=$PATH:~/tools/plink' >> ~/.bashrc
 source ~/.bashrc
 ```
 
-check plink activation
+6. check plink activation
 ```bash
 plink --version
 

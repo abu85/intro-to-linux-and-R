@@ -46,7 +46,7 @@
     "href": "scripts/01_intro_to_linux.html",
     "title": "",
     "section": "",
-    "text": "Plink, vcftools, bcftools, bedtools\n\n\n\n\n\n\nSolution & explanation\n\n\n\n\n\nGo to terminal from your mac or windows PC\nmake directory & Download softwere files in there\ncd --\n\nmkdir -p ~/tools/plink \n\ncd ~/tools/plink\n\n# get the plink with wget command\n\nwget https://s3.amazonaws.com/plink1-assets/plink_linux_x86_64_20250819.zip\nUnzip files\nunzip plink_linux_x86_64_20250819.zip\nchange permision\nll\nchmod +x plink\nll\nactivate plink\necho 'export PATH=$PATH:~/tools/plink' &gt;&gt; ~/.bashrc\n\nsource ~/.bashrc\necho 'export PATH=$PATH:~/tools/plink' &gt;&gt; ~/.bashrc\nsource ~/.bashrc\ncheck plink activation\nplink --version\n\n# or \n\nplink\n\n\nfirst see them if they are installed already or not\nvcftools --version\nbcftools --version\nbedtools --version\nIf you see error or there is not tools like that then follow the rest command and execute one by one\nsudo apt install vcftools\n\nvcftools --version\nsudo apt install bcftools\n\nbcftools --version\nsudo apt install bedtools\n\nbedtools --version"
+    "text": "Plink\nvcftools\nBCFtools\nBedtools\n\n\n\n\n\n\n\nSoftwares installation\n\n\n\n\n\n\ngo to terminal from your mac or windows PC (see pre-course if cant open)\nmake directory & Download software files in there\n\ncd --\n\nmkdir -p ~/tools/plink \n\ncd ~/tools/plink\n\n# get the plink with wget command\n\nwget https://s3.amazonaws.com/plink1-assets/plink_linux_x86_64_20250819.zip\n\nunzip files\n\nunzip plink_linux_x86_64_20250819.zip\n\nchange permission\n\nll\nchmod +x plink\nll\n\nactivate plink\n\necho 'export PATH=$PATH:~/tools/plink' &gt;&gt; ~/.bashrc\n\nsource ~/.bashrc\necho 'export PATH=$PATH:~/tools/plink' &gt;&gt; ~/.bashrc\nsource ~/.bashrc\n\ncheck plink activation\n\nplink --version\n\n# or \n\nplink\n\n\nfirst see them if they are installed already or not\nvcftools --version\nbcftools --version\nbedtools --version\nIf you see error or there is not tools like that then follow the rest command and execute one by one\nsudo apt install vcftools\n\nvcftools --version\nsudo apt install bcftools\n\nbcftools --version\nsudo apt install bedtools\n\nbedtools --version"
   },
   {
     "objectID": "index - Copy.html",
@@ -65,16 +65,16 @@
   {
     "objectID": "scripts/02_intro_R.html",
     "href": "scripts/02_intro_R.html",
-    "title": "Tools or packages needed for R modules:",
+    "title": "1. Packages needed for R modules:",
     "section": "",
-    "text": "GAPIT3: https://github.com/jiabowang/GAPIT\nggplot2\nrrBLUP\n\n\n\n\n\n\n\nSolution & explanation\n\n\n\n\n\n\n\nR can be freely downloaded from http://www.r-project.org.\nWe also recommend the integrated development environment RStudio which is also freely available at http://www.rstudio.com.\nGAPIT can currently be installed in several ways.\n\nFrom source on the internet\nFrom GitHub\nFrom an archive\n\n\n\n\nGAPIT can be loaded with a single funciton.\nsource(\"http://zzlab.net/GAPIT/gapit_functions.txt\")\nOr from GitHub function.\nsource(\"https://raw.githubusercontent.com/jiabowang/GAPIT/refs/heads/master/gapit_functions.txt\", encoding = \"UTF-8\")\n\n\n\nInstallation can also be made from GitHub when the R package devtools is available.\ninstall.packages(\"devtools\")\ndevtools::install_github(\"jiabowang/GAPIT\", force=TRUE)\nlibrary(GAPIT)\n\nor\ninstall.packages(\"remotes\")\nremotes::install_github(\"jiabowang/GAPIT\")\nlibrary(GAPIT)\n\n\n\nGAPIT can be installed from an archive such as *.tar.gz or *.zip archive. An archive can be downloaded from the “releases” page. If you would like the latest version of GAPIT from the GitHub site you may want to clone it and then build it (this may require Rtools on Windows).\nbash$ git clone git@github.com:jiabowang/GAPIT.git\nbash$ R CMD build GAPIT\nOnce an archive has been obtained it can be installed from a shell, similar to as follows.\nbash$ R CMD INSTALL GAPIT_3.5.0.9000.tar.gz\nOr similarly from within R.\ninstall.packages(\"GAPIT_3.5.0.9000.tar.gz\", repos = NULL, type=\"source\")\n\n\n\nInstallation of same packages such as “multtest” and “biobase” can not be intalled from BiocManager directly. These packages can be downloaded in the Bioconductor website and be installed from local source files.\nThe website of Bioconductor is here:\nhttps://bioconductor.org/packages/3.19/bioc/\n\n\n\nThe taxa and order of individual among genotype file and phenotype files could be different. The GAPIT can automaticly filter and order the common taxa among among genotype file and phenotype files.\n\n\nGWAS methods include: General Linear Model(GLM),Mixed Linear Model(MLM),compressed Mixed Linear Model(CMLM),SUPER, FarmCPU, MLMM, and BLINK. Users can use model=“GLM” to select method.\n\n\n\nGS methods include: gBLUP, cBLUP, sBLUP, and GAGBLUP. Besides GAGBLUP, all GS methods could be seleted by using model=“gBLUP”.\n\n\n\n\n# loading packages for GAPIT and GAPIT functions\nsource(\"https://raw.githubusercontent.com/jiabowang/GAPIT/refs/heads/master/gapit_functions.txt\")\n# loading data set\nmyY=read.table(file=\"https://github.com/jiabowang/GAPIT/raw/refs/heads/master/Documents/mdp_traits.txt\", head = TRUE)\nmyGD=read.table(\"https://github.com/jiabowang/GAPIT/raw/refs/heads/master/Documents/mdp_numeric.txt\",head=T)\nmyGM=read.table(\"https://github.com/jiabowang/GAPIT/raw/refs/heads/master/Documents/mdp_SNP_information.txt\",head=T)\n#myG=read.table(file=\"https://github.com/jiabowang/GAPIT/raw/refs/heads/master/Documents/mdp_genotype_test.hmp.txt\", head = FALSE)\n# performing simulation phenotype\nset.seed(198521)\nmysimulation&lt;-GAPIT(h2=0.7,NQTN=20,GD=myGD,GM=myGM)\nmyY=mysimulation$Y\n\n\nmyGAPIT &lt;- GAPIT(\n  Y=myY[,c(1,2)],\n  GD=myGD,\n  GM=myGM,\n  model=c(\"GLM\",\"MLM\",\"SUPER\",\"MLMM\",\"FarmCPU\",\"Blink\"),# choose model\n  #model=c(\"FarmCPU\"),\n  PCA.total=3,                                          # set total PCAs\n  NJtree.group=4,                                       # set the number of clusting group in Njtree plot\n  QTN.position=mysimulation$QTN.position,\n  Inter.Plot=TRUE,                                      # perform interactive plot\n  Multiple_analysis=TRUE,                               # perform multiple analysis\n  PCA.3d=TRUE,                                          # plot 3d interactive PCA\n  file.output=T\n)\nMore details please check and ref user manual.\n\n\ninstall.packages(\"ggplot2\")\ninstall.packages(\"rrBLUP\")\nlibrary(\"ggplot2\")\nlibrary(\"rrBLUP\")\n\n\n\n\n\n\n\n\nAbout R, R vs Rstudio, Timeline\nSetting a project or working directory\nInteracting with R\nPackages\nAssign values or objects\nData types, structures\nHow to import and export data or results\nHandle large data sets\nHousekeeping\nOutliers\n\n\n\n\n\nset working directory,\nprint path of the current working directory,\nupload data,\nsubset data,\ntidy data\ntransform data,\nplot,\nsaving plot\n\n\n\nsetwd, getwd\nread.table, read_table, read_csv,\nstr, summarize, summary."
+    "text": "GAPIT3\nggplot2\nrrBLUP\n\n\n\n\n\n\n\nPackages installation\n\n\n\n\n\n\n\nR can be freely downloaded from http://www.r-project.org.\nWe also recommend the integrated development environment RStudio which is also freely available at http://www.rstudio.com.\nGAPIT can currently be installed in several ways.\n\nFrom source on the internet\nFrom GitHub\nFrom an archive\n\n\n\n\nGAPIT can be loaded with a single funciton.\nsource(\"http://zzlab.net/GAPIT/gapit_functions.txt\")\nOr from GitHub function.\nsource(\"https://raw.githubusercontent.com/jiabowang/GAPIT/refs/heads/master/gapit_functions.txt\", encoding = \"UTF-8\")\n\n\n\nInstallation can also be made from GitHub when the R package devtools is available.\ninstall.packages(\"devtools\")\ndevtools::install_github(\"jiabowang/GAPIT\", force=TRUE)\nlibrary(GAPIT)\n\nor\ninstall.packages(\"remotes\")\nremotes::install_github(\"jiabowang/GAPIT\")\nlibrary(GAPIT)\n\n\n\nGAPIT can be installed from an archive such as *.tar.gz or *.zip archive. An archive can be downloaded from the “releases” page. If you would like the latest version of GAPIT from the GitHub site you may want to clone it and then build it (this may require Rtools on Windows).\ngit clone git@github.com:jiabowang/GAPIT.git\nR CMD build GAPIT\nOnce an archive has been obtained it can be installed from a shell, similar to as follows.\nR CMD INSTALL GAPIT_3.5.0.9000.tar.gz\nOr similarly from within R.\ninstall.packages(\"GAPIT_3.5.0.9000.tar.gz\", repos = NULL, type=\"source\")\n\n\n\nInstallation of same packages such as “multtest” and “biobase” can not be intalled from BiocManager directly. These packages can be downloaded in the Bioconductor website and be installed from local source files.\nThe website of Bioconductor is here:\nhttps://bioconductor.org/packages/3.19/bioc/\n\n\n\n# loading packages for GAPIT and GAPIT functions\nsource(\"https://raw.githubusercontent.com/jiabowang/GAPIT/refs/heads/master/gapit_functions.txt\")\n# loading data set\nmyY=read.table(file=\"https://github.com/jiabowang/GAPIT/raw/refs/heads/master/Documents/mdp_traits.txt\", head = TRUE)\nmyGD=read.table(\"https://github.com/jiabowang/GAPIT/raw/refs/heads/master/Documents/mdp_numeric.txt\",head=T)\nmyGM=read.table(\"https://github.com/jiabowang/GAPIT/raw/refs/heads/master/Documents/mdp_SNP_information.txt\",head=T)\n#myG=read.table(file=\"https://github.com/jiabowang/GAPIT/raw/refs/heads/master/Documents/mdp_genotype_test.hmp.txt\", head = FALSE)\n# performing simulation phenotype\nset.seed(198521)\nmysimulation&lt;-GAPIT(h2=0.7,NQTN=20,GD=myGD,GM=myGM)\nmyY=mysimulation$Y\n\n\nmyGAPIT &lt;- GAPIT(\n  Y=myY[,c(1,2)],\n  GD=myGD,\n  GM=myGM,\n  model=c(\"GLM\",\"MLM\",\"SUPER\",\"MLMM\",\"FarmCPU\",\"Blink\"),# choose model\n  #model=c(\"FarmCPU\"),\n  PCA.total=3,                                          # set total PCAs\n  NJtree.group=4,                                       # set the number of clusting group in Njtree plot\n  QTN.position=mysimulation$QTN.position,\n  Inter.Plot=TRUE,                                      # perform interactive plot\n  Multiple_analysis=TRUE,                               # perform multiple analysis\n  PCA.3d=TRUE,                                          # plot 3d interactive PCA\n  file.output=T\n)\nMore details please check and ref user manual.\n\n\ninstall.packages(\"ggplot2\")\ninstall.packages(\"rrBLUP\")\nlibrary(\"ggplot2\")\nlibrary(\"rrBLUP\")\n\n\n\n\n\n\n\n\nAbout R, R vs Rstudio, Timeline\nSetting a project or working directory\nInteracting with R\nPackages\nAssign values or objects\nData types, structures\nHow to import and export data or results\nHandle large data sets\nHousekeeping\nOutliers\n\n\n\n\n\nset working directory,\nprint path of the current working directory,\nupload data,\nsubset data,\ntidy data\ntransform data,\nplot,\nsaving plot\n\n\n\n\nDirectory: setwd, getwd\nUpload data to R: read.table, read_table, read_csv,\nSee data structure: str, summarize, summary."
   },
   {
     "objectID": "scripts/00_precourse.html",
     "href": "scripts/00_precourse.html",
     "title": "",
     "section": "",
-    "text": "Install or activate WSL or Unix, and install R and RStudio if you do not have them already before 1st meeting.\nWe strongly recommend for those not yet familiar with UNIX and/or R to take this opportunity and take these online tutorials, since those are requirements for the workshop. This will help you to develop your programming skills and we can always learn a few tricks here and there, even if you are already experienced.\n\n\n\n\n\n\n\n\nTask & Tools\nNote\nLink\n\n\n\n\nBook Reading (pdf)\nchapter 1-9\nA (very) short introduction to R.pdf\n\n\nInstall & activate WSL or Unix\nFor Windows user only\nUNIX\n\n\nInstall R itself and RStudio Desktop\nall participants\nR & RStudio"
+    "text": "Before 1st meeting, please Install or activate WSL or Unix (mac users do not need this part), and install R and RStudio if you do not have them already.\nWe strongly recommend for those not yet familiar with UNIX and/or R to take this opportunity and take the following online tutorials, since those are pre-requisite for the workshop but not mandatory. This will help you to develop your programming skills and we can always learn a few tricks here and there, even if you are already experienced.\n\n\n\n\n\n\n\n\nTask & Tools\nNote\nLink\n\n\n\n\nBook Reading (pdf)\nchapter 1-9\nA (very) short introduction to R.pdf\n\n\nInstall & activate WSL or Unix\nFor Windows user only\nUNIX\n\n\nInstall R itself and RStudio Desktop\nall participants\nR & RStudio"
   },
   {
     "objectID": "scripts/01_intro_to_linux.html#intro-to-linux",
@@ -95,7 +95,7 @@
     "href": "scripts/00_precourse.html#precourse-materials",
     "title": "",
     "section": "",
-    "text": "Install or activate WSL or Unix, and install R and RStudio if you do not have them already before 1st meeting.\nWe strongly recommend for those not yet familiar with UNIX and/or R to take this opportunity and take these online tutorials, since those are requirements for the workshop. This will help you to develop your programming skills and we can always learn a few tricks here and there, even if you are already experienced.\n\n\n\n\n\n\n\n\nTask & Tools\nNote\nLink\n\n\n\n\nBook Reading (pdf)\nchapter 1-9\nA (very) short introduction to R.pdf\n\n\nInstall & activate WSL or Unix\nFor Windows user only\nUNIX\n\n\nInstall R itself and RStudio Desktop\nall participants\nR & RStudio"
+    "text": "Before 1st meeting, please Install or activate WSL or Unix (mac users do not need this part), and install R and RStudio if you do not have them already.\nWe strongly recommend for those not yet familiar with UNIX and/or R to take this opportunity and take the following online tutorials, since those are pre-requisite for the workshop but not mandatory. This will help you to develop your programming skills and we can always learn a few tricks here and there, even if you are already experienced.\n\n\n\n\n\n\n\n\nTask & Tools\nNote\nLink\n\n\n\n\nBook Reading (pdf)\nchapter 1-9\nA (very) short introduction to R.pdf\n\n\nInstall & activate WSL or Unix\nFor Windows user only\nUNIX\n\n\nInstall R itself and RStudio Desktop\nall participants\nR & RStudio"
   },
   {
     "objectID": "practicals/excercise/data_handling_part_1.html",
@@ -151,7 +151,7 @@
     "href": "index.html#before-day-1",
     "title": "Intro to Linux & R",
     "section": "🧰 Before Day 1",
-    "text": "🧰 Before Day 1\nRead the pre-course ⬆️ and be prepared accordingly. You need following tools in the day 1:\n\n\n\n\n\n\n👉Tools\n\n\n\n\n\n\nWSL/Unix/Ubuntu/Shell The Unix Shell tutorial\nR (version ≥ 4.0)\nRStudio\nRecommended packages in RStudio: tidyverse\nPlink at Linux (https://zzz.bwh.harvard.edu/plink/dist/plink-latest.zip)"
+    "text": "🧰 Before Day 1\nRead the pre-course ⬆️ and be prepared accordingly. You need following tools in the day 1:\n\n\n\n\n\n\n👉Tools\n\n\n\n\n\n\nWSL/Unix/Ubuntu/Shell The Unix Shell for windows users.\nPlink, vcftools, BCFtools, and Bedtools (see linux chapter).\nR (version ≥ 4.0)\nRStudio\nRecommended packages in RStudio: GAPIT3, ggplot2, and rrBLUP(see linux and R chapter).\nPlink at Linux (https://zzz.bwh.harvard.edu/plink/dist/plink-latest.zip)"
   },
   {
     "objectID": "index.html#schedule-of-day-1",
@@ -193,7 +193,7 @@
     "href": "index.html#course-materieals",
     "title": "Intro to Linux & R",
     "section": "📚 Course materieals",
-    "text": "📚 Course materieals\n\n\n\n\n\n\n👉️ Course materieals\n\n\n\n\n\n\n1. Download this repository:\nwget https://github.com/abu85/intro-to-linux-and-R/archive/refs/heads/main.zip . # download with 'wget' command\n\n\n2. Extract and enter into the repository folder📁\n\nunzip main.zip            # extract everything from the zip file to folder\n\nls                        # see the file folder\n\ncd intro-to-linux-and-R   # change and enter into the folder(directory)\nOr Clone this repository if are using (git):\ngit clone https://github.com/YOUR_USERNAME/intro-to-R-genomic-selection.git\ncd intro-to-linux-and-R\n\n\n📚 Contents of the 📁 intro-to-linux-and-R\nls -la         # see the content\nIt will be look like as follows\n_quarto.yml _quarto_old.yml\ndocs\nindex_files practicals.md\nslides _quarto_new.txt _site index.qmd practicals scripts\nstyles.css\n\nImportant folders for you\n\nslides/: Lecture slides\nscripts/: Lecture R scripts for each topic\nPracticals: RMarkdown files for hands-on exercises\npracticals/exercise/data/: Sample genotype and phenotype datasets\n\n\n\n3. Open the project in RStudio.\n\n\n4. Install required packages:\ninstall.packages(c(\"tidyverse\"??????)) \n\n\n5. After Lunch (Start with the practicals in the practicals/ folder.)\n\n\n6. Extras:\n\nresources/: Additional resources and cheat sheets\nsolutions/: Solutions to practical exercises\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n📬 For questions or feedback, contact at abu.siddique@slu.se"
+    "text": "📚 Course materieals\n\n\n\n\n\n\n👉️ Course materieals\n\n\n\n\n\n\n1. Download this repository:\nwget https://github.com/abu85/intro-to-linux-and-R/archive/refs/heads/main.zip . # download with 'wget' command\n\n\n2. Extract and enter into the repository folder📁\n\nunzip main.zip            # extract everything from the zip file to folder\n\nls                        # see the file folder\n\ncd intro-to-linux-and-R   # change and enter into the folder(directory)\nOr Clone this repository if you have (git):\ngit clone https://github.com/YOUR_USERNAME/intro-to-R-genomic-selection.git\ncd intro-to-linux-and-R\n\n\n📚 Contents of the 📁 intro-to-linux-and-R\nls -la         # see the content through linux\nIt will be look like as follows\npracticals scripts\n\nImportant folders for you\n\nslides/: Lecture slides\nscripts/: Lecture R scripts for each topic\nPracticals: RMarkdown files for hands-on exercises\npracticals/exercise/data/data_for_linux: Sample genotype datasets\npracticals/exercise/data/data_for_linux: Sample phenotype datasets\n\n\n\n\n\n\n\nTip\n\n\n\n📬 For questions or feedback, contact at abu.siddique@slu.se\n\n\n\n\n\nLicense\nThis work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License."
   },
   {
     "objectID": "index.html#for-questions-or-feedback-contact-at-abu.siddiqueslu.se",
@@ -345,35 +345,35 @@
   {
     "objectID": "scripts/02_intro_R.html#gapit-is-a-package-that-is-run-in-the-r-software-environment.",
     "href": "scripts/02_intro_R.html#gapit-is-a-package-that-is-run-in-the-r-software-environment.",
-    "title": "Tools or packages needed for R modules:",
+    "title": "1. Packages needed for R modules:",
     "section": "",
     "text": "R can be freely downloaded from http://www.r-project.org.\nWe also recommend the integrated development environment RStudio which is also freely available at http://www.rstudio.com.\nGAPIT can currently be installed in several ways.\n\nFrom source on the internet\nFrom GitHub\nFrom an archive"
   },
   {
     "objectID": "scripts/02_intro_R.html#installation-from-source-functions",
     "href": "scripts/02_intro_R.html#installation-from-source-functions",
-    "title": "Tools or packages needed for R modules:",
+    "title": "1. Packages needed for R modules:",
     "section": "",
     "text": "GAPIT can be loaded with a single funciton.\nsource(\"http://zzlab.net/GAPIT/gapit_functions.txt\")\nOr from GitHub function.\nsource(\"https://raw.githubusercontent.com/jiabowang/GAPIT/refs/heads/master/gapit_functions.txt\", encoding = \"UTF-8\")"
   },
   {
     "objectID": "scripts/02_intro_R.html#installation-from-github",
     "href": "scripts/02_intro_R.html#installation-from-github",
-    "title": "Tools or packages needed for R modules:",
+    "title": "1. Packages needed for R modules:",
     "section": "",
     "text": "Installation can also be made from GitHub when the R package devtools is available.\ninstall.packages(\"devtools\")\ndevtools::install_github(\"jiabowang/GAPIT\", force=TRUE)\nlibrary(GAPIT)\n\nor\ninstall.packages(\"remotes\")\nremotes::install_github(\"jiabowang/GAPIT\")\nlibrary(GAPIT)"
   },
   {
     "objectID": "scripts/02_intro_R.html#installation-from-an-archive",
     "href": "scripts/02_intro_R.html#installation-from-an-archive",
-    "title": "Tools or packages needed for R modules:",
+    "title": "1. Packages needed for R modules:",
     "section": "",
-    "text": "GAPIT can be installed from an archive such as *.tar.gz or *.zip archive. An archive can be downloaded from the “releases” page. If you would like the latest version of GAPIT from the GitHub site you may want to clone it and then build it (this may require Rtools on Windows).\nbash$ git clone git@github.com:jiabowang/GAPIT.git\nbash$ R CMD build GAPIT\nOnce an archive has been obtained it can be installed from a shell, similar to as follows.\nbash$ R CMD INSTALL GAPIT_3.5.0.9000.tar.gz\nOr similarly from within R.\ninstall.packages(\"GAPIT_3.5.0.9000.tar.gz\", repos = NULL, type=\"source\")"
+    "text": "GAPIT can be installed from an archive such as *.tar.gz or *.zip archive. An archive can be downloaded from the “releases” page. If you would like the latest version of GAPIT from the GitHub site you may want to clone it and then build it (this may require Rtools on Windows).\ngit clone git@github.com:jiabowang/GAPIT.git\nR CMD build GAPIT\nOnce an archive has been obtained it can be installed from a shell, similar to as follows.\nR CMD INSTALL GAPIT_3.5.0.9000.tar.gz\nOr similarly from within R.\ninstall.packages(\"GAPIT_3.5.0.9000.tar.gz\", repos = NULL, type=\"source\")"
   },
   {
     "objectID": "scripts/02_intro_R.html#in-some-case-of-the-biocmanager-can-not-be-installed",
     "href": "scripts/02_intro_R.html#in-some-case-of-the-biocmanager-can-not-be-installed",
-    "title": "Tools or packages needed for R modules:",
+    "title": "1. Packages needed for R modules:",
     "section": "",
     "text": "Installation of same packages such as “multtest” and “biobase” can not be intalled from BiocManager directly. These packages can be downloaded in the Bioconductor website and be installed from local source files.\nThe website of Bioconductor is here:\nhttps://bioconductor.org/packages/3.19/bioc/"
   },
@@ -401,23 +401,23 @@
   {
     "objectID": "scripts/02_intro_R.html#install-ggplot2-rrblup-package",
     "href": "scripts/02_intro_R.html#install-ggplot2-rrblup-package",
-    "title": "Tools or packages needed for R modules:",
+    "title": "1. Packages needed for R modules:",
     "section": "",
     "text": "install.packages(\"ggplot2\")\ninstall.packages(\"rrBLUP\")\nlibrary(\"ggplot2\")\nlibrary(\"rrBLUP\")"
   },
   {
     "objectID": "scripts/02_intro_R.html#topics",
     "href": "scripts/02_intro_R.html#topics",
-    "title": "Tools or packages needed for R modules:",
+    "title": "1. Packages needed for R modules:",
     "section": "",
     "text": "About R, R vs Rstudio, Timeline\nSetting a project or working directory\nInteracting with R\nPackages\nAssign values or objects\nData types, structures\nHow to import and export data or results\nHandle large data sets\nHousekeeping\nOutliers"
   },
   {
     "objectID": "scripts/02_intro_R.html#tasks",
     "href": "scripts/02_intro_R.html#tasks",
-    "title": "Tools or packages needed for R modules:",
+    "title": "1. Packages needed for R modules:",
     "section": "",
-    "text": "set working directory,\nprint path of the current working directory,\nupload data,\nsubset data,\ntidy data\ntransform data,\nplot,\nsaving plot\n\n\n\nsetwd, getwd\nread.table, read_table, read_csv,\nstr, summarize, summary."
+    "text": "set working directory,\nprint path of the current working directory,\nupload data,\nsubset data,\ntidy data\ntransform data,\nplot,\nsaving plot\n\n\n\n\nDirectory: setwd, getwd\nUpload data to R: read.table, read_table, read_csv,\nSee data structure: str, summarize, summary."
   },
   {
     "objectID": "scripts/01_intro_to_linux.html#topics",
@@ -425,5 +425,33 @@
     "title": "",
     "section": "Topics",
     "text": "Topics\n\nSetup: Installation\nIntroducing the Shell: What & Why shell? CLI vs GUI\nNavigating Files and Directories\nWorking With Files and Directories\nArguments , Pipes\nShell Scripts\nFinding Things\n\n\nTasks\n\nopen the terminal or wsl command line\nwhere am I (print working directory)\ncreate a directory (folder)\nchange working directory to the new directory\nabsolute/relative paths of that directory\nlist view (different styles)\narguments\ncopy and paste\nmove\nrename\ndelete files or folders\ndownload tools\nunzip or extract\n\n\n\n\n\n\n\nBasic linux commands\n\n\n\n\n\n\nBasic linux commands\nls, cd, pwd, mkdir, cp, mv, rm.\n\n\nWorkshop oriented commands\nls , cd, mkdir, wget (for plinks tool), tar or unzip, nano, less, head, use of \\, arguments,\n\n\nAdvanced commands\n\nless – view a file\nnano – view and edit a file\nhead / tail\ngrep\nfind\nwildcards\ntab completion – use it!!!\nman – manual pages or\nanycommand --help\n\n\n\nExample\nls"
+  },
+  {
+    "objectID": "index.html#intended-learning-outcomes",
+    "href": "index.html#intended-learning-outcomes",
+    "title": "Intro to Linux & R",
+    "section": "Intended Learning Outcomes",
+    "text": "Intended Learning Outcomes\nBy the end of this session, participants will be able to:\nUnix/Linux\n\nInstall and verify the functionality of key genomics tools: Plink, vcftools, BCFtools, and Bedtools.\nNavigate the Unix/Linux environment, including creating directories, moving between locations, and managing files. Extra:\nInspect and interpret VCF files, including understanding key fields and genotype formats.\nUse vcftools and bcftools to filter, summarize, and manipulate VCF data.\n\nR\n\nInstall and load essential R packages for genomic analysis: GAPIT3, ggplot2, and rrBLUP.\nPrepare input files for downstream analysis in R, including GAPIT-compatible formats.\nLoad and explore data in R, including reading tables and data frames, and performing basic plotting."
+  },
+  {
+    "objectID": "index.html#learning-activities",
+    "href": "index.html#learning-activities",
+    "title": "Intro to Linux & R",
+    "section": "Learning Activities",
+    "text": "Learning Activities\nTo achieve the above outcomes, participants will:\nUnix/Linux:\n\nFollow guided installation steps for Plink, vcftools, BCFtools, and Bedtools on their systems (see pre-course materials).\nRun basic Unix commands to create directories, navigate folders, and manage files (1st meeting).\nExplore a small VCF file in class to understand its structure and metadata(1st meeting).\nUse vcftools and bcftools to filter variants, calculate allele frequencies, and extract summary statistics (extra).\nPractice using bedtools to intersect VCF data with genomic regions(extra).\nConvert VCF to Plink format and run basic Plink commands to check data quality(extra).\n\nR:\n\nInstall R packages and verify functionality by loading them in R(1st meeting).\nLoad processed data into R, inspect it using str(), summary(), and head(), and visualize it using ggplot2(1st meeting).\nPrepare genotype and phenotype files for GAPIT and run a basic association analysis (demonstrated by instructor)."
+  },
+  {
+    "objectID": "scripts/01_intro_to_linux.html#softweres-installation",
+    "href": "scripts/01_intro_to_linux.html#softweres-installation",
+    "title": "",
+    "section": "",
+    "text": "Plink\nvcftools\nBCFtools\nBedtools\n\n\n\n\n\n\n\nSoftweres installation\n\n\n\n\n\nGo to terminal from your mac or windows PC\nmake directory & Download softwere files in there\ncd --\n\nmkdir -p ~/tools/plink \n\ncd ~/tools/plink\n\n# get the plink with wget command\n\nwget https://s3.amazonaws.com/plink1-assets/plink_linux_x86_64_20250819.zip\nUnzip files\nunzip plink_linux_x86_64_20250819.zip\nchange permision\nll\nchmod +x plink\nll\nactivate plink\necho 'export PATH=$PATH:~/tools/plink' &gt;&gt; ~/.bashrc\n\nsource ~/.bashrc\necho 'export PATH=$PATH:~/tools/plink' &gt;&gt; ~/.bashrc\nsource ~/.bashrc\ncheck plink activation\nplink --version\n\n# or \n\nplink\n\n\nfirst see them if they are installed already or not\nvcftools --version\nbcftools --version\nbedtools --version\nIf you see error or there is not tools like that then follow the rest command and execute one by one\nsudo apt install vcftools\n\nvcftools --version\nsudo apt install bcftools\n\nbcftools --version\nsudo apt install bedtools\n\nbedtools --version"
+  },
+  {
+    "objectID": "scripts/01_intro_to_linux.html#softwares-installation",
+    "href": "scripts/01_intro_to_linux.html#softwares-installation",
+    "title": "",
+    "section": "",
+    "text": "Plink\nvcftools\nBCFtools\nBedtools\n\n\n\n\n\n\n\nSoftwares installation\n\n\n\n\n\n\ngo to terminal from your mac or windows PC (see pre-course if cant open)\nmake directory & Download software files in there\n\ncd --\n\nmkdir -p ~/tools/plink \n\ncd ~/tools/plink\n\n# get the plink with wget command\n\nwget https://s3.amazonaws.com/plink1-assets/plink_linux_x86_64_20250819.zip\n\nunzip files\n\nunzip plink_linux_x86_64_20250819.zip\n\nchange permission\n\nll\nchmod +x plink\nll\n\nactivate plink\n\necho 'export PATH=$PATH:~/tools/plink' &gt;&gt; ~/.bashrc\n\nsource ~/.bashrc\necho 'export PATH=$PATH:~/tools/plink' &gt;&gt; ~/.bashrc\nsource ~/.bashrc\n\ncheck plink activation\n\nplink --version\n\n# or \n\nplink\n\n\nfirst see them if they are installed already or not\nvcftools --version\nbcftools --version\nbedtools --version\nIf you see error or there is not tools like that then follow the rest command and execute one by one\nsudo apt install vcftools\n\nvcftools --version\nsudo apt install bcftools\n\nbcftools --version\nsudo apt install bedtools\n\nbedtools --version"
   }
 ]

@@ -1,11 +1,11 @@
 
-# Tools or packages needed for R modules: 
+# 1. Packages needed for R modules: 
 
-- GAPIT3: https://github.com/jiabowang/GAPIT
-- ggplot2
-- rrBLUP
+- `GAPIT3`
+- `ggplot2`
+- `rrBLUP`
 
-::: {.callout-tip title="Solution & explanation" collapse="true"}
+::: {.callout-tip title="Packages installation" collapse="true"}
 
 ## GAPIT is a package that is run in the R software environment.
 R can be freely downloaded from [http://www.r-project.org](http://www.r-project.org). 
@@ -13,7 +13,7 @@ R can be freely downloaded from [http://www.r-project.org](http://www.r-project.
 We also recommend the integrated development environment RStudio which is also freely available at [http://www.rstudio.com](http://www.rstudio.com).
 
 
-GAPIT can currently be installed in several ways.
+[GAPIT](https://github.com/jiabowang/GAPIT) can currently be installed in several ways.
 
 - From source on the internet
 - From GitHub
@@ -56,16 +56,16 @@ GAPIT can be installed from an archive such as \*.tar.gz or \*.zip archive.
 An archive can be downloaded from the "releases" page.
 If you would like the latest version of GAPIT from the GitHub site you may want to clone it and then build it (this may require Rtools on Windows).
 
-```
-bash$ git clone git@github.com:jiabowang/GAPIT.git
-bash$ R CMD build GAPIT
+```bash
+git clone git@github.com:jiabowang/GAPIT.git
+R CMD build GAPIT
 ```
 
 Once an archive has been obtained it can be installed from a shell, similar to as follows.
 
 
-```
-bash$ R CMD INSTALL GAPIT_3.5.0.9000.tar.gz
+```bash
+R CMD INSTALL GAPIT_3.5.0.9000.tar.gz
 ```
 
 Or similarly from within R.
@@ -84,25 +84,12 @@ The website of Bioconductor is here:
 https://bioconductor.org/packages/3.19/bioc/
 ```
 
-Analysis
-======
-
-The taxa and order of individual among genotype file and phenotype files could be different. The GAPIT can automaticly filter and order the common taxa among among genotype file and phenotype files.
-
-GWAS
------
-GWAS methods include: General Linear Model(GLM),Mixed Linear Model(MLM),compressed Mixed Linear Model(CMLM),SUPER, FarmCPU, MLMM, and BLINK. Users can use model="GLM" to select method. 
-
-GS
------
-GS methods include: gBLUP, cBLUP, sBLUP, and GAGBLUP. Besides GAGBLUP, all GS methods could be seleted by using model="gBLUP".
-
    
 Example
 =====
 
 
-```
+```r
 # loading packages for GAPIT and GAPIT functions
 source("https://raw.githubusercontent.com/jiabowang/GAPIT/refs/heads/master/gapit_functions.txt")
 # loading data set
@@ -132,7 +119,7 @@ myGAPIT <- GAPIT(
 )
 ```
 
-More details please check and ref user manual.
+More details please check and [ref user manual](https://github.com/jiabowang/GAPIT).
 
 
 
@@ -150,7 +137,7 @@ library("rrBLUP")
 :::
 
 
-## Topics 
+## 2. Topics 
 - About R, R vs Rstudio, Timeline
 - Setting a project or working directory
 - Interacting with R
@@ -162,7 +149,7 @@ library("rrBLUP")
 - Housekeeping
 - Outliers
 
-## Tasks 
+## 3. Tasks 
 - set working directory, 
 - print path of the current working directory, 
 - upload data, 
@@ -174,11 +161,11 @@ library("rrBLUP")
 
 
 ### R built-in function  
-`setwd, getwd` 
+- Directory: `setwd, getwd` 
 
-`read.table, read_table, read_csv`, 
+- Upload data to R: `read.table, read_table, read_csv`, 
 
-`str, summarize, summary`. 
+- See data structure: `str, summarize, summary`. 
 
 
 

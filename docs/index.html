@@ -127,7 +127,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="././scripts/00_precourse.html"> 
-<span class="menu-text">Precourse</span></a>
+<span class="menu-text">Pre-course</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="././scripts/01_intro_to_linux.html"> 
@@ -189,6 +189,42 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>Welcome to the Day1</p>
+<section id="intended-learning-outcomes" class="level2">
+<h2 class="anchored" data-anchor-id="intended-learning-outcomes">Intended Learning Outcomes</h2>
+<p>By the end of this session, participants will be able to:</p>
+<p><em>Unix/Linux</em></p>
+<ol type="1">
+<li><strong>Install and verify</strong> the functionality of key <strong>genomics tools</strong>: <code>Plink</code>, <code>vcftools</code>, <code>BCFtools</code>, and <code>Bedtools</code>.</li>
+<li><strong>Navigate the Unix/Linux environment</strong>, including creating directories, moving between locations, and managing files. Extra:</li>
+<li>Inspect and interpret VCF files, including understanding key fields and genotype formats.</li>
+<li>Use vcftools and bcftools to filter, summarize, and manipulate VCF data.</li>
+</ol>
+<p><em>R</em></p>
+<ol type="1">
+<li><strong>Install and load essential R packages</strong> for genomic analysis: <code>GAPIT3</code>, <code>ggplot2</code>, and <code>rrBLUP</code>.</li>
+<li>Prepare input files for downstream analysis in R, including GAPIT-compatible formats.</li>
+<li><strong>Load and explore data in R</strong>, including reading tables and data frames, and performing basic plotting.</li>
+</ol>
+</section>
+<section id="learning-activities" class="level2">
+<h2 class="anchored" data-anchor-id="learning-activities">Learning Activities</h2>
+<p>To achieve the above outcomes, participants will:</p>
+<p><em>Unix/Linux:</em></p>
+<ol type="1">
+<li>Follow guided installation steps for Plink, vcftools, BCFtools, and Bedtools on their systems (see pre-course materials).</li>
+<li>Run basic Unix commands to create directories, navigate folders, and manage files (1st meeting).</li>
+<li>Explore a small VCF file in class to understand its structure and metadata(1st meeting).</li>
+<li>Use vcftools and bcftools to filter variants, calculate allele frequencies, and extract summary statistics (extra).</li>
+<li>Practice using bedtools to intersect VCF data with genomic regions(extra).</li>
+<li>Convert VCF to Plink format and run basic Plink commands to check data quality(extra).</li>
+</ol>
+<p><em>R:</em></p>
+<ol type="1">
+<li>Install R packages and verify functionality by loading them in R(1st meeting).</li>
+<li>Load processed data into R, inspect it using <code>str()</code>, <code>summary()</code>, and <code>head()</code>, and visualize it using <code>ggplot2</code>(1st meeting).</li>
+<li>Prepare genotype and phenotype files for GAPIT and run a basic association analysis (demonstrated by instructor).</li>
+</ol>
+</section>
 <section id="before-day-1" class="level2">
 <h2 class="anchored" data-anchor-id="before-day-1">🧰 <code>Before Day 1</code></h2>
 <p>Read the <code>pre-course</code> ⬆️ and be prepared accordingly. You need following <code>tools</code> in the day 1:</p>
@@ -205,10 +241,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ul>
-<li><code>WSL</code>/<code>Unix</code>/<code>Ubuntu</code>/<code>Shell</code> <a href="https://swcarpentry.github.io/shell-novice/">The Unix Shell</a> tutorial</li>
+<li><code>WSL</code>/<code>Unix</code>/<code>Ubuntu</code>/<code>Shell</code> <a href="https://learn.microsoft.com/en-us/windows/wsl/install">The Unix Shell</a> for <strong>windows users</strong>.</li>
+<li><code>Plink</code>, <code>vcftools</code>, <code>BCFtools</code>, and <code>Bedtools</code> (see linux chapter).</li>
 <li><code>R</code> (version ≥ 4.0)</li>
 <li><code>RStudio</code></li>
-<li>Recommended packages in RStudio: <code>tidyverse</code></li>
+<li>Recommended packages in RStudio: <code>GAPIT3</code>, <code>ggplot2</code>, and <code>rrBLUP</code>(see linux and R chapter).</li>
 <li><code>Plink</code> at Linux (https://zzz.bwh.harvard.edu/plink/dist/plink-latest.zip)</li>
 </ul>
 </div>
@@ -256,7 +293,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="course-materieals" class="level2">
 <h2 class="anchored" data-anchor-id="course-materieals">📚 Course materieals</h2>
 <div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -265,7 +302,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <section id="download-this-repository" class="level5">
 <h5 class="anchored" data-anchor-id="download-this-repository">1. Download this repository:</h5>
@@ -279,49 +316,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span>                        <span class="co"># see the file folder</span></span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> intro-to-linux-and-R   <span class="co"># change and enter into the folder(directory)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Or Clone this repository if are using (git):</p>
+<p>Or Clone this repository if you have (git):</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/YOUR_USERNAME/intro-to-R-genomic-selection.git</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> intro-to-linux-and-R</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="contents-of-the-intro-to-linux-and-r" class="level4">
-<h4 class="anchored" data-anchor-id="contents-of-the-intro-to-linux-and-r">📚 Contents of the 📁 <strong>intro-to-linux-and-R</strong></h4>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-la</span>         <span class="co"># see the content</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<h4 class="anchored">📚 Contents of the 📁 <strong>intro-to-linux-and-R</strong></h4>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-la</span>         <span class="co"># see the content through linux</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>It will be look like as follows</p>
-<p>_quarto.yml _quarto_old.yml<br>
-docs<br>
-index_files practicals.md<br>
-<code>slides</code> _quarto_new.txt _site index.qmd <code>practicals</code> <code>scripts</code><br>
-styles.css</p>
+<p><code>practicals</code> <code>scripts</code></p>
 <section id="important-folders-for-you" class="level5">
-<h5 class="anchored" data-anchor-id="important-folders-for-you">Important folders for you</h5>
+<h5 class="anchored">Important folders for you</h5>
 <ul>
 <li><code>slides/</code>: Lecture slides</li>
 <li><code>scripts/</code>: Lecture R scripts for each topic</li>
 <li><a href="./practicals/practical_01_intro.html">Practicals</a>: RMarkdown files for hands-on exercises</li>
-<li><code>practicals/exercise/data/</code>: Sample genotype and phenotype datasets</li>
+<li><code>practicals/exercise/data/data_for_linux</code>: Sample genotype datasets</li>
+<li><code>practicals/exercise/data/data_for_linux</code>: Sample phenotype datasets</li>
 </ul>
-</section>
-<section id="open-the-project-in-rstudio." class="level5">
-<h5 class="anchored" data-anchor-id="open-the-project-in-rstudio.">3. Open the project in RStudio.</h5>
-</section>
-<section id="install-required-packages" class="level5">
-<h5 class="anchored" data-anchor-id="install-required-packages">4. Install required packages:</h5>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"tidyverse"</span>??????)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="after-lunch-start-with-the-practicals-in-the-practicals-folder." class="level5">
-<h5 class="anchored" data-anchor-id="after-lunch-start-with-the-practicals-in-the-practicals-folder.">5. After Lunch (Start with the practicals in the <code>practicals/</code> folder.)</h5>
-</section>
-<section id="extras" class="level5">
-<h5 class="anchored" data-anchor-id="extras">6. Extras:</h5>
-<ul>
-<li><code>resources/</code>: Additional resources and cheat sheets</li>
-<li><code>solutions/</code>: Solutions to practical exercises</li>
-</ul>
-</section>
-</section>
-</div>
-</div>
-</div>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -336,11 +348,16 @@ Tip
 </section>
 </div>
 </section>
+</section>
 <section id="license" class="level2">
 <h2 class="anchored" data-anchor-id="license">License</h2>
 <p>This work is licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
 
 
+</section>
+</div>
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->

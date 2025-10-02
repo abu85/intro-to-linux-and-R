@@ -169,10 +169,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#tools-or-packages-needed-for-r-modules" id="toc-tools-or-packages-needed-for-r-modules" class="nav-link active" data-scroll-target="#tools-or-packages-needed-for-r-modules">Tools or packages needed for R modules:</a>
+  <li><a href="#packages-needed-for-r-modules" id="toc-packages-needed-for-r-modules" class="nav-link active" data-scroll-target="#packages-needed-for-r-modules">1. Packages needed for R modules:</a>
   <ul class="collapse">
-  <li><a href="#topics" id="toc-topics" class="nav-link" data-scroll-target="#topics">Topics</a></li>
-  <li><a href="#tasks" id="toc-tasks" class="nav-link" data-scroll-target="#tasks">Tasks</a>
+  <li><a href="#topics" id="toc-topics" class="nav-link" data-scroll-target="#topics">2. Topics</a></li>
+  <li><a href="#tasks" id="toc-tasks" class="nav-link" data-scroll-target="#tasks">3. Tasks</a>
   <ul class="collapse">
   <li><a href="#r-built-in-function" id="toc-r-built-in-function" class="nav-link" data-scroll-target="#r-built-in-function">R built-in function</a></li>
   </ul></li>
@@ -186,20 +186,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="tools-or-packages-needed-for-r-modules" class="level1">
-<h1>Tools or packages needed for R modules:</h1>
+<section id="packages-needed-for-r-modules" class="level1">
+<h1>1. Packages needed for R modules:</h1>
 <ul>
-<li>GAPIT3: https://github.com/jiabowang/GAPIT</li>
-<li>ggplot2</li>
-<li>rrBLUP</li>
+<li><code>GAPIT3</code></li>
+<li><code>ggplot2</code></li>
+<li><code>rrBLUP</code></li>
 </ul>
-<div class="callout callout-style-default callout-tip callout-titled" title="Solution &amp; explanation">
+<div class="callout callout-style-default callout-tip callout-titled" title="Packages installation">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solution &amp; explanation
+Packages installation
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -209,7 +209,7 @@ Solution &amp; explanation
 <h2 class="anchored" data-anchor-id="gapit-is-a-package-that-is-run-in-the-r-software-environment.">GAPIT is a package that is run in the R software environment.</h2>
 <p>R can be freely downloaded from <a href="http://www.r-project.org">http://www.r-project.org</a>.</p>
 <p>We also recommend the integrated development environment RStudio which is also freely available at <a href="http://www.rstudio.com">http://www.rstudio.com</a>.</p>
-<p>GAPIT can currently be installed in several ways.</p>
+<p><a href="https://github.com/jiabowang/GAPIT">GAPIT</a> can currently be installed in several ways.</p>
 <ul>
 <li>From source on the internet</li>
 <li>From GitHub</li>
@@ -238,10 +238,10 @@ library(GAPIT)</code></pre>
 <section id="installation-from-an-archive" class="level2">
 <h2 class="anchored" data-anchor-id="installation-from-an-archive">Installation from an archive</h2>
 <p>GAPIT can be installed from an archive such as *.tar.gz or *.zip archive. An archive can be downloaded from the “releases” page. If you would like the latest version of GAPIT from the GitHub site you may want to clone it and then build it (this may require Rtools on Windows).</p>
-<pre><code>bash$ git clone git@github.com:jiabowang/GAPIT.git
-bash$ R CMD build GAPIT</code></pre>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone git@github.com:jiabowang/GAPIT.git</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">R</span> CMD build GAPIT</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Once an archive has been obtained it can be installed from a shell, similar to as follows.</p>
-<pre><code>bash$ R CMD INSTALL GAPIT_3.5.0.9000.tar.gz</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">R</span> CMD INSTALL GAPIT_3.5.0.9000.tar.gz</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Or similarly from within R.</p>
 <pre><code>install.packages("GAPIT_3.5.0.9000.tar.gz", repos = NULL, type="source")</code></pre>
 </section>
@@ -251,48 +251,36 @@ bash$ R CMD build GAPIT</code></pre>
 <p>The website of Bioconductor is here:</p>
 <pre><code>https://bioconductor.org/packages/3.19/bioc/</code></pre>
 </section>
-<section id="analysis" class="level1">
-<h1>Analysis</h1>
-<p>The taxa and order of individual among genotype file and phenotype files could be different. The GAPIT can automaticly filter and order the common taxa among among genotype file and phenotype files.</p>
-<section id="gwas" class="level2">
-<h2 class="anchored" data-anchor-id="gwas">GWAS</h2>
-<p>GWAS methods include: General Linear Model(GLM),Mixed Linear Model(MLM),compressed Mixed Linear Model(CMLM),SUPER, FarmCPU, MLMM, and BLINK. Users can use model=“GLM” to select method.</p>
-</section>
-<section id="gs" class="level2">
-<h2 class="anchored" data-anchor-id="gs">GS</h2>
-<p>GS methods include: gBLUP, cBLUP, sBLUP, and GAGBLUP. Besides GAGBLUP, all GS methods could be seleted by using model=“gBLUP”.</p>
-</section>
-</section>
 <section id="example" class="level1">
 <h1>Example</h1>
-<pre><code># loading packages for GAPIT and GAPIT functions
-source("https://raw.githubusercontent.com/jiabowang/GAPIT/refs/heads/master/gapit_functions.txt")
-# loading data set
-myY=read.table(file="https://github.com/jiabowang/GAPIT/raw/refs/heads/master/Documents/mdp_traits.txt", head = TRUE)
-myGD=read.table("https://github.com/jiabowang/GAPIT/raw/refs/heads/master/Documents/mdp_numeric.txt",head=T)
-myGM=read.table("https://github.com/jiabowang/GAPIT/raw/refs/heads/master/Documents/mdp_SNP_information.txt",head=T)
-#myG=read.table(file="https://github.com/jiabowang/GAPIT/raw/refs/heads/master/Documents/mdp_genotype_test.hmp.txt", head = FALSE)
-# performing simulation phenotype
-set.seed(198521)
-mysimulation&lt;-GAPIT(h2=0.7,NQTN=20,GD=myGD,GM=myGM)
-myY=mysimulation$Y
-
-
-myGAPIT &lt;- GAPIT(
-  Y=myY[,c(1,2)],
-  GD=myGD,
-  GM=myGM,
-  model=c("GLM","MLM","SUPER","MLMM","FarmCPU","Blink"),# choose model
-  #model=c("FarmCPU"),
-  PCA.total=3,                                          # set total PCAs
-  NJtree.group=4,                                       # set the number of clusting group in Njtree plot
-  QTN.position=mysimulation$QTN.position,
-  Inter.Plot=TRUE,                                      # perform interactive plot
-  Multiple_analysis=TRUE,                               # perform multiple analysis
-  PCA.3d=TRUE,                                          # plot 3d interactive PCA
-  file.output=T
-)</code></pre>
-<p>More details please check and ref user manual.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># loading packages for GAPIT and GAPIT functions</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"https://raw.githubusercontent.com/jiabowang/GAPIT/refs/heads/master/gapit_functions.txt"</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># loading data set</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>myY<span class="ot">=</span><span class="fu">read.table</span>(<span class="at">file=</span><span class="st">"https://github.com/jiabowang/GAPIT/raw/refs/heads/master/Documents/mdp_traits.txt"</span>, <span class="at">head =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>myGD<span class="ot">=</span><span class="fu">read.table</span>(<span class="st">"https://github.com/jiabowang/GAPIT/raw/refs/heads/master/Documents/mdp_numeric.txt"</span>,<span class="at">head=</span>T)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>myGM<span class="ot">=</span><span class="fu">read.table</span>(<span class="st">"https://github.com/jiabowang/GAPIT/raw/refs/heads/master/Documents/mdp_SNP_information.txt"</span>,<span class="at">head=</span>T)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co">#myG=read.table(file="https://github.com/jiabowang/GAPIT/raw/refs/heads/master/Documents/mdp_genotype_test.hmp.txt", head = FALSE)</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="co"># performing simulation phenotype</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">198521</span>)</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>mysimulation<span class="ot">&lt;-</span><span class="fu">GAPIT</span>(<span class="at">h2=</span><span class="fl">0.7</span>,<span class="at">NQTN=</span><span class="dv">20</span>,<span class="at">GD=</span>myGD,<span class="at">GM=</span>myGM)</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>myY<span class="ot">=</span>mysimulation<span class="sc">$</span>Y</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>myGAPIT <span class="ot">&lt;-</span> <span class="fu">GAPIT</span>(</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">Y=</span>myY[,<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>)],</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">GD=</span>myGD,</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">GM=</span>myGM,</span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">model=</span><span class="fu">c</span>(<span class="st">"GLM"</span>,<span class="st">"MLM"</span>,<span class="st">"SUPER"</span>,<span class="st">"MLMM"</span>,<span class="st">"FarmCPU"</span>,<span class="st">"Blink"</span>),<span class="co"># choose model</span></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>  <span class="co">#model=c("FarmCPU"),</span></span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">PCA.total=</span><span class="dv">3</span>,                                          <span class="co"># set total PCAs</span></span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>  <span class="at">NJtree.group=</span><span class="dv">4</span>,                                       <span class="co"># set the number of clusting group in Njtree plot</span></span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>  <span class="at">QTN.position=</span>mysimulation<span class="sc">$</span>QTN.position,</span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>  <span class="at">Inter.Plot=</span><span class="cn">TRUE</span>,                                      <span class="co"># perform interactive plot</span></span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>  <span class="at">Multiple_analysis=</span><span class="cn">TRUE</span>,                               <span class="co"># perform multiple analysis</span></span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>  <span class="at">PCA.3d=</span><span class="cn">TRUE</span>,                                          <span class="co"># plot 3d interactive PCA</span></span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>  <span class="at">file.output=</span>T</span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>More details please check and <a href="https://github.com/jiabowang/GAPIT">ref user manual</a>.</p>
 <section id="install-ggplot2-rrblup-package" class="level2">
 <h2 class="anchored" data-anchor-id="install-ggplot2-rrblup-package">Install <strong>ggplot2</strong> &amp; <strong>rrBLUP</strong> package</h2>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"ggplot2"</span>)</span>
@@ -305,7 +293,7 @@ myGAPIT &lt;- GAPIT(
 </div>
 </div>
 <section id="topics" class="level2">
-<h2 class="anchored" data-anchor-id="topics">Topics</h2>
+<h2 class="anchored" data-anchor-id="topics">2. Topics</h2>
 <ul>
 <li>About R, R vs Rstudio, Timeline</li>
 <li>Setting a project or working directory</li>
@@ -320,7 +308,7 @@ myGAPIT &lt;- GAPIT(
 </ul>
 </section>
 <section id="tasks" class="level2">
-<h2 class="anchored" data-anchor-id="tasks">Tasks</h2>
+<h2 class="anchored" data-anchor-id="tasks">3. Tasks</h2>
 <ul>
 <li>set working directory,</li>
 <li>print path of the current working directory,</li>
@@ -333,9 +321,11 @@ myGAPIT &lt;- GAPIT(
 </ul>
 <section id="r-built-in-function" class="level3">
 <h3 class="anchored" data-anchor-id="r-built-in-function">R built-in function</h3>
-<p><code>setwd, getwd</code></p>
-<p><code>read.table, read_table, read_csv</code>,</p>
-<p><code>str, summarize, summary</code>.</p>
+<ul>
+<li><p>Directory: <code>setwd, getwd</code></p></li>
+<li><p>Upload data to R: <code>read.table, read_table, read_csv</code>,</p></li>
+<li><p>See data structure: <code>str, summarize, summary</code>.</p></li>
+</ul>
 
 
 </section>

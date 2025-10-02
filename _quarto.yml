@@ -12,7 +12,7 @@ website:
     left:
       - text: "Home"
         href: index.qmd
-      - text: "Precourse"
+      - text: "Pre-course"
         href: ./scripts/00_precourse.html
       - text: "Linux"
         href: ./scripts/01_intro_to_linux.html

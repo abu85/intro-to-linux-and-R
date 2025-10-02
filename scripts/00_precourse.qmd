@@ -1,10 +1,10 @@
 ## Precourse materials
 
-Install or activate **WSL or Unix**, and install **R and RStudio if you do not have them already before 1st meeting**.
+Before 1st meeting, please Install or activate **WSL or Unix** (mac users do not need this part), and install **R and RStudio if you do not have them already**.
 
-We strongly recommend for **those not yet familiar with UNIX and/or R to take this opportunity and take these online tutorials**, since those are requirements for the workshop. This will help you to develop your programming skills and we can always learn a few tricks here and there, even if you are already experienced.
+We strongly recommend for **those not yet familiar with UNIX and/or R to take this opportunity and take the following online tutorials**, since those are pre-requisite for the workshop *but not mandatory*. This will help you to develop your programming skills and we can always learn a few tricks here and there, even if you are already experienced.
 
-### `Before 1st meeting`: *Make sure you have installed Unix, R, RStudio in your PC*
+### `Before 1st meeting`: *Make sure you have activated Unix, R, RStudio in your PC*
 
 ### Tutorials:
  
