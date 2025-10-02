@@ -1,11 +1,11 @@
-## Softwares installation
+## 1. Tools needed for Unix/Linux
 
 - `Plink` 
 - `vcftools`
 - `BCFtools` 
 - `Bedtools`
 
-::: {.callout-tip title="Softwares installation" collapse="true"}
+::: {.callout-tip title="Tools installation" collapse="true"}
 
 1. go to *terminal* from your `mac` or `windows` PC (see pre-course if cant open)
 
@@ -49,7 +49,7 @@ plink --version
 
 plink
 ```
-## Install vcftools, bcftools, bedtools
+7. Install vcftools, bcftools, bedtools
 first see them if they are installed already or not
 ```bash
 vcftools --version
@@ -78,7 +78,7 @@ bedtools --version
 
 :::
 
-## Topics 
+## 2. Topics 
 
 0. Setup: Installation
 1. Introducing the Shell: What & Why shell? CLI vs GUI
@@ -88,7 +88,7 @@ bedtools --version
 6. Shell Scripts
 7. Finding Things
 
-### Tasks 
+## 3. Tasks 
 
 - open the terminal or wsl command line
 - where am I (print working directory)
