@@ -46,7 +46,7 @@
     "href": "scripts/01_intro_to_linux.html",
     "title": "",
     "section": "",
-    "text": "Setup: Installation\nIntroducing the Shell: What & Why shell? CLI vs GUI\nNavigating Files and Directories\nWorking With Files and Directories\nArguments , Pipes\nShell Scripts\nFinding Things\n\n\n\n\n\nopen the terminal or wsl command line\nwhere am I (print working directory)\ncreate a directory (folder)\nchange working directory to the new directory\nabsolute/relative paths of that directory\nlist view (different styles)\narguments\ncopy and paste\nmove\nrename\ndelete files or folders\ndownload tools\nunzip or extract\n\n\n\n\nls, cd, pwd, mkdir, cp, mv, rm.\n\n\n\nls , cd, mkdir, wget (for plinks tool), tar or unzip, nano, less, head, use of \\, arguments,\n\n\n\n\nless – view a file\nnano – view and edit a file\nhead / tail\ngrep\nfind\nwildcards\ntab completion – use it!!!\nman – manual pages or\nanycommand --help\n\n\n\n\nls"
+    "text": "Plink, vcftools, bcftools, bedtools\n\n\n\n\n\n\nSolution & explanation\n\n\n\n\n\nGo to terminal from your mac or windows PC\nmake directory & Download softwere files in there\ncd --\n\nmkdir -p ~/tools/plink \n\ncd ~/tools/plink\n\n# get the plink with wget command\n\nwget https://s3.amazonaws.com/plink1-assets/plink_linux_x86_64_20250819.zip\nUnzip files\nunzip plink_linux_x86_64_20250819.zip\nchange permision\nll\nchmod +x plink\nll\nactivate plink\necho 'export PATH=$PATH:~/tools/plink' &gt;&gt; ~/.bashrc\n\nsource ~/.bashrc\necho 'export PATH=$PATH:~/tools/plink' &gt;&gt; ~/.bashrc\nsource ~/.bashrc\ncheck plink activation\nplink --version\n\n# or \n\nplink\n\n\nfirst see them if they are installed already or not\nvcftools --version\nbcftools --version\nbedtools --version\nIf you see error or there is not tools like that then follow the rest command and execute one by one\nsudo apt install vcftools\n\nvcftools --version\nsudo apt install bcftools\n\nbcftools --version\nsudo apt install bedtools\n\nbedtools --version"
   },
   {
     "objectID": "index - Copy.html",
@@ -332,15 +332,15 @@
     "objectID": "scripts/01_intro_to_linux.html#install-softweres",
     "href": "scripts/01_intro_to_linux.html#install-softweres",
     "title": "",
-    "section": "Install softweres",
-    "text": "Install softweres\nGo to terminal from your mac or windows PC\nmake directory & Download softwere files in there\ncd --\n\nmkdir -p ~/tools/plink \n\ncd ~/tools/plink\n\n# get the plink with wget command\n\nwget https://s3.amazonaws.com/plink1-assets/plink_linux_x86_64_20250819.zip\nUnzip files\nunzip plink_linux_x86_64_20250819.zip\nchange permision\nll\nchmod +x plink\nll\nactivate plink\necho 'export PATH=$PATH:~/tools/plink' &gt;&gt; ~/.bashrc\n\nsource ~/.bashrc\necho 'export PATH=$PATH:~/tools/plink' &gt;&gt; ~/.bashrc\nsource ~/.bashrc\ncheck plink activation\nplink --version\n\n# or \n\nplink"
+    "section": "",
+    "text": "Plink, vcftools, bcftools, bedtools\n\n\n\n\n\n\nSolution & explanation\n\n\n\n\n\nGo to terminal from your mac or windows PC\nmake directory & Download softwere files in there\ncd --\n\nmkdir -p ~/tools/plink \n\ncd ~/tools/plink\n\n# get the plink with wget command\n\nwget https://s3.amazonaws.com/plink1-assets/plink_linux_x86_64_20250819.zip\nUnzip files\nunzip plink_linux_x86_64_20250819.zip\nchange permision\nll\nchmod +x plink\nll\nactivate plink\necho 'export PATH=$PATH:~/tools/plink' &gt;&gt; ~/.bashrc\n\nsource ~/.bashrc\necho 'export PATH=$PATH:~/tools/plink' &gt;&gt; ~/.bashrc\nsource ~/.bashrc\ncheck plink activation\nplink --version\n\n# or \n\nplink\n\n\nfirst see them if they are installed already or not\nvcftools --version\nbcftools --version\nbedtools --version\nIf you see error or there is not tools like that then follow the rest command and execute one by one\nsudo apt install vcftools\n\nvcftools --version\nsudo apt install bcftools\n\nbcftools --version\nsudo apt install bedtools\n\nbedtools --version"
   },
   {
     "objectID": "scripts/01_intro_to_linux.html#install-vcftools-bcftools-bedtools",
     "href": "scripts/01_intro_to_linux.html#install-vcftools-bcftools-bedtools",
     "title": "",
-    "section": "Install vcftools, bcftools, bedtools",
-    "text": "Install vcftools, bcftools, bedtools\nfirst see them if they are installed already or not\nvcftools --version\nbcftools --version\nbedtools --version\nIf you see error or there is not tools like that then follow the rest command and execute one by one\nsudo apt install vcftools\n\nvcftools --version\nsudo apt install bcftools\n\nbcftools --version\nsudo apt install bedtools\n\nbedtools --version"
+    "section": "",
+    "text": "first see them if they are installed already or not\nvcftools --version\nbcftools --version\nbedtools --version\nIf you see error or there is not tools like that then follow the rest command and execute one by one\nsudo apt install vcftools\n\nvcftools --version\nsudo apt install bcftools\n\nbcftools --version\nsudo apt install bedtools\n\nbedtools --version"
   },
   {
     "objectID": "scripts/02_intro_R.html#gapit-is-a-package-that-is-run-in-the-r-software-environment.",
@@ -418,5 +418,12 @@
     "title": "Tools or packages needed for R modules:",
     "section": "",
     "text": "set working directory,\nprint path of the current working directory,\nupload data,\nsubset data,\ntidy data\ntransform data,\nplot,\nsaving plot\n\n\n\nsetwd, getwd\nread.table, read_table, read_csv,\nstr, summarize, summary."
+  },
+  {
+    "objectID": "scripts/01_intro_to_linux.html#topics",
+    "href": "scripts/01_intro_to_linux.html#topics",
+    "title": "",
+    "section": "Topics",
+    "text": "Topics\n\nSetup: Installation\nIntroducing the Shell: What & Why shell? CLI vs GUI\nNavigating Files and Directories\nWorking With Files and Directories\nArguments , Pipes\nShell Scripts\nFinding Things\n\n\nTasks\n\nopen the terminal or wsl command line\nwhere am I (print working directory)\ncreate a directory (folder)\nchange working directory to the new directory\nabsolute/relative paths of that directory\nlist view (different styles)\narguments\ncopy and paste\nmove\nrename\ndelete files or folders\ndownload tools\nunzip or extract\n\n\n\n\n\n\n\nBasic linux commands\n\n\n\n\n\n\nBasic linux commands\nls, cd, pwd, mkdir, cp, mv, rm.\n\n\nWorkshop oriented commands\nls , cd, mkdir, wget (for plinks tool), tar or unzip, nano, less, head, use of \\, arguments,\n\n\nAdvanced commands\n\nless – view a file\nnano – view and edit a file\nhead / tail\ngrep\nfind\nwildcards\ntab completion – use it!!!\nman – manual pages or\nanycommand --help\n\n\n\nExample\nls"
   }
 ]
