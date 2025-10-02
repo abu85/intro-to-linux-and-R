@@ -6,9 +6,311 @@ title: "Practical 01 — Intro to Linux"
 
 - Learn basic shell commands
 - Practice editing files
+- Practice loading data in R and Plotting
+
+`ls` , `cd`, `mkdir`, `wget` (for plinks tool), `tar` or `unzip`,
+
+
+### 1. List files
+```bash
+ls 
+```
+
+What else I can do with this command?
+Options:
+```bash
+ls --help
+```
 
 ```bash
-# example: list files
+man ls 
+```
+Note: press on **Q** keyboard button to **exit**
+
+classify list (files or folders):
+```bash
+ls -F
+```
+
+list all:
+```bash
+ls -a
+```
+
+print the author of each file:
+```bash
 ls -la
+```
+
+
+
+### 2. Where am I?
+
+What is my present working directory?
+
+```bash
+pwd
+```
+
+
+### 3. Create a folder/directory in current working directory
+
+```bash
+mkdir my_tools
+```
+
+multiple sub folders at once:
+```bash
+mkdir my_tools/plink
+```
+list them:
+```bash
+ls -a
+```
+
+
+### 4. Go in the new directory
+```bash
+cd my_tools
+```
+Or go to another sub directory
+```bash
+cd /plink
+```
+
+
+How do you know you moved in or not?
+
+look at the texts before the `$` sign in the terminal
+```bash
+pwd
+```
+What if you type `cd ..` or `cd -` or `cd --`
+
+How to come back to the place where you were?
+
+
+### 5. Download the official Plink softwere binary and make it available
+We use `wget` command for this 
+see all version [here](https://www.cog-genomics.org/plink/)
+```bash
+wget https://s3.amazonaws.com/plink1-assets/plink_linux_x86_64_20250819.zip
+```
+#### Unzip the downloaded file
+`unzip` command
+```bash
+unzip plink_linux_x86_64.zip
+```
+
+#### Make the binary executable: change the permision
+```bash
+chmod +x plink
+```
+
+#### Add Plink to your PATH 
+(*optional but recommended*)
+```bash
+echo 'export PATH=$PATH:~/my_tools/plink' >> ~/.bashrc
+source ~/.bashrc
+```
+
+#### Test installation
+```bash
+plink --version
+```
+You will see something printed as like as bellow: 
+
+>PLINK v1.9.0-b.7.11 64-bit (19 Aug 2025)
+
+
+## To do:
+
+- Create a folder and a sub folder and 
+- make a file in 1st folder there and 
+- move it to the subfolder
+- print if it is there
+- make it executable
+
+### 6. create a file and write something in it
+
+
+```bash
+nano test.txt
+```
+
+copy and paste following line
+
+`This is a file 
+we like to read it
+and save it`
+
+`Ctrl` + `right click` mouse
+
+>`Ctrl` + `o` for write out, then `Enter` to save the name, then `Ctrl` + `x` for exit
+
+## To do
+- edit the new file and add the line 'Today is Monday' and exit the file or editing
+
+
+### Word count
+```bash
+wc -la
+```
+
+#### print and pipe
+
+```bash
+cat | wc -l
+```
+
+
+## To do
+
+- count no. of files or number of lines in a file text file
+- see the couple of lines
+- open the file with less
+- use | pipe
+- save output to a file
+
+
+::: {.callout-tip title="Solution & explanation" collapse="true"}
+
+
+
+#### 📁 File Setup
+Download or place these files (`📁 data_4_linux`) in your working directory: 
+
+- *example.vcf*: VCF file with genotype data
+- *regions.bed*: BED file with genomic regions
+- *plink_data.ped* and *plink_data.map*: Input files for Plink
+
+#### 🔹 vcftools
+
+1. Calculate allele frequencies
+```bash
+vcftools --vcf example.vcf --freq
+
+```
+- `--vcf example.vcf`: Specifies the input VCF file.
+- `--freq`: Calculates allele frequencies for each variant.
+- Output: `out.frq` (or use `--out` to name it).
+
+2. Filter variants by minor allele frequency
+```bash
+vcftools --vcf example.vcf --maf 0.05 --recode --out filtered_maf
+```
+- `--maf` `0.05`: Filters out variants with MAF < 0.05.
+- `--recode`: Outputs a new VCF file with only the filtered variants.
+- `--out` `filtered_maf`: Prefix for output files.
+
+3. Count missing data per individual
+```bash
+vcftools --vcf example.vcf --missing-indv --out missing_data
+
+```
+- `--missing-indv`: Calculates missing genotype rates per individual.
+- Output: `missing_data.imiss`
+
+#### 🔹 bcftools
+
+1. View VCF header
+```bash
+bcftools view -h example.vcf
+
+```
+- `-h`: Displays only the header lines of the VCF file.
+
+2. Filter variants by quality
+```bash
+bcftools view -i 'QUAL>30' example.vcf -o highqual.vcf
+
+```
+- `-i 'QUAL>30'`: Includes only variants with quality > 30.
+- `-o` `highqual.vcf`: Output file name.
+
+3. Convert VCF to BCF
+```bash
+bcftools view -O b -o output.bcf example.vcf
+```
+- `-O` `b`: Output format is BCF (binary VCF).
+- `-o` `output.bcf`: Output file name.
+
+#### 🔹 bedtools
+
+1. Intersect VCF with BED regions
+```bash
+bedtools intersect -a example.vcf -b regions.bed > vcf_in_regions.vcf
+```
+
+- `-a`: First file (VCF) to compare.
+- `-b`: Second file (BED) with regions of interest.
+- `>`: Redirects output to a new file.
+
+2. Count intersected variants
+```bash
+grep -v "^#" vcf_in_regions.vcf | wc -l
+```
+
+- `grep` `-v` `"^#"`: Removes header lines.
+- `wc` `-l`: Counts the number of remaining lines (i.e., variants).
+
+#### 🔹 Plink
+
+1. Calculate allele frequencies
+```bash
+plink --file plink_data --freq --out plink_freq
+```
+
+- `--file` `plink_data`: Uses plink_data.ped and plink_data.map.
+- `--freq`: Calculates allele frequencies.
+- `--out` `plink_freq`: Output prefix.
+
+2. Check missingness
+```bash
+plink --file plink_data --missing --out plink_missing
+```
+- `--missing`: Calculates missing genotype rates per individual and per SNP.
+- Output: `.imiss` and `.lmiss` files.
+
+
+:::
+
+
+
+### Recommended packages 
+Install **ggplot2** package
+
+```r
+install.packages("ggplot2")
+
+library("ggplot2")
+```
+
+### Example R code
+
+See the data structure:
+```{r}
+str(cars)
+
+```
+A data frame with 50 observations on 2 variables.
+
+[,1]	speed	numeric	Speed (mph)
+[,2]	dist	numeric	Stopping distance (ft)
+
+
+### Plotting a figure
+Speed and Stopping Distances of Cars
+```{r}
+# ggplot(data = cars, aes (x = speed, y = dist))+
+# geom_point()
+```
+
+### Load data table in R 
+### How to do that from RStudio?
+### How to do that with function or command?
+```{r}
+# loading data set
+myY=read.table(file="https://github.com/jiabowang/GAPIT/raw/refs/heads/master/Documents/mdp_traits.txt", head = TRUE)
 ```
 

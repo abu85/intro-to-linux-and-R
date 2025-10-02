@@ -1,0 +1,8 @@
+##fileformat=VCFv4.2
+##FILTER=<ID=PASS,Description="All filters passed">
+##source=ExampleVCF
+##bcftools_viewVersion=1.13+htslib-1.13+ds
+##bcftools_viewCommand=view -i QUAL>30 -o highqual.vcf example.vcf; Date=Thu Oct  2 16:32:41 2025
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	Sample1	Sample2
+1	1050	rs2	T	C	60	PASS	DP=120	GT	0/0	0/1
+1	1100	rs3	G	A	70	PASS	DP=90	GT	1/1	0/0

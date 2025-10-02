@@ -1,0 +1,27 @@
+PLINK v1.9.0-b.7.11 64-bit (19 Aug 2025)
+Options in effect:
+  --file plink_data
+  --missing
+  --out plink_missing
+
+Hostname: vbsg-asiddique
+Working directory: /mnt/c/Users/auue0001/OneDrive - Sveriges lantbruksuniversitet/slubi/proj/2025/GS_course/website/intro-to-linux-and-R/practicals/excercise/data/data_4_linux
+Start time: Thu Oct  2 16:33:24 2025
+
+Random number seed: 1759415604
+7592 MB RAM detected; reserving 3796 MB for main workspace.
+Scanning .ped file... done.
+Performing single-pass .bed write (3 variants, 2 people).
+--file: plink_missing-temporary.bed + plink_missing-temporary.bim +
+plink_missing-temporary.fam written.
+3 variants loaded from .bim file.
+2 people (1 male, 1 female) loaded from .fam.
+2 phenotype values loaded from .fam.
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 2 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is exactly 1.
+--missing: Sample missing data report written to plink_missing.imiss, and
+variant-based missing data report written to plink_missing.lmiss.
+
+End time: Thu Oct  2 16:33:24 2025

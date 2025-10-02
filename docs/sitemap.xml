@@ -10,7 +10,7 @@
   </url>
   <url>
     <loc>https://yourdomain.com/scripts/01_intro_to_linux.html</loc>
-    <lastmod>2025-09-25T20:44:10.696Z</lastmod>
+    <lastmod>2025-10-02T15:30:01.334Z</lastmod>
   </url>
   <url>
     <loc>https://yourdomain.com/index - Copy.html</loc>
@@ -22,7 +22,7 @@
   </url>
   <url>
     <loc>https://yourdomain.com/scripts/02_intro_R.html</loc>
-    <lastmod>2025-09-25T20:46:31.347Z</lastmod>
+    <lastmod>2025-10-02T15:45:22.680Z</lastmod>
   </url>
   <url>
     <loc>https://yourdomain.com/scripts/00_precourse.html</loc>
@@ -39,5 +39,9 @@
   <url>
     <loc>https://yourdomain.com/slides/slides.html</loc>
     <lastmod>2025-09-24T14:09:23.041Z</lastmod>
+  </url>
+  <url>
+    <loc>https://yourdomain.com/practicals/practical_01_intro.html</loc>
+    <lastmod>2025-10-02T15:46:57.028Z</lastmod>
   </url>
 </urlset>

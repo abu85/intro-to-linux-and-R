@@ -1,0 +1,13 @@
+
+VCFtools - 0.1.16
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf example.vcf
+	--missing-indv
+	--out missing_data
+
+After filtering, kept 2 out of 2 Individuals
+Outputting Individual Missingness
+After filtering, kept 3 out of a possible 3 Sites
+Run Time = 0.00 seconds

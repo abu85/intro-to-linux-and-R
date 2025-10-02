@@ -57,24 +57,147 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="practical_01_intro_files/libs/clipboard/clipboard.min.js"></script>
-<script src="practical_01_intro_files/libs/quarto-html/quarto.js"></script>
-<script src="practical_01_intro_files/libs/quarto-html/popper.min.js"></script>
-<script src="practical_01_intro_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="practical_01_intro_files/libs/quarto-html/anchor.min.js"></script>
-<link href="practical_01_intro_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="practical_01_intro_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="practical_01_intro_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="practical_01_intro_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="practical_01_intro_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../images/favicon.ico" rel="icon">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
 
 
+<link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="fullcontent">
+<body class="nav-fixed">
 
-<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
-
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href=".././scripts/00_precourse.html"> 
+<span class="menu-text">Precourse</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href=".././scripts/01_intro_to_linux.html"> 
+<span class="menu-text">Linux</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href=".././scripts/02_intro_R.html"> 
+<span class="menu-text">R</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href=".././practicals/excercise/data_handling_part_2_v1.html"> 
+<span class="menu-text">Lab</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://swcarpentry.github.io/shell-novice/"> <i class="bi bi-softwerecarpentry" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="mailto:your.email@example.com"> <i class="bi bi-envelope" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#goals" id="toc-goals" class="nav-link active" data-scroll-target="#goals">Goals</a>
+  <ul class="collapse">
+  <li><a href="#list-files" id="toc-list-files" class="nav-link" data-scroll-target="#list-files">1. List files</a></li>
+  <li><a href="#where-am-i" id="toc-where-am-i" class="nav-link" data-scroll-target="#where-am-i">2. Where am I?</a></li>
+  <li><a href="#create-a-folderdirectory-in-current-working-directory" id="toc-create-a-folderdirectory-in-current-working-directory" class="nav-link" data-scroll-target="#create-a-folderdirectory-in-current-working-directory">3. Create a folder/directory in current working directory</a></li>
+  <li><a href="#go-in-the-new-directory" id="toc-go-in-the-new-directory" class="nav-link" data-scroll-target="#go-in-the-new-directory">4. Go in the new directory</a></li>
+  <li><a href="#download-the-official-plink-softwere-binary-and-make-it-available" id="toc-download-the-official-plink-softwere-binary-and-make-it-available" class="nav-link" data-scroll-target="#download-the-official-plink-softwere-binary-and-make-it-available">5. Download the official Plink softwere binary and make it available</a></li>
+  </ul></li>
+  <li><a href="#to-do" id="toc-to-do" class="nav-link" data-scroll-target="#to-do">To do:</a>
+  <ul class="collapse">
+  <li><a href="#create-a-file-and-write-something-in-it" id="toc-create-a-file-and-write-something-in-it" class="nav-link" data-scroll-target="#create-a-file-and-write-something-in-it">6. create a file and write something in it</a></li>
+  </ul></li>
+  <li><a href="#to-do-1" id="toc-to-do-1" class="nav-link" data-scroll-target="#to-do-1">To do</a>
+  <ul class="collapse">
+  <li><a href="#word-count" id="toc-word-count" class="nav-link" data-scroll-target="#word-count">Word count</a></li>
+  </ul></li>
+  <li><a href="#to-do-2" id="toc-to-do-2" class="nav-link" data-scroll-target="#to-do-2">To do</a>
+  <ul class="collapse">
+  <li><a href="#recommended-packages" id="toc-recommended-packages" class="nav-link" data-scroll-target="#recommended-packages">Recommended packages</a></li>
+  <li><a href="#example-r-code" id="toc-example-r-code" class="nav-link" data-scroll-target="#example-r-code">Example R code</a></li>
+  <li><a href="#plotting-a-figure" id="toc-plotting-a-figure" class="nav-link" data-scroll-target="#plotting-a-figure">Plotting a figure</a></li>
+  <li><a href="#load-data-table-in-r" id="toc-load-data-table-in-r" class="nav-link" data-scroll-target="#load-data-table-in-r">Load data table in R</a></li>
+  <li><a href="#how-to-do-that-from-rstudio" id="toc-how-to-do-that-from-rstudio" class="nav-link" data-scroll-target="#how-to-do-that-from-rstudio">How to do that from RStudio?</a></li>
+  <li><a href="#how-to-do-that-with-function-or-command" id="toc-how-to-do-that-with-function-or-command" class="nav-link" data-scroll-target="#how-to-do-that-with-function-or-command">How to do that with function or command?</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
@@ -101,13 +224,285 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>Learn basic shell commands</li>
 <li>Practice editing files</li>
+<li>Practice loading data in R and Plotting</li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># example: list files</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-la</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><code>ls</code> , <code>cd</code>, <code>mkdir</code>, <code>wget</code> (for plinks tool), <code>tar</code> or <code>unzip</code>,</p>
+<section id="list-files" class="level3">
+<h3 class="anchored" data-anchor-id="list-files">1. List files</h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>What else I can do with this command? Options:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">--help</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">man</span> ls </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Note: press on <strong>Q</strong> keyboard button to <strong>exit</strong></p>
+<p>classify list (files or folders):</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-F</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>list all:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-a</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>print the author of each file:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-la</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="where-am-i" class="level3">
+<h3 class="anchored" data-anchor-id="where-am-i">2. Where am I?</h3>
+<p>What is my present working directory?</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">pwd</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="create-a-folderdirectory-in-current-working-directory" class="level3">
+<h3 class="anchored" data-anchor-id="create-a-folderdirectory-in-current-working-directory">3. Create a folder/directory in current working directory</h3>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> my_tools</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>multiple sub folders at once:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> my_tools/plink</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>list them:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-a</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="go-in-the-new-directory" class="level3">
+<h3 class="anchored" data-anchor-id="go-in-the-new-directory">4. Go in the new directory</h3>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> my_tools</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Or go to another sub directory</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /plink</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>How do you know you moved in or not?</p>
+<p>look at the texts before the <code>$</code> sign in the terminal</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">pwd</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>What if you type <code>cd ..</code> or <code>cd -</code> or <code>cd --</code></p>
+<p>How to come back to the place where you were?</p>
+</section>
+<section id="download-the-official-plink-softwere-binary-and-make-it-available" class="level3">
+<h3 class="anchored" data-anchor-id="download-the-official-plink-softwere-binary-and-make-it-available">5. Download the official Plink softwere binary and make it available</h3>
+<p>We use <code>wget</code> command for this see all version <a href="https://www.cog-genomics.org/plink/">here</a></p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://s3.amazonaws.com/plink1-assets/plink_linux_x86_64_20250819.zip</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="unzip-the-downloaded-file" class="level4">
+<h4 class="anchored" data-anchor-id="unzip-the-downloaded-file">Unzip the downloaded file</h4>
+<p><code>unzip</code> command</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unzip</span> plink_linux_x86_64.zip</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="make-the-binary-executable-change-the-permision" class="level4">
+<h4 class="anchored" data-anchor-id="make-the-binary-executable-change-the-permision">Make the binary executable: change the permision</h4>
+<div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chmod</span> +x plink</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="add-plink-to-your-path" class="level4">
+<h4 class="anchored" data-anchor-id="add-plink-to-your-path">Add Plink to your PATH</h4>
+<p>(<em>optional but recommended</em>)</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">'export PATH=$PATH:~/my_tools/plink'</span> <span class="op">&gt;&gt;</span> ~/.bashrc</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> ~/.bashrc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="test-installation" class="level4">
+<h4 class="anchored" data-anchor-id="test-installation">Test installation</h4>
+<div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">plink</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You will see something printed as like as bellow:</p>
+<blockquote class="blockquote">
+<p>PLINK v1.9.0-b.7.11 64-bit (19 Aug 2025)</p>
+</blockquote>
+</section>
+</section>
+</section>
+<section id="to-do" class="level2">
+<h2 class="anchored" data-anchor-id="to-do">To do:</h2>
+<ul>
+<li>Create a folder and a sub folder and</li>
+<li>make a file in 1st folder there and</li>
+<li>move it to the subfolder</li>
+<li>print if it is there</li>
+<li>make it executable</li>
+</ul>
+<section id="create-a-file-and-write-something-in-it" class="level3">
+<h3 class="anchored" data-anchor-id="create-a-file-and-write-something-in-it">6. create a file and write something in it</h3>
+<div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nano</span> test.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>copy and paste following line</p>
+<p><code>This is a file  we like to read it and save it</code></p>
+<p><code>Ctrl</code> + <code>right click</code> mouse</p>
+<blockquote class="blockquote">
+<p><code>Ctrl</code> + <code>o</code> for write out, then <code>Enter</code> to save the name, then <code>Ctrl</code> + <code>x</code> for exit</p>
+</blockquote>
+</section>
+</section>
+<section id="to-do-1" class="level2">
+<h2 class="anchored" data-anchor-id="to-do-1">To do</h2>
+<ul>
+<li>edit the new file and add the line ‘Today is Monday’ and exit the file or editing</li>
+</ul>
+<section id="word-count" class="level3">
+<h3 class="anchored" data-anchor-id="word-count">Word count</h3>
+<div class="sourceCode" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wc</span> <span class="at">-la</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="print-and-pipe" class="level4">
+<h4 class="anchored" data-anchor-id="print-and-pipe">print and pipe</h4>
+<div class="sourceCode" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+</section>
+<section id="to-do-2" class="level2">
+<h2 class="anchored" data-anchor-id="to-do-2">To do</h2>
+<ul>
+<li>count no. of files or number of lines in a file text file</li>
+<li>see the couple of lines</li>
+<li>open the file with less</li>
+<li>use | pipe</li>
+<li>save output to a file</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled" title="Solution &amp; explanation">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution &amp; explanation
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<section id="file-setup" class="level4">
+<h4 class="anchored" data-anchor-id="file-setup">📁 File Setup</h4>
+<p>Download or place these files (<code>📁 data_4_linux</code>) in your working directory:</p>
+<ul>
+<li><em>example.vcf</em>: VCF file with genotype data</li>
+<li><em>regions.bed</em>: BED file with genomic regions</li>
+<li><em>plink_data.ped</em> and <em>plink_data.map</em>: Input files for Plink</li>
+</ul>
+</section>
+<section id="vcftools" class="level4">
+<h4 class="anchored" data-anchor-id="vcftools">🔹 vcftools</h4>
+<ol type="1">
+<li>Calculate allele frequencies</li>
+</ol>
+<div class="sourceCode" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ex">vcftools</span> <span class="at">--vcf</span> example.vcf <span class="at">--freq</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>--vcf example.vcf</code>: Specifies the input VCF file.</li>
+<li><code>--freq</code>: Calculates allele frequencies for each variant.</li>
+<li>Output: <code>out.frq</code> (or use <code>--out</code> to name it).</li>
+</ul>
+<ol start="2" type="1">
+<li>Filter variants by minor allele frequency</li>
+</ol>
+<div class="sourceCode" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ex">vcftools</span> <span class="at">--vcf</span> example.vcf <span class="at">--maf</span> 0.05 <span class="at">--recode</span> <span class="at">--out</span> filtered_maf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>--maf</code> <code>0.05</code>: Filters out variants with MAF &lt; 0.05.</li>
+<li><code>--recode</code>: Outputs a new VCF file with only the filtered variants.</li>
+<li><code>--out</code> <code>filtered_maf</code>: Prefix for output files.</li>
+</ul>
+<ol start="3" type="1">
+<li>Count missing data per individual</li>
+</ol>
+<div class="sourceCode" id="cb24"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="ex">vcftools</span> <span class="at">--vcf</span> example.vcf <span class="at">--missing-indv</span> <span class="at">--out</span> missing_data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>--missing-indv</code>: Calculates missing genotype rates per individual.</li>
+<li>Output: <code>missing_data.imiss</code></li>
+</ul>
+</section>
+<section id="bcftools" class="level4">
+<h4 class="anchored" data-anchor-id="bcftools">🔹 bcftools</h4>
+<ol type="1">
+<li>View VCF header</li>
+</ol>
+<div class="sourceCode" id="cb25"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bcftools</span> view <span class="at">-h</span> example.vcf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>-h</code>: Displays only the header lines of the VCF file.</li>
+</ul>
+<ol start="2" type="1">
+<li>Filter variants by quality</li>
+</ol>
+<div class="sourceCode" id="cb26"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bcftools</span> view <span class="at">-i</span> <span class="st">'QUAL&gt;30'</span> example.vcf <span class="at">-o</span> highqual.vcf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>-i 'QUAL&gt;30'</code>: Includes only variants with quality &gt; 30.</li>
+<li><code>-o</code> <code>highqual.vcf</code>: Output file name.</li>
+</ul>
+<ol start="3" type="1">
+<li>Convert VCF to BCF</li>
+</ol>
+<div class="sourceCode" id="cb27"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bcftools</span> view <span class="at">-O</span> b <span class="at">-o</span> output.bcf example.vcf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>-O</code> <code>b</code>: Output format is BCF (binary VCF).</li>
+<li><code>-o</code> <code>output.bcf</code>: Output file name.</li>
+</ul>
+</section>
+<section id="bedtools" class="level4">
+<h4 class="anchored" data-anchor-id="bedtools">🔹 bedtools</h4>
+<ol type="1">
+<li>Intersect VCF with BED regions</li>
+</ol>
+<div class="sourceCode" id="cb28"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bedtools</span> intersect <span class="at">-a</span> example.vcf <span class="at">-b</span> regions.bed <span class="op">&gt;</span> vcf_in_regions.vcf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>-a</code>: First file (VCF) to compare.</li>
+<li><code>-b</code>: Second file (BED) with regions of interest.</li>
+<li><code>&gt;</code>: Redirects output to a new file.</li>
+</ul>
+<ol start="2" type="1">
+<li>Count intersected variants</li>
+</ol>
+<div class="sourceCode" id="cb29"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="at">-v</span> <span class="st">"^#"</span> vcf_in_regions.vcf <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>grep</code> <code>-v</code> <code>"^#"</code>: Removes header lines.</li>
+<li><code>wc</code> <code>-l</code>: Counts the number of remaining lines (i.e., variants).</li>
+</ul>
+</section>
+<section id="plink" class="level4">
+<h4 class="anchored" data-anchor-id="plink">🔹 Plink</h4>
+<ol type="1">
+<li>Calculate allele frequencies</li>
+</ol>
+<div class="sourceCode" id="cb30"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="ex">plink</span> <span class="at">--file</span> plink_data <span class="at">--freq</span> <span class="at">--out</span> plink_freq</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>--file</code> <code>plink_data</code>: Uses plink_data.ped and plink_data.map.</li>
+<li><code>--freq</code>: Calculates allele frequencies.</li>
+<li><code>--out</code> <code>plink_freq</code>: Output prefix.</li>
+</ul>
+<ol start="2" type="1">
+<li>Check missingness</li>
+</ol>
+<div class="sourceCode" id="cb31"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="ex">plink</span> <span class="at">--file</span> plink_data <span class="at">--missing</span> <span class="at">--out</span> plink_missing</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>--missing</code>: Calculates missing genotype rates per individual and per SNP.</li>
+<li>Output: <code>.imiss</code> and <code>.lmiss</code> files.</li>
+</ul>
+</section>
+</div>
+</div>
+</div>
+<section id="recommended-packages" class="level3">
+<h3 class="anchored" data-anchor-id="recommended-packages">Recommended packages</h3>
+<p>Install <strong>ggplot2</strong> package</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"ggplot2"</span>)</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"ggplot2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="example-r-code" class="level3">
+<h3 class="anchored" data-anchor-id="example-r-code">Example R code</h3>
+<p>See the data structure:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(cars)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>'data.frame':   50 obs. of  2 variables:
+ $ speed: num  4 4 7 7 8 9 10 10 10 11 ...
+ $ dist : num  2 10 4 22 16 10 18 26 34 17 ...</code></pre>
+</div>
+</div>
+<p>A data frame with 50 observations on 2 variables.</p>
+<p>[,1] speed numeric Speed (mph) [,2] dist numeric Stopping distance (ft)</p>
+</section>
+<section id="plotting-a-figure" class="level3">
+<h3 class="anchored" data-anchor-id="plotting-a-figure">Plotting a figure</h3>
+<p>Speed and Stopping Distances of Cars</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ggplot(data = cars, aes (x = speed, y = dist))+</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="co"># geom_point()</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="load-data-table-in-r" class="level3">
+<h3 class="anchored" data-anchor-id="load-data-table-in-r">Load data table in R</h3>
+</section>
+<section id="how-to-do-that-from-rstudio" class="level3">
+<h3 class="anchored" data-anchor-id="how-to-do-that-from-rstudio">How to do that from RStudio?</h3>
+</section>
+<section id="how-to-do-that-with-function-or-command" class="level3">
+<h3 class="anchored" data-anchor-id="how-to-do-that-with-function-or-command">How to do that with function or command?</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># loading data set</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>myY<span class="ot">=</span><span class="fu">read.table</span>(<span class="at">file=</span><span class="st">"https://github.com/jiabowang/GAPIT/raw/refs/heads/master/Documents/mdp_traits.txt"</span>, <span class="at">head =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+
+
+</section>
 </section>
 
-</main>
-<!-- /main column -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -128,6 +523,150 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
@@ -200,7 +739,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
+      var filterRegex = new RegExp("https:\/\/yourdomain\.com");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

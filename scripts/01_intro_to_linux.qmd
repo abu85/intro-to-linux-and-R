@@ -6,7 +6,7 @@
 1. Introducing the Shell: What & Why shell? CLI vs GUI
 2. Navigating Files and Directories
 3. Working With Files and Directories
-4. Pipes 
+4. Arguments , Pipes 
 6. Shell Scripts
 7. Finding Things
 
@@ -53,5 +53,72 @@ ls
 ```
 
 
-#### Tools: [Plink](https://zzz.bwh.harvard.edu/plink/dist/plink-latest.zip)
+## Install softweres
+Go to *terminal* from your `mac` or `windows` PC
 
+make directory & Download softwere files in there
+```bash
+cd --
+
+mkdir -p ~/tools/plink 
+
+cd ~/tools/plink
+
+# get the plink with wget command
+
+wget https://s3.amazonaws.com/plink1-assets/plink_linux_x86_64_20250819.zip
+```
+
+Unzip files
+```bash
+unzip plink_linux_x86_64_20250819.zip
+```
+change permision
+```bash
+ll
+chmod +x plink
+ll
+```
+activate plink
+```bash
+echo 'export PATH=$PATH:~/tools/plink' >> ~/.bashrc
+
+source ~/.bashrc
+echo 'export PATH=$PATH:~/tools/plink' >> ~/.bashrc
+source ~/.bashrc
+```
+
+check plink activation
+```bash
+plink --version
+
+# or 
+
+plink
+```
+## Install vcftools, bcftools, bedtools
+first see them if they are installed already or not
+```bash
+vcftools --version
+bcftools --version
+bedtools --version
+```
+If you see error or there is not tools like that then follow the rest command and execute one by one
+
+```bash
+sudo apt install vcftools
+
+vcftools --version
+```
+
+```bash
+sudo apt install bcftools
+
+bcftools --version
+```
+
+```bash
+sudo apt install bedtools
+
+bedtools --version
+```

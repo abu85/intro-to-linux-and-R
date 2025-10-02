@@ -46,7 +46,7 @@
     "href": "scripts/01_intro_to_linux.html",
     "title": "",
     "section": "",
-    "text": "Setup: Installation\nIntroducing the Shell: What & Why shell? CLI vs GUI\nNavigating Files and Directories\nWorking With Files and Directories\nPipes\nShell Scripts\nFinding Things\n\n\n\n\n\nopen the terminal or wsl command line\nwhere am I (print working directory)\ncreate a directory (folder)\nchange working directory to the new directory\nabsolute/relative paths of that directory\nlist view (different styles)\narguments\ncopy and paste\nmove\nrename\ndelete files or folders\ndownload tools\nunzip or extract\n\n\n\n\nls, cd, pwd, mkdir, cp, mv, rm.\n\n\n\nls , cd, mkdir, wget (for plinks tool), tar or unzip, nano, less, head, use of \\, arguments,\n\n\n\n\nless – view a file\nnano – view and edit a file\nhead / tail\ngrep\nfind\nwildcards\ntab completion – use it!!!\nman – manual pages or\nanycommand --help\n\n\n\n\nls"
+    "text": "Setup: Installation\nIntroducing the Shell: What & Why shell? CLI vs GUI\nNavigating Files and Directories\nWorking With Files and Directories\nArguments , Pipes\nShell Scripts\nFinding Things\n\n\n\n\n\nopen the terminal or wsl command line\nwhere am I (print working directory)\ncreate a directory (folder)\nchange working directory to the new directory\nabsolute/relative paths of that directory\nlist view (different styles)\narguments\ncopy and paste\nmove\nrename\ndelete files or folders\ndownload tools\nunzip or extract\n\n\n\n\nls, cd, pwd, mkdir, cp, mv, rm.\n\n\n\nls , cd, mkdir, wget (for plinks tool), tar or unzip, nano, less, head, use of \\, arguments,\n\n\n\n\nless – view a file\nnano – view and edit a file\nhead / tail\ngrep\nfind\nwildcards\ntab completion – use it!!!\nman – manual pages or\nanycommand --help\n\n\n\n\nls"
   },
   {
     "objectID": "index - Copy.html",
@@ -65,9 +65,9 @@
   {
     "objectID": "scripts/02_intro_R.html",
     "href": "scripts/02_intro_R.html",
-    "title": "",
+    "title": "Tools or packages needed for R modules:",
     "section": "",
-    "text": "About R, R vs Rstudio, Timeline\nSetting a project or working directory\nInteracting with R\nPackages\nAssign values or objects\nData types, structures\nHow to import and export data or results\nHandle large data sets\nHousekeeping\nOutliers\n\n\n\n\n\nset working directory,\nprint path of the current working directory,\nupload data,\nsubset data,\ntidy data\ntransform data,\nplot,\nsaving plot\n\n\n\n\nsetwd, getwd, read_table, read_csv, pvot_longer, pvot_wider, select, mutate, summarize, summary.\n\n\n\nInstall Tidyverse package\ninstall.packages(\"tidyverse\")\n\nlibrary(\"tidyverse\")\n\n\n\n\nsummary(cars)\n\n     speed           dist       \n Min.   : 4.0   Min.   :  2.00  \n 1st Qu.:12.0   1st Qu.: 26.00  \n Median :15.0   Median : 36.00  \n Mean   :15.4   Mean   : 42.98  \n 3rd Qu.:19.0   3rd Qu.: 56.00  \n Max.   :25.0   Max.   :120.00"
+    "text": "GAPIT3: https://github.com/jiabowang/GAPIT\nggplot2\nrrBLUP\n\n\n\n\n\n\n\nSolution & explanation\n\n\n\n\n\n\n\nR can be freely downloaded from http://www.r-project.org.\nWe also recommend the integrated development environment RStudio which is also freely available at http://www.rstudio.com.\nGAPIT can currently be installed in several ways.\n\nFrom source on the internet\nFrom GitHub\nFrom an archive\n\n\n\n\nGAPIT can be loaded with a single funciton.\nsource(\"http://zzlab.net/GAPIT/gapit_functions.txt\")\nOr from GitHub function.\nsource(\"https://raw.githubusercontent.com/jiabowang/GAPIT/refs/heads/master/gapit_functions.txt\", encoding = \"UTF-8\")\n\n\n\nInstallation can also be made from GitHub when the R package devtools is available.\ninstall.packages(\"devtools\")\ndevtools::install_github(\"jiabowang/GAPIT\", force=TRUE)\nlibrary(GAPIT)\n\nor\ninstall.packages(\"remotes\")\nremotes::install_github(\"jiabowang/GAPIT\")\nlibrary(GAPIT)\n\n\n\nGAPIT can be installed from an archive such as *.tar.gz or *.zip archive. An archive can be downloaded from the “releases” page. If you would like the latest version of GAPIT from the GitHub site you may want to clone it and then build it (this may require Rtools on Windows).\nbash$ git clone git@github.com:jiabowang/GAPIT.git\nbash$ R CMD build GAPIT\nOnce an archive has been obtained it can be installed from a shell, similar to as follows.\nbash$ R CMD INSTALL GAPIT_3.5.0.9000.tar.gz\nOr similarly from within R.\ninstall.packages(\"GAPIT_3.5.0.9000.tar.gz\", repos = NULL, type=\"source\")\n\n\n\nInstallation of same packages such as “multtest” and “biobase” can not be intalled from BiocManager directly. These packages can be downloaded in the Bioconductor website and be installed from local source files.\nThe website of Bioconductor is here:\nhttps://bioconductor.org/packages/3.19/bioc/\n\n\n\nThe taxa and order of individual among genotype file and phenotype files could be different. The GAPIT can automaticly filter and order the common taxa among among genotype file and phenotype files.\n\n\nGWAS methods include: General Linear Model(GLM),Mixed Linear Model(MLM),compressed Mixed Linear Model(CMLM),SUPER, FarmCPU, MLMM, and BLINK. Users can use model=“GLM” to select method.\n\n\n\nGS methods include: gBLUP, cBLUP, sBLUP, and GAGBLUP. Besides GAGBLUP, all GS methods could be seleted by using model=“gBLUP”.\n\n\n\n\n# loading packages for GAPIT and GAPIT functions\nsource(\"https://raw.githubusercontent.com/jiabowang/GAPIT/refs/heads/master/gapit_functions.txt\")\n# loading data set\nmyY=read.table(file=\"https://github.com/jiabowang/GAPIT/raw/refs/heads/master/Documents/mdp_traits.txt\", head = TRUE)\nmyGD=read.table(\"https://github.com/jiabowang/GAPIT/raw/refs/heads/master/Documents/mdp_numeric.txt\",head=T)\nmyGM=read.table(\"https://github.com/jiabowang/GAPIT/raw/refs/heads/master/Documents/mdp_SNP_information.txt\",head=T)\n#myG=read.table(file=\"https://github.com/jiabowang/GAPIT/raw/refs/heads/master/Documents/mdp_genotype_test.hmp.txt\", head = FALSE)\n# performing simulation phenotype\nset.seed(198521)\nmysimulation&lt;-GAPIT(h2=0.7,NQTN=20,GD=myGD,GM=myGM)\nmyY=mysimulation$Y\n\n\nmyGAPIT &lt;- GAPIT(\n  Y=myY[,c(1,2)],\n  GD=myGD,\n  GM=myGM,\n  model=c(\"GLM\",\"MLM\",\"SUPER\",\"MLMM\",\"FarmCPU\",\"Blink\"),# choose model\n  #model=c(\"FarmCPU\"),\n  PCA.total=3,                                          # set total PCAs\n  NJtree.group=4,                                       # set the number of clusting group in Njtree plot\n  QTN.position=mysimulation$QTN.position,\n  Inter.Plot=TRUE,                                      # perform interactive plot\n  Multiple_analysis=TRUE,                               # perform multiple analysis\n  PCA.3d=TRUE,                                          # plot 3d interactive PCA\n  file.output=T\n)\nMore details please check and ref user manual.\n\n\ninstall.packages(\"ggplot2\")\ninstall.packages(\"rrBLUP\")\nlibrary(\"ggplot2\")\nlibrary(\"rrBLUP\")\n\n\n\n\n\n\n\n\nAbout R, R vs Rstudio, Timeline\nSetting a project or working directory\nInteracting with R\nPackages\nAssign values or objects\nData types, structures\nHow to import and export data or results\nHandle large data sets\nHousekeeping\nOutliers\n\n\n\n\n\nset working directory,\nprint path of the current working directory,\nupload data,\nsubset data,\ntidy data\ntransform data,\nplot,\nsaving plot\n\n\n\nsetwd, getwd\nread.table, read_table, read_csv,\nstr, summarize, summary."
   },
   {
     "objectID": "scripts/00_precourse.html",
@@ -172,7 +172,7 @@
     "href": "scripts/01_intro_to_linux.html#intro-to-linux-under-development",
     "title": "",
     "section": "",
-    "text": "Setup: Installation\nIntroducing the Shell: What & Why shell? CLI vs GUI\nNavigating Files and Directories\nWorking With Files and Directories\nPipes\nShell Scripts\nFinding Things\n\n\n\n\n\nopen the terminal or wsl command line\nwhere am I (print working directory)\ncreate a directory (folder)\nchange working directory to the new directory\nabsolute/relative paths of that directory\nlist view (different styles)\narguments\ncopy and paste\nmove\nrename\ndelete files or folders\ndownload tools\nunzip or extract\n\n\n\n\nls, cd, pwd, mkdir, cp, mv, rm.\n\n\n\nls , cd, mkdir, wget (for plinks tool), tar or unzip, nano, less, head, use of \\, arguments,\n\n\n\n\nless – view a file\nnano – view and edit a file\nhead / tail\ngrep\nfind\nwildcards\ntab completion – use it!!!\nman – manual pages or\nanycommand --help\n\n\n\n\nls"
+    "text": "Setup: Installation\nIntroducing the Shell: What & Why shell? CLI vs GUI\nNavigating Files and Directories\nWorking With Files and Directories\nArguments , Pipes\nShell Scripts\nFinding Things\n\n\n\n\n\nopen the terminal or wsl command line\nwhere am I (print working directory)\ncreate a directory (folder)\nchange working directory to the new directory\nabsolute/relative paths of that directory\nlist view (different styles)\narguments\ncopy and paste\nmove\nrename\ndelete files or folders\ndownload tools\nunzip or extract\n\n\n\n\nls, cd, pwd, mkdir, cp, mv, rm.\n\n\n\nls , cd, mkdir, wget (for plinks tool), tar or unzip, nano, less, head, use of \\, arguments,\n\n\n\n\nless – view a file\nnano – view and edit a file\nhead / tail\ngrep\nfind\nwildcards\ntab completion – use it!!!\nman – manual pages or\nanycommand --help\n\n\n\n\nls"
   },
   {
     "objectID": "scripts/02_intro_R.html#intro-to-r-under-development",
@@ -285,5 +285,138 @@
     "title": "Data_handling (under development)",
     "section": "Export results or data",
     "text": "Export results or data\nFor csv\nwrite.csv(df , file = “path/to/your/saving/folder/df.csv”)\nFor creating excel file\nwritexl::write_xlsx (test_df, path = “C:/Users/your_username/test_df.xlsx”, col_names = TRUE, format_headers = TRUE)\n\n# writexl::write_xlsx (sat.d2, path = \"C:/Users/auue0001/OneDrive - Sveriges lantbruksuniversitet/slubi/proj/GS_course/excercise/test_df.xlsx\", col_names = TRUE, format_headers = TRUE)\n\n\nSession info\nFinally we want to which packages we used in this excercises\n\n\nR version 4.4.1 (2024-06-14 ucrt)\nPlatform: x86_64-w64-mingw32/x64\nRunning under: Windows 11 x64 (build 26100)\n\nMatrix products: default\n\n\nlocale:\n[1] LC_COLLATE=English_Sweden.utf8  LC_CTYPE=English_Sweden.utf8   \n[3] LC_MONETARY=English_Sweden.utf8 LC_NUMERIC=C                   \n[5] LC_TIME=English_Sweden.utf8    \n\ntime zone: Europe/Stockholm\ntzcode source: internal\n\nattached base packages:\n[1] stats     graphics  grDevices utils     datasets  methods   base     \n\nother attached packages:\n [1] lubridate_1.9.3 forcats_1.0.0   stringr_1.5.1   dplyr_1.1.4    \n [5] purrr_1.0.2     readr_2.1.5     tidyr_1.3.1     tibble_3.2.1   \n [9] ggplot2_4.0.0   tidyverse_2.0.0 writexl_1.5.4   psych_2.5.6    \n\nloaded via a namespace (and not attached):\n [1] gtable_0.3.6       jsonlite_1.8.9     compiler_4.4.1     tidyselect_1.2.1  \n [5] parallel_4.4.1     dichromat_2.0-0.1  scales_1.4.0       yaml_2.3.10       \n [9] fastmap_1.2.0      lattice_0.22-6     R6_2.6.1           generics_0.1.4    \n[13] knitr_1.50         htmlwidgets_1.6.4  tzdb_0.4.0         pillar_1.11.1     \n[17] RColorBrewer_1.1-3 rlang_1.1.4        stringi_1.8.4      xfun_0.53         \n[21] S7_0.2.0           timechange_0.3.0   cli_3.6.3          withr_3.0.2       \n[25] magrittr_2.0.3     digest_0.6.37      grid_4.4.1         rstudioapi_0.17.1 \n[29] hms_1.1.3          lifecycle_1.0.4    nlme_3.1-164       vctrs_0.6.5       \n[33] mnormt_2.1.1       evaluate_1.0.5     glue_1.8.0         farver_2.1.2      \n[37] rmarkdown_2.29     tools_4.4.1        pkgconfig_2.0.3    htmltools_0.5.8.1 \n\n\n\n\nNotes\nmain author of the script is “F. Isik”"
+  },
+  {
+    "objectID": "practicals/practical_01_intro.html",
+    "href": "practicals/practical_01_intro.html",
+    "title": "Practical 01 — Intro to Linux",
+    "section": "",
+    "text": "Learn basic shell commands\nPractice editing files\nPractice loading data in R and Plotting\n\nls , cd, mkdir, wget (for plinks tool), tar or unzip,\n\n\nls \nWhat else I can do with this command? Options:\nls --help\nman ls \nNote: press on Q keyboard button to exit\nclassify list (files or folders):\nls -F\nlist all:\nls -a\nprint the author of each file:\nls -la\n\n\n\nWhat is my present working directory?\npwd\n\n\n\nmkdir my_tools\nmultiple sub folders at once:\nmkdir my_tools/plink\nlist them:\nls -a\n\n\n\ncd my_tools\nOr go to another sub directory\ncd /plink\nHow do you know you moved in or not?\nlook at the texts before the $ sign in the terminal\npwd\nWhat if you type cd .. or cd - or cd --\nHow to come back to the place where you were?\n\n\n\nWe use wget command for this see all version here\nwget https://s3.amazonaws.com/plink1-assets/plink_linux_x86_64_20250819.zip\n\n\nunzip command\nunzip plink_linux_x86_64.zip\n\n\n\nchmod +x plink\n\n\n\n(optional but recommended)\necho 'export PATH=$PATH:~/my_tools/plink' &gt;&gt; ~/.bashrc\nsource ~/.bashrc\n\n\n\nplink --version\nYou will see something printed as like as bellow:\n\nPLINK v1.9.0-b.7.11 64-bit (19 Aug 2025)"
+  },
+  {
+    "objectID": "practicals/practical_01_intro.html#goals",
+    "href": "practicals/practical_01_intro.html#goals",
+    "title": "Practical 01 — Intro to Linux",
+    "section": "",
+    "text": "Learn basic shell commands\nPractice editing files\nPractice loading data in R and Plotting\n\nls , cd, mkdir, wget (for plinks tool), tar or unzip,\n\n\nls \nWhat else I can do with this command? Options:\nls --help\nman ls \nNote: press on Q keyboard button to exit\nclassify list (files or folders):\nls -F\nlist all:\nls -a\nprint the author of each file:\nls -la\n\n\n\nWhat is my present working directory?\npwd\n\n\n\nmkdir my_tools\nmultiple sub folders at once:\nmkdir my_tools/plink\nlist them:\nls -a\n\n\n\ncd my_tools\nOr go to another sub directory\ncd /plink\nHow do you know you moved in or not?\nlook at the texts before the $ sign in the terminal\npwd\nWhat if you type cd .. or cd - or cd --\nHow to come back to the place where you were?\n\n\n\nWe use wget command for this see all version here\nwget https://s3.amazonaws.com/plink1-assets/plink_linux_x86_64_20250819.zip\n\n\nunzip command\nunzip plink_linux_x86_64.zip\n\n\n\nchmod +x plink\n\n\n\n(optional but recommended)\necho 'export PATH=$PATH:~/my_tools/plink' &gt;&gt; ~/.bashrc\nsource ~/.bashrc\n\n\n\nplink --version\nYou will see something printed as like as bellow:\n\nPLINK v1.9.0-b.7.11 64-bit (19 Aug 2025)"
+  },
+  {
+    "objectID": "practicals/practical_01_intro.html#to-do",
+    "href": "practicals/practical_01_intro.html#to-do",
+    "title": "Practical 01 — Intro to Linux",
+    "section": "To do:",
+    "text": "To do:\n\nCreate a folder and a sub folder and\nmake a file in 1st folder there and\nmove it to the subfolder\nprint if it is there\nmake it executable\n\n\n6. create a file and write something in it\nnano test.txt\ncopy and paste following line\nThis is a file  we like to read it and save it\nCtrl + right click mouse\n\nCtrl + o for write out, then Enter to save the name, then Ctrl + x for exit"
+  },
+  {
+    "objectID": "practicals/practical_01_intro.html#to-do-1",
+    "href": "practicals/practical_01_intro.html#to-do-1",
+    "title": "Practical 01 — Intro to Linux",
+    "section": "To do",
+    "text": "To do\n\nedit the new file and add the line ‘Today is Monday’ and exit the file or editing\n\n\nWord count\nwc -la\n\nprint and pipe\ncat | wc -l"
+  },
+  {
+    "objectID": "practicals/practical_01_intro.html#solution-explanation",
+    "href": "practicals/practical_01_intro.html#solution-explanation",
+    "title": "Practical 01 — Intro to Linux",
+    "section": "Solution & explanation",
+    "text": "Solution & explanation"
+  },
+  {
+    "objectID": "practicals/practical_01_intro.html#to-do-2",
+    "href": "practicals/practical_01_intro.html#to-do-2",
+    "title": "Practical 01 — Intro to Linux",
+    "section": "To do",
+    "text": "To do\n\ncount no. of files or number of lines in a file text file\nsee the couple of lines\nopen the file with less\nuse | pipe\nsave output to a file\n\n\n\n\n\n\n\nSolution & explanation\n\n\n\n\n\n\n📁 File Setup\nDownload or place these files (📁 data_4_linux) in your working directory:\n\nexample.vcf: VCF file with genotype data\nregions.bed: BED file with genomic regions\nplink_data.ped and plink_data.map: Input files for Plink\n\n\n\n🔹 vcftools\n\nCalculate allele frequencies\n\nvcftools --vcf example.vcf --freq\n\n--vcf example.vcf: Specifies the input VCF file.\n--freq: Calculates allele frequencies for each variant.\nOutput: out.frq (or use --out to name it).\n\n\nFilter variants by minor allele frequency\n\nvcftools --vcf example.vcf --maf 0.05 --recode --out filtered_maf\n\n--maf 0.05: Filters out variants with MAF &lt; 0.05.\n--recode: Outputs a new VCF file with only the filtered variants.\n--out filtered_maf: Prefix for output files.\n\n\nCount missing data per individual\n\nvcftools --vcf example.vcf --missing-indv --out missing_data\n\n--missing-indv: Calculates missing genotype rates per individual.\nOutput: missing_data.imiss\n\n\n\n🔹 bcftools\n\nView VCF header\n\nbcftools view -h example.vcf\n\n-h: Displays only the header lines of the VCF file.\n\n\nFilter variants by quality\n\nbcftools view -i 'QUAL&gt;30' example.vcf -o highqual.vcf\n\n-i 'QUAL&gt;30': Includes only variants with quality &gt; 30.\n-o highqual.vcf: Output file name.\n\n\nConvert VCF to BCF\n\nbcftools view -O b -o output.bcf example.vcf\n\n-O b: Output format is BCF (binary VCF).\n-o output.bcf: Output file name.\n\n\n\n🔹 bedtools\n\nIntersect VCF with BED regions\n\nbedtools intersect -a example.vcf -b regions.bed &gt; vcf_in_regions.vcf\n\n-a: First file (VCF) to compare.\n-b: Second file (BED) with regions of interest.\n&gt;: Redirects output to a new file.\n\n\nCount intersected variants\n\ngrep -v \"^#\" vcf_in_regions.vcf | wc -l\n\ngrep -v \"^#\": Removes header lines.\nwc -l: Counts the number of remaining lines (i.e., variants).\n\n\n\n🔹 Plink\n\nCalculate allele frequencies\n\nplink --file plink_data --freq --out plink_freq\n\n--file plink_data: Uses plink_data.ped and plink_data.map.\n--freq: Calculates allele frequencies.\n--out plink_freq: Output prefix.\n\n\nCheck missingness\n\nplink --file plink_data --missing --out plink_missing\n\n--missing: Calculates missing genotype rates per individual and per SNP.\nOutput: .imiss and .lmiss files.\n\n\n\n\n\n\nRecommended packages\nInstall ggplot2 package\ninstall.packages(\"ggplot2\")\n\nlibrary(\"ggplot2\")\n\n\nExample R code\nSee the data structure:\n\nstr(cars)\n\n'data.frame':   50 obs. of  2 variables:\n $ speed: num  4 4 7 7 8 9 10 10 10 11 ...\n $ dist : num  2 10 4 22 16 10 18 26 34 17 ...\n\n\nA data frame with 50 observations on 2 variables.\n[,1] speed numeric Speed (mph) [,2] dist numeric Stopping distance (ft)\n\n\nPlotting a figure\nSpeed and Stopping Distances of Cars\n\n# ggplot(data = cars, aes (x = speed, y = dist))+\n# geom_point()\n\n\n\nLoad data table in R\n\n\nHow to do that from RStudio?\n\n\nHow to do that with function or command?\n\n# loading data set\nmyY=read.table(file=\"https://github.com/jiabowang/GAPIT/raw/refs/heads/master/Documents/mdp_traits.txt\", head = TRUE)"
+  },
+  {
+    "objectID": "scripts/01_intro_to_linux.html#install-softweres",
+    "href": "scripts/01_intro_to_linux.html#install-softweres",
+    "title": "",
+    "section": "Install softweres",
+    "text": "Install softweres\nGo to terminal from your mac or windows PC\nmake directory & Download softwere files in there\ncd --\n\nmkdir -p ~/tools/plink \n\ncd ~/tools/plink\n\n# get the plink with wget command\n\nwget https://s3.amazonaws.com/plink1-assets/plink_linux_x86_64_20250819.zip\nUnzip files\nunzip plink_linux_x86_64_20250819.zip\nchange permision\nll\nchmod +x plink\nll\nactivate plink\necho 'export PATH=$PATH:~/tools/plink' &gt;&gt; ~/.bashrc\n\nsource ~/.bashrc\necho 'export PATH=$PATH:~/tools/plink' &gt;&gt; ~/.bashrc\nsource ~/.bashrc\ncheck plink activation\nplink --version\n\n# or \n\nplink"
+  },
+  {
+    "objectID": "scripts/01_intro_to_linux.html#install-vcftools-bcftools-bedtools",
+    "href": "scripts/01_intro_to_linux.html#install-vcftools-bcftools-bedtools",
+    "title": "",
+    "section": "Install vcftools, bcftools, bedtools",
+    "text": "Install vcftools, bcftools, bedtools\nfirst see them if they are installed already or not\nvcftools --version\nbcftools --version\nbedtools --version\nIf you see error or there is not tools like that then follow the rest command and execute one by one\nsudo apt install vcftools\n\nvcftools --version\nsudo apt install bcftools\n\nbcftools --version\nsudo apt install bedtools\n\nbedtools --version"
+  },
+  {
+    "objectID": "scripts/02_intro_R.html#gapit-is-a-package-that-is-run-in-the-r-software-environment.",
+    "href": "scripts/02_intro_R.html#gapit-is-a-package-that-is-run-in-the-r-software-environment.",
+    "title": "Tools or packages needed for R modules:",
+    "section": "",
+    "text": "R can be freely downloaded from http://www.r-project.org.\nWe also recommend the integrated development environment RStudio which is also freely available at http://www.rstudio.com.\nGAPIT can currently be installed in several ways.\n\nFrom source on the internet\nFrom GitHub\nFrom an archive"
+  },
+  {
+    "objectID": "scripts/02_intro_R.html#installation-from-source-functions",
+    "href": "scripts/02_intro_R.html#installation-from-source-functions",
+    "title": "Tools or packages needed for R modules:",
+    "section": "",
+    "text": "GAPIT can be loaded with a single funciton.\nsource(\"http://zzlab.net/GAPIT/gapit_functions.txt\")\nOr from GitHub function.\nsource(\"https://raw.githubusercontent.com/jiabowang/GAPIT/refs/heads/master/gapit_functions.txt\", encoding = \"UTF-8\")"
+  },
+  {
+    "objectID": "scripts/02_intro_R.html#installation-from-github",
+    "href": "scripts/02_intro_R.html#installation-from-github",
+    "title": "Tools or packages needed for R modules:",
+    "section": "",
+    "text": "Installation can also be made from GitHub when the R package devtools is available.\ninstall.packages(\"devtools\")\ndevtools::install_github(\"jiabowang/GAPIT\", force=TRUE)\nlibrary(GAPIT)\n\nor\ninstall.packages(\"remotes\")\nremotes::install_github(\"jiabowang/GAPIT\")\nlibrary(GAPIT)"
+  },
+  {
+    "objectID": "scripts/02_intro_R.html#installation-from-an-archive",
+    "href": "scripts/02_intro_R.html#installation-from-an-archive",
+    "title": "Tools or packages needed for R modules:",
+    "section": "",
+    "text": "GAPIT can be installed from an archive such as *.tar.gz or *.zip archive. An archive can be downloaded from the “releases” page. If you would like the latest version of GAPIT from the GitHub site you may want to clone it and then build it (this may require Rtools on Windows).\nbash$ git clone git@github.com:jiabowang/GAPIT.git\nbash$ R CMD build GAPIT\nOnce an archive has been obtained it can be installed from a shell, similar to as follows.\nbash$ R CMD INSTALL GAPIT_3.5.0.9000.tar.gz\nOr similarly from within R.\ninstall.packages(\"GAPIT_3.5.0.9000.tar.gz\", repos = NULL, type=\"source\")"
+  },
+  {
+    "objectID": "scripts/02_intro_R.html#in-some-case-of-the-biocmanager-can-not-be-installed",
+    "href": "scripts/02_intro_R.html#in-some-case-of-the-biocmanager-can-not-be-installed",
+    "title": "Tools or packages needed for R modules:",
+    "section": "",
+    "text": "Installation of same packages such as “multtest” and “biobase” can not be intalled from BiocManager directly. These packages can be downloaded in the Bioconductor website and be installed from local source files.\nThe website of Bioconductor is here:\nhttps://bioconductor.org/packages/3.19/bioc/"
+  },
+  {
+    "objectID": "scripts/02_intro_R.html#gwas",
+    "href": "scripts/02_intro_R.html#gwas",
+    "title": "Tools or packages needed for R modules:",
+    "section": "",
+    "text": "GWAS methods include: General Linear Model(GLM),Mixed Linear Model(MLM),compressed Mixed Linear Model(CMLM),SUPER, FarmCPU, MLMM, and BLINK. Users can use model=“GLM” to select method."
+  },
+  {
+    "objectID": "scripts/02_intro_R.html#gs",
+    "href": "scripts/02_intro_R.html#gs",
+    "title": "Tools or packages needed for R modules:",
+    "section": "",
+    "text": "GS methods include: gBLUP, cBLUP, sBLUP, and GAGBLUP. Besides GAGBLUP, all GS methods could be seleted by using model=“gBLUP”."
+  },
+  {
+    "objectID": "scripts/02_intro_R.html#install-ggplot2-package",
+    "href": "scripts/02_intro_R.html#install-ggplot2-package",
+    "title": "Tools or packages needed for R modules:",
+    "section": "Install ggplot2 package",
+    "text": "Install ggplot2 package\ninstall.packages(\"ggplot2\")\ninstall.packages(\"rrBLUP\")\nlibrary(\"ggplot2\")\nlibrary(\"rrBLUP\")\n\nTopics\n\nAbout R, R vs Rstudio, Timeline\nSetting a project or working directory\nInteracting with R\nPackages\nAssign values or objects\nData types, structures\nHow to import and export data or results\nHandle large data sets\nHousekeeping\nOutliers\n\n\n\nTasks\n\nset working directory,\nprint path of the current working directory,\nupload data,\nsubset data,\ntidy data\ntransform data,\nplot,\nsaving plot\n\n\n\nR built-in function\n`setwd, getwd,\nread.table, read_table, read_csv,\nstr, summarize, summary.\n\n\nRecommended packages\nInstall ggplot2 package\ninstall.packages(\"ggplot2\")\n\nlibrary(\"ggplot2\")\n\n\nExample R code\nSee the data structure:\n\nstr(cars)\n\n'data.frame':   50 obs. of  2 variables:\n $ speed: num  4 4 7 7 8 9 10 10 10 11 ...\n $ dist : num  2 10 4 22 16 10 18 26 34 17 ...\n\n\nA data frame with 50 observations on 2 variables.\n[,1] speed numeric Speed (mph) [,2] dist numeric Stopping distance (ft)\n\n\nPlotting a figure\nSpeed and Stopping Distances of Cars\n\n# ggplot(data = cars, aes (x = speed, y = dist))+\n# geom_point()"
+  },
+  {
+    "objectID": "scripts/02_intro_R.html#install-ggplot2-rrblup-package",
+    "href": "scripts/02_intro_R.html#install-ggplot2-rrblup-package",
+    "title": "Tools or packages needed for R modules:",
+    "section": "",
+    "text": "install.packages(\"ggplot2\")\ninstall.packages(\"rrBLUP\")\nlibrary(\"ggplot2\")\nlibrary(\"rrBLUP\")"
+  },
+  {
+    "objectID": "scripts/02_intro_R.html#topics",
+    "href": "scripts/02_intro_R.html#topics",
+    "title": "Tools or packages needed for R modules:",
+    "section": "",
+    "text": "About R, R vs Rstudio, Timeline\nSetting a project or working directory\nInteracting with R\nPackages\nAssign values or objects\nData types, structures\nHow to import and export data or results\nHandle large data sets\nHousekeeping\nOutliers"
+  },
+  {
+    "objectID": "scripts/02_intro_R.html#tasks",
+    "href": "scripts/02_intro_R.html#tasks",
+    "title": "Tools or packages needed for R modules:",
+    "section": "",
+    "text": "set working directory,\nprint path of the current working directory,\nupload data,\nsubset data,\ntidy data\ntransform data,\nplot,\nsaving plot\n\n\n\nsetwd, getwd\nread.table, read_table, read_csv,\nstr, summarize, summary."
   }
 ]

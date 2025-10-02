@@ -1,6 +1,156 @@
-## Intro to R (under development)
 
-### Topics 
+# Tools or packages needed for R modules: 
+
+- GAPIT3: https://github.com/jiabowang/GAPIT
+- ggplot2
+- rrBLUP
+
+::: {.callout-tip title="Solution & explanation" collapse="true"}
+
+## GAPIT is a package that is run in the R software environment.
+R can be freely downloaded from [http://www.r-project.org](http://www.r-project.org). 
+
+We also recommend the integrated development environment RStudio which is also freely available at [http://www.rstudio.com](http://www.rstudio.com).
+
+
+GAPIT can currently be installed in several ways.
+
+- From source on the internet
+- From GitHub
+- From an archive
+
+
+## Installation from source functions
+
+GAPIT can be loaded with a single funciton. 
+
+
+```
+source("http://zzlab.net/GAPIT/gapit_functions.txt")
+```
+
+Or from GitHub function.
+```
+source("https://raw.githubusercontent.com/jiabowang/GAPIT/refs/heads/master/gapit_functions.txt", encoding = "UTF-8")
+```
+
+## Installation from GitHub
+
+Installation can also be made from GitHub when the R package `devtools` is available.
+
+```
+install.packages("devtools")
+devtools::install_github("jiabowang/GAPIT", force=TRUE)
+library(GAPIT)
+
+or
+install.packages("remotes")
+remotes::install_github("jiabowang/GAPIT")
+library(GAPIT)
+```
+
+## Installation from an archive
+
+
+GAPIT can be installed from an archive such as \*.tar.gz or \*.zip archive.
+An archive can be downloaded from the "releases" page.
+If you would like the latest version of GAPIT from the GitHub site you may want to clone it and then build it (this may require Rtools on Windows).
+
+```
+bash$ git clone git@github.com:jiabowang/GAPIT.git
+bash$ R CMD build GAPIT
+```
+
+Once an archive has been obtained it can be installed from a shell, similar to as follows.
+
+
+```
+bash$ R CMD INSTALL GAPIT_3.5.0.9000.tar.gz
+```
+
+Or similarly from within R.
+
+```
+install.packages("GAPIT_3.5.0.9000.tar.gz", repos = NULL, type="source")
+```
+
+## In some case of the BiocManager can not be installed
+
+Installation of same packages such as “multtest” and “biobase” can not be intalled from BiocManager directly. These packages can be downloaded in the Bioconductor website and be installed from local source files.
+
+The website of Bioconductor is here:
+
+```
+https://bioconductor.org/packages/3.19/bioc/
+```
+
+Analysis
+======
+
+The taxa and order of individual among genotype file and phenotype files could be different. The GAPIT can automaticly filter and order the common taxa among among genotype file and phenotype files.
+
+GWAS
+-----
+GWAS methods include: General Linear Model(GLM),Mixed Linear Model(MLM),compressed Mixed Linear Model(CMLM),SUPER, FarmCPU, MLMM, and BLINK. Users can use model="GLM" to select method. 
+
+GS
+-----
+GS methods include: gBLUP, cBLUP, sBLUP, and GAGBLUP. Besides GAGBLUP, all GS methods could be seleted by using model="gBLUP".
+
+   
+Example
+=====
+
+
+```
+# loading packages for GAPIT and GAPIT functions
+source("https://raw.githubusercontent.com/jiabowang/GAPIT/refs/heads/master/gapit_functions.txt")
+# loading data set
+myY=read.table(file="https://github.com/jiabowang/GAPIT/raw/refs/heads/master/Documents/mdp_traits.txt", head = TRUE)
+myGD=read.table("https://github.com/jiabowang/GAPIT/raw/refs/heads/master/Documents/mdp_numeric.txt",head=T)
+myGM=read.table("https://github.com/jiabowang/GAPIT/raw/refs/heads/master/Documents/mdp_SNP_information.txt",head=T)
+#myG=read.table(file="https://github.com/jiabowang/GAPIT/raw/refs/heads/master/Documents/mdp_genotype_test.hmp.txt", head = FALSE)
+# performing simulation phenotype
+set.seed(198521)
+mysimulation<-GAPIT(h2=0.7,NQTN=20,GD=myGD,GM=myGM)
+myY=mysimulation$Y
+
+
+myGAPIT <- GAPIT(
+  Y=myY[,c(1,2)],
+  GD=myGD,
+  GM=myGM,
+  model=c("GLM","MLM","SUPER","MLMM","FarmCPU","Blink"),# choose model
+  #model=c("FarmCPU"),
+  PCA.total=3,                                          # set total PCAs
+  NJtree.group=4,                                       # set the number of clusting group in Njtree plot
+  QTN.position=mysimulation$QTN.position,
+  Inter.Plot=TRUE,                                      # perform interactive plot
+  Multiple_analysis=TRUE,                               # perform multiple analysis
+  PCA.3d=TRUE,                                          # plot 3d interactive PCA
+  file.output=T
+)
+```
+
+More details please check and ref user manual.
+
+
+
+
+## Install **ggplot2** & **rrBLUP** package
+
+```r
+install.packages("ggplot2")
+install.packages("rrBLUP")
+library("ggplot2")
+library("rrBLUP")
+
+```
+
+:::
+
+
+## Topics 
 - About R, R vs Rstudio, Timeline
 - Setting a project or working directory
 - Interacting with R
@@ -12,7 +162,7 @@
 - Housekeeping
 - Outliers
 
-### Tasks 
+## Tasks 
 - set working directory, 
 - print path of the current working directory, 
 - upload data, 
@@ -22,23 +172,13 @@
 - plot, 
 - saving plot
 
+
 ### R built-in function  
-`setwd, getwd, read_table, read_csv, pvot_longer, pvot_wider, select, mutate, summarize, summary`. 
+`setwd, getwd` 
 
-### Recommended packages 
-Install **Tidyverse** package
+`read.table, read_table, read_csv`, 
 
-```r
-install.packages("tidyverse")
+`str, summarize, summary`. 
 
-library("tidyverse")
-```
-
-### Example R code
-
-```{r}
-summary(cars)
-
-```
 
 
