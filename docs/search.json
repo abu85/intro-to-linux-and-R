@@ -151,7 +151,7 @@
     "href": "index.html#before-day-1",
     "title": "Intro to Linux & R",
     "section": "🧰 Before Day 1",
-    "text": "🧰 Before Day 1\nRead the pre-course ⬆️ and install R, RStudio Desktop, Linux/Ubuntu (windows users only), and be prepared accordingly.\nWe will need following tools in the day 1:\n\n\n\n\n\n\n👉Tools needed at day1\n\n\n\n\n\n\nWSL/Unix/Ubuntu/Shell The Unix Shell (for windows users only).\nRecommended tools: Plink, vcftools, BCFtools, and Bedtools (see linux chapter).\nR (version ≥ 4.0)\nRStudio\nRecommended packages in RStudio: GAPIT3, ggplot2, and rrBLUP(see R chapter).\nPlink at Linux here"
+    "text": "🧰 Before Day 1\nRead the pre-course ⬆️ and install R, RStudio Desktop (all users) and Linux/Ubuntu (windows users only), and be prepared accordingly.\nWe will need following tools in the day 1:\n\n\n\n\n\n\n👉Tools needed\n\n\n\n\n\n\nWSL/Unix/Ubuntu/Shell The Unix Shell (for windows users only).\nRecommended tools: Plink, vcftools, BCFtools, and Bedtools (see linux chapter).\nR (version ≥ 4.0)\nRStudio\nRecommended packages in RStudio: GAPIT3, ggplot2, and rrBLUP(see R chapter).\nPlink at Linux here"
   },
   {
     "objectID": "index.html#schedule-of-day-1",
@@ -438,7 +438,7 @@
     "href": "index.html#learning-activities",
     "title": "Intro to Linux & R",
     "section": "Learning Activities",
-    "text": "Learning Activities\nTo achieve the above outcomes, participants will:\nUnix/Linux: 1. Describe Linux, CLI, Shell (pre-course materials, 1st meeting). 1. Follow guided installation steps for Plink, vcftools, BCFtools, and Bedtools on their systems (pre-course, 1st meeting). 1. Run basic Unix commands to create directories, navigate folders, and manage files (1st meeting).\nR:\n\nDescribe R RStudio, data structure, set working directories(pre-course, 1st meeting).\nInstall R packages and verify functionality by loading them in R(1st meeting).\nLoad data into R, inspect it using both from RStudio and by functions (1st meeting)."
+    "text": "Learning Activities\nTo achieve the above outcomes, participants will:\nUnix/Linux:\n\nRead Linux, CLI, Shell materials (pre-course materials, 1st meeting).\nFollow guided installation steps for Plink, vcftools, BCFtools, and Bedtools on their systems (pre-course, 1st meeting).\nRun basic Unix commands to create directories, navigate folders, and manage files (1st meeting).\n\nR:\n\nRead and follow R & RStudio materials\nExplore data structure, set working directories(pre-course, 1st meeting).\nInstall R packages and verify functionality by loading them in R(1st meeting).\nLoad data into R, inspect it using both from RStudio and by functions (1st meeting)."
   },
   {
     "objectID": "scripts/01_intro_to_linux.html#softweres-installation",

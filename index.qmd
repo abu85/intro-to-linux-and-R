@@ -38,25 +38,27 @@ By the end of the day1, participants will be able to:
 
 To achieve the above outcomes, participants will:
 
-*Unix/Linux:*
-1. Describe Linux, CLI, Shell (pre-course materials, 1st meeting).
+*Unix/Linux:* 
+
+1. Read Linux, CLI, Shell materials (pre-course materials, 1st meeting).
 1. Follow guided installation steps for Plink, vcftools, BCFtools, and Bedtools on their systems (pre-course, 1st meeting).
 1. Run basic Unix commands to create directories, navigate folders, and manage files (1st meeting).
 
 *R:*
 
-1. Describe R RStudio, data structure, set working directories(pre-course, 1st meeting).
+1. Read and follow R & RStudio materials
+1. Explore data structure, set working directories(pre-course, 1st meeting).
 1. Install R packages and verify functionality by loading them in R(1st meeting).
 1. Load data into R, inspect it using both from RStudio and by functions (1st meeting).
 
 
 ## 🧰 `Before Day 1`
-Read the `pre-course` ⬆️ and install `R`, `RStudio Desktop`, `Linux/Ubuntu` (windows users only), and be prepared accordingly. 
+Read the `pre-course` ⬆️ and install `R`, `RStudio Desktop` (all users) and `Linux/Ubuntu` (windows users only), and be prepared accordingly. 
 
 We will need following `tools` in the day 1:
 
 ::: {.callout-important collapse=true}
-## 👉Tools needed at day1
+## 👉Tools needed
 
 - `WSL`/`Unix`/`Ubuntu`/`Shell` [The Unix Shell](https://learn.microsoft.com/en-us/windows/wsl/install) (for **windows users** only).
 - Recommended tools: `Plink`, `vcftools`, `BCFtools`, and `Bedtools` (see linux chapter).
