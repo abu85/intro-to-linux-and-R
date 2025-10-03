@@ -1,4 +1,4 @@
-## 1. Tools needed for Unix/Linux
+## 1. Tools needed for Linux/Unix module
 
 - `Plink` 
 - `vcftools`
@@ -7,19 +7,18 @@
 
 ::: {.callout-tip title="Tools installation" collapse="true"}
 
-1. go to *terminal* from your `mac` or `windows` PC (see pre-course if cant open)
+1. Open the *terminal* from your `macOS` or `windows WSL` PC (see *pre-course* tutorial if you can't open terminal)
 
-2. make directory & Download software files in there
+2. Make directory & download software files in there
 ```bash
-cd --
+cd --                   # to change location to your home
 
-mkdir -p ~/tools/plink 
+mkdir -p ~/tools/plink  # make a new directories
 
-cd ~/tools/plink
+cd ~/tools/plink        # move to new directories
 
-# get the plink with wget command
 
-wget https://s3.amazonaws.com/plink1-assets/plink_linux_x86_64_20250819.zip
+wget https://s3.amazonaws.com/plink1-assets/plink_linux_x86_64_20250819.zip  # get the plink with wget command
 ```
 
 3. unzip files
@@ -28,38 +27,38 @@ unzip plink_linux_x86_64_20250819.zip
 ```
 4. change permission
 ```bash
-ll
-chmod +x plink
+ll                # to see the lists or contents
+chmod +x plink    # permission is changes for execution with +x
 ll
 ```
 5. activate plink
 ```bash
-echo 'export PATH=$PATH:~/tools/plink' >> ~/.bashrc
+echo 'export PATH=$PATH:~/tools/plink' >> ~/.bashrc  # activate bash
 
 source ~/.bashrc
-echo 'export PATH=$PATH:~/tools/plink' >> ~/.bashrc
-source ~/.bashrc
+
 ```
+this command ensures you can run it from anywhere in the terminal just by typing plink, without needing to specify the full path
 
 6. check plink activation
 ```bash
-plink --version
+plink --version   # it will print version no.
 
 # or 
 
-plink
+plink             # it will print a breif & all options
 ```
 7. Install vcftools, bcftools, bedtools
-first see them if they are installed already or not
+first see them if tools are installed already or not
 ```bash
 vcftools --version
 bcftools --version
 bedtools --version
 ```
-If you see error or there is not tools like that then follow the rest command and execute one by one
+If you see *error* or there is no tools like that, then follow the rest of the commands and execute one by one. It will install tools.
 
 ```bash
-sudo apt install vcftools
+sudo apt install vcftools  # install vcftools at your windows wsl or mac
 
 vcftools --version
 ```
@@ -71,7 +70,7 @@ bcftools --version
 ```
 
 ```bash
-sudo apt install bedtools
+sudo apt install bedtools # install vcftools at your windows wsl or mac
 
 bedtools --version
 ```
@@ -84,9 +83,9 @@ bedtools --version
 1. Introducing the Shell: What & Why shell? CLI vs GUI
 2. Navigating Files and Directories
 3. Working With Files and Directories
-4. Arguments , Pipes 
-6. Shell Scripts
-7. Finding Things
+4. Arguments, Pipes (extra)
+6. Shell Scripts (extra)
+7. Finding Things (extra)
 
 ## 3. Tasks 
 
@@ -97,37 +96,9 @@ bedtools --version
 - absolute/relative paths of that directory
 - list view (different styles)
 - arguments
+- download tools
+- unzip or extract
 - copy and paste
 - move
 - rename
 - delete files or folders
-- download tools
-- unzip or extract
-
-::: {.callout-tip title="Basic linux commands" collapse="true"}
-
-### Basic linux commands 
-ls, cd, pwd, mkdir, cp, mv, rm.
-
-
-### Workshop oriented commands
-
-`ls` , `cd`, `mkdir`, `wget` (for plinks tool), `tar` or `unzip`, `nano`, `less`, `head`, use of `\`, arguments,
-
-### Advanced commands
-
-- `less` – view a file
-- `nano` – view and edit a file
-- `head` / `tail`
-- `grep`
-- `find`
-- `wildcards`
-- tab completion – use it!!!
-- `man` – manual pages or
-- anycommand `--help`
-
-### Example
-```bash
-ls
-```
-:::

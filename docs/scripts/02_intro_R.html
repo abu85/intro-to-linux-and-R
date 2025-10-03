@@ -137,8 +137,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">R</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href=".././practicals/excercise/data_handling_part_2_v1.html"> 
-<span class="menu-text">Lab</span></a>
+    <a class="nav-link" href=".././practicals/practical_01_intro.html"> 
+<span class="menu-text">Insilico activities(Lab)</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
@@ -171,10 +171,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#packages-needed-for-r-modules" id="toc-packages-needed-for-r-modules" class="nav-link active" data-scroll-target="#packages-needed-for-r-modules">1. Packages needed for R modules:</a></li>
   <li><a href="#topics" id="toc-topics" class="nav-link" data-scroll-target="#topics">2. Topics</a></li>
-  <li><a href="#tasks" id="toc-tasks" class="nav-link" data-scroll-target="#tasks">3. Tasks</a>
-  <ul class="collapse">
-  <li><a href="#r-built-in-function" id="toc-r-built-in-function" class="nav-link" data-scroll-target="#r-built-in-function">R built-in function</a></li>
-  </ul></li>
+  <li><a href="#tasks" id="toc-tasks" class="nav-link" data-scroll-target="#tasks">3. Tasks</a></li>
   </ul>
 </nav>
     </div>
@@ -248,44 +245,14 @@ library(GAPIT)</code></pre>
 <p>Installation of same packages such as “multtest” and “biobase” can not be intalled from BiocManager directly. These packages can be downloaded in the Bioconductor website and be installed from local source files.</p>
 <p>The website of Bioconductor is here:</p>
 <pre><code>https://bioconductor.org/packages/3.19/bioc/</code></pre>
-</section>
-<section id="example" class="level1">
-<h1>Example</h1>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># loading packages for GAPIT and GAPIT functions</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"https://raw.githubusercontent.com/jiabowang/GAPIT/refs/heads/master/gapit_functions.txt"</span>)</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># loading data set</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>myY<span class="ot">=</span><span class="fu">read.table</span>(<span class="at">file=</span><span class="st">"https://github.com/jiabowang/GAPIT/raw/refs/heads/master/Documents/mdp_traits.txt"</span>, <span class="at">head =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>myGD<span class="ot">=</span><span class="fu">read.table</span>(<span class="st">"https://github.com/jiabowang/GAPIT/raw/refs/heads/master/Documents/mdp_numeric.txt"</span>,<span class="at">head=</span>T)</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>myGM<span class="ot">=</span><span class="fu">read.table</span>(<span class="st">"https://github.com/jiabowang/GAPIT/raw/refs/heads/master/Documents/mdp_SNP_information.txt"</span>,<span class="at">head=</span>T)</span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co">#myG=read.table(file="https://github.com/jiabowang/GAPIT/raw/refs/heads/master/Documents/mdp_genotype_test.hmp.txt", head = FALSE)</span></span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="co"># performing simulation phenotype</span></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">198521</span>)</span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>mysimulation<span class="ot">&lt;-</span><span class="fu">GAPIT</span>(<span class="at">h2=</span><span class="fl">0.7</span>,<span class="at">NQTN=</span><span class="dv">20</span>,<span class="at">GD=</span>myGD,<span class="at">GM=</span>myGM)</span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>myY<span class="ot">=</span>mysimulation<span class="sc">$</span>Y</span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>myGAPIT <span class="ot">&lt;-</span> <span class="fu">GAPIT</span>(</span>
-<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">Y=</span>myY[,<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>)],</span>
-<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">GD=</span>myGD,</span>
-<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">GM=</span>myGM,</span>
-<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">model=</span><span class="fu">c</span>(<span class="st">"GLM"</span>,<span class="st">"MLM"</span>,<span class="st">"SUPER"</span>,<span class="st">"MLMM"</span>,<span class="st">"FarmCPU"</span>,<span class="st">"Blink"</span>),<span class="co"># choose model</span></span>
-<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>  <span class="co">#model=c("FarmCPU"),</span></span>
-<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">PCA.total=</span><span class="dv">3</span>,                                          <span class="co"># set total PCAs</span></span>
-<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>  <span class="at">NJtree.group=</span><span class="dv">4</span>,                                       <span class="co"># set the number of clusting group in Njtree plot</span></span>
-<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>  <span class="at">QTN.position=</span>mysimulation<span class="sc">$</span>QTN.position,</span>
-<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>  <span class="at">Inter.Plot=</span><span class="cn">TRUE</span>,                                      <span class="co"># perform interactive plot</span></span>
-<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>  <span class="at">Multiple_analysis=</span><span class="cn">TRUE</span>,                               <span class="co"># perform multiple analysis</span></span>
-<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>  <span class="at">PCA.3d=</span><span class="cn">TRUE</span>,                                          <span class="co"># plot 3d interactive PCA</span></span>
-<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>  <span class="at">file.output=</span>T</span>
-<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>More details please check and <a href="https://github.com/jiabowang/GAPIT">ref user manual</a>.</p>
+</section>
 <section id="install-ggplot2-rrblup-package" class="level3">
 <h3 class="anchored" data-anchor-id="install-ggplot2-rrblup-package">Install <strong>ggplot2</strong> &amp; <strong>rrBLUP</strong> package</h3>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"ggplot2"</span>)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"rrBLUP"</span>)</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"ggplot2"</span>)</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"rrBLUP"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"ggplot2"</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"rrBLUP"</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"ggplot2"</span>)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"rrBLUP"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </div>
 </div>
@@ -297,13 +264,11 @@ library(GAPIT)</code></pre>
 <li>About R, R vs Rstudio, Timeline</li>
 <li>Setting a project or working directory</li>
 <li>Interacting with R</li>
-<li>Packages</li>
+<li>Install Packages</li>
 <li>Assign values or objects</li>
 <li>Data types, structures</li>
 <li>How to import and export data or results</li>
-<li>Handle large data sets</li>
 <li>Housekeeping</li>
-<li>Outliers</li>
 </ul>
 </section>
 <section id="tasks" class="level2">
@@ -311,23 +276,12 @@ library(GAPIT)</code></pre>
 <ul>
 <li>set working directory,</li>
 <li>print path of the current working directory,</li>
-<li>upload data,</li>
-<li>subset data,</li>
-<li>tidy data</li>
-<li>transform data,</li>
-<li>plot,</li>
+<li>upload data, export</li>
+<li>data structure</li>
 <li>saving plot</li>
 </ul>
-<section id="r-built-in-function" class="level3">
-<h3 class="anchored" data-anchor-id="r-built-in-function">R built-in function</h3>
-<ul>
-<li><p>Directory: <code>setwd, getwd</code></p></li>
-<li><p>Upload data to R: <code>read.table, read_table, read_csv</code>,</p></li>
-<li><p>See data structure: <code>str, summarize, summary</code>.</p></li>
-</ul>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

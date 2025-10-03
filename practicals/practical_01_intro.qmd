@@ -1,17 +1,35 @@
 ---
-title: "Practical 01 — Intro to Linux"
+title: "Practical 01 — Intro to Linux and R"
 ---
 
-## Goals
+# Goals
 
-- Learn basic shell commands
-- Practice editing files
-- Practice loading data in R and Plotting
+- Learn basic Linux shell commands and practice
+- Load and explore data in R and set working directories
 
-`ls` , `cd`, `mkdir`, `wget` (for plinks tool), `tar` or `unzip`,
+## Linux: 
+
+- open the terminal or wsl command line
+- where am I (print working directory)
+- list or view (different styles)
+- create a directory (folder)
+- change working directory to the new directory
+- absolute/relative paths of that directory
+- include options & arguments
+- copy and paste files & folders
+- move files & folders
+- rename files & folders
+- delete files or folders
+- download any tools
+- unzip or extract
+- activate tool
 
 
-### 1. List files
+### 1. Open Linux terminal at your PC
+
+search `terminal` or `Ubuntu` or `command prompt` and click on the first result
+
+### 2. List files
 ```bash
 ls 
 ```
@@ -29,8 +47,17 @@ Note: press on **Q** keyboard button to **exit**
 
 classify list (files or folders):
 ```bash
-ls -F
+ls -F 
 ```
+
+```bash
+ls -F ./
+
+```
+Here `-F` is an *option* and `./` is an *argument* 
+![](https://swcarpentry.github.io/shell-novice/fig/shell_command_syntax.svg)
+
+
 
 list all:
 ```bash
@@ -44,7 +71,7 @@ ls -la
 
 
 
-### 2. Where am I?
+### 3. Where am I?
 
 What is my present working directory?
 
@@ -53,7 +80,9 @@ pwd
 ```
 
 
-### 3. Create a folder/directory in current working directory
+### 4. Create a folder/directory
+
+Do it in home or current working directory
 
 ```bash
 mkdir my_tools
@@ -69,7 +98,7 @@ ls -a
 ```
 
 
-### 4. Go in the new directory
+### 5. Go in the new directory
 ```bash
 cd my_tools
 ```
@@ -82,30 +111,67 @@ cd /plink
 How do you know you moved in or not?
 
 look at the texts before the `$` sign in the terminal
+
+Or execute next command
 ```bash
 pwd
 ```
-What if you type `cd ..` or `cd -` or `cd --`
 
-How to come back to the place where you were?
+::: {.callout-tip title="Exercise" collapse="true"}
+
+What if you execute: 
+`cd ..` or 
+`cd -` or 
+`cd --` 
+
+What they do?
+
+How to come back to the place(directory) where you were?
+
+:::
+
+### TO DO 1:
+
+- Create a *folder* and a *sub-folder*
+- make a file (*file.txt*) in 1st folder
+- move it to the *sub-folder*
+- print *content* of the sub-folder if it is there
 
 
-### 5. Download the official Plink softwere binary and make it available
+### 6. Software instalation in Linux 
+
+**must for this workshops**
+
+::: {.callout-tip title="tools installation in Linux" collapse="false"}
+
+### Download the official Plink softwere binary and make it available
+
+```bash
+cd --               # be in your home directory
+
+cd my_tools/plink   # be in your plink directory
+```
 We use `wget` command for this 
 see all version [here](https://www.cog-genomics.org/plink/)
+
 ```bash
 wget https://s3.amazonaws.com/plink1-assets/plink_linux_x86_64_20250819.zip
 ```
+
 #### Unzip the downloaded file
-`unzip` command
+use `unzip` command, 
 ```bash
 unzip plink_linux_x86_64.zip
 ```
+to know more `unzip --help`
 
 #### Make the binary executable: change the permision
+use `chmod` command
 ```bash
 chmod +x plink
 ```
+to know more `chmod --help`
+
 
 #### Add Plink to your PATH 
 (*optional but recommended*)
@@ -113,8 +179,20 @@ chmod +x plink
 echo 'export PATH=$PATH:~/my_tools/plink' >> ~/.bashrc
 source ~/.bashrc
 ```
+this command ensures you can run it from anywhere in the terminal just by typing plink, without needing to specify the full path.
+
+Explanation: 
+- `echo` = print what is after it
+
+- `>>` = is a shell operator used to append text to a file.
+
+- `~`  = *home/username*
+
+- `.bashrc` is a configuration file in your home directory that runs every time you start a new terminal session (specifically for Bash shell).
+
 
 #### Test installation
+check version of the Plink tool
 ```bash
 plink --version
 ```
@@ -123,15 +201,13 @@ You will see something printed as like as bellow:
 >PLINK v1.9.0-b.7.11 64-bit (19 Aug 2025)
 
 
-## To do:
+If not that means Plink is not activated, we need activate it (repeat and fix *Make the binary executable: change the permision* step)
 
-- Create a folder and a sub folder and 
-- make a file in 1st folder there and 
-- move it to the subfolder
-- print if it is there
-- make it executable
+:::
 
-### 6. create a file and write something in it
+Well done!
+
+### 7. create a file and write something in it
 
 
 ```bash
@@ -148,150 +224,200 @@ and save it`
 
 >`Ctrl` + `o` for write out, then `Enter` to save the name, then `Ctrl` + `x` for exit
 
-## To do
+
+
+
+### TO DO 2 (extra)
 - edit the new file and add the line 'Today is Monday' and exit the file or editing
+- make it *executable*
 
 
-### Word count
+### 8. Word count (extra)
+Print file's content
 ```bash
-wc -la
+cat file.txt
 ```
+
+count line of the words
+```bash
+wc -l file.txt
+```
+
 
 #### print and pipe
 
 ```bash
-cat | wc -l
+cat file.txt | wc -l
 ```
 
 
-## To do
+### TO DO 3 (extra)
 
-- count no. of files or number of lines in a file text file
-- see the couple of lines
-- open the file with less
+- see the couple of lines (use `head`) 
+- count number of lines in a `file.text` file
 - use | pipe
-- save output to a file
+- save output to a file called `result.txt` (use `>`)
 
 
-::: {.callout-tip title="Solution & explanation" collapse="true"}
+What you have learn so far:
+
+::: {.callout-tip title="Linux commands" collapse="false"}
+
+### Workshop oriented commands
+
+`ls` ,`man`, `pwd`, `cd`, `mkdir`, `wget` (for plinks tool), `tar` or `unzip`, `nano`, `less`, `head`, `cp`, `mv`, `rm`, use of `\`, arguments.
+
+### More commands
+
+- `less` – view a file
+- `nano` – view and edit a file
+- `head` / `tail`
+- `grep`
+- `find`
+- `wildcards`
+- tab completion – use it!!!
+- `man` – manual pages or
+- anycommand `--help`
+- `|`
+:::
 
 
+## R:
 
-#### 📁 File Setup
-Download or place these files (`📁 data_4_linux`) in your working directory: 
+### 1. Packages needed for R modules
 
-- *example.vcf*: VCF file with genotype data
-- *regions.bed*: BED file with genomic regions
-- *plink_data.ped* and *plink_data.map*: Input files for Plink
+- `GAPIT3`
+- `ggplot2`
+- `rrBLUP`
 
-#### 🔹 vcftools
+::: {.callout-tip title="Packages installation" collapse="false"}
+### GAPIT is a package that is run in the R software environment.
+R can be freely downloaded from [http://www.r-project.org](http://www.r-project.org). 
 
-1. Calculate allele frequencies
-```bash
-vcftools --vcf example.vcf --freq
+We also recommend the integrated development environment RStudio which is also freely available at [http://www.rstudio.com](http://www.rstudio.com).
 
-```
-- `--vcf example.vcf`: Specifies the input VCF file.
-- `--freq`: Calculates allele frequencies for each variant.
-- Output: `out.frq` (or use `--out` to name it).
 
-2. Filter variants by minor allele frequency
-```bash
-vcftools --vcf example.vcf --maf 0.05 --recode --out filtered_maf
-```
-- `--maf` `0.05`: Filters out variants with MAF < 0.05.
-- `--recode`: Outputs a new VCF file with only the filtered variants.
-- `--out` `filtered_maf`: Prefix for output files.
+[GAPIT](https://github.com/jiabowang/GAPIT) can currently be installed in several ways.
 
-3. Count missing data per individual
-```bash
-vcftools --vcf example.vcf --missing-indv --out missing_data
+- From source on the internet
+- From GitHub
+- From an archive
 
-```
-- `--missing-indv`: Calculates missing genotype rates per individual.
-- Output: `missing_data.imiss`
 
-#### 🔹 bcftools
+### Installation from source functions
 
-1. View VCF header
-```bash
-bcftools view -h example.vcf
+GAPIT can be loaded with a single funciton. 
 
-```
-- `-h`: Displays only the header lines of the VCF file.
 
-2. Filter variants by quality
-```bash
-bcftools view -i 'QUAL>30' example.vcf -o highqual.vcf
-
-```
-- `-i 'QUAL>30'`: Includes only variants with quality > 30.
-- `-o` `highqual.vcf`: Output file name.
-
-3. Convert VCF to BCF
-```bash
-bcftools view -O b -o output.bcf example.vcf
-```
-- `-O` `b`: Output format is BCF (binary VCF).
-- `-o` `output.bcf`: Output file name.
-
-#### 🔹 bedtools
-
-1. Intersect VCF with BED regions
-```bash
-bedtools intersect -a example.vcf -b regions.bed > vcf_in_regions.vcf
+```r
+source("http://zzlab.net/GAPIT/gapit_functions.txt")
 ```
 
-- `-a`: First file (VCF) to compare.
-- `-b`: Second file (BED) with regions of interest.
-- `>`: Redirects output to a new file.
-
-2. Count intersected variants
-```bash
-grep -v "^#" vcf_in_regions.vcf | wc -l
+Or from GitHub function.
+```r
+source("https://raw.githubusercontent.com/jiabowang/GAPIT/refs/heads/master/gapit_functions.txt", encoding = "UTF-8")
 ```
 
-- `grep` `-v` `"^#"`: Removes header lines.
-- `wc` `-l`: Counts the number of remaining lines (i.e., variants).
+### Installation from GitHub
 
-#### 🔹 Plink
+Installation can also be made from GitHub when the R package `devtools` is available.
 
-1. Calculate allele frequencies
-```bash
-plink --file plink_data --freq --out plink_freq
+```r
+install.packages("devtools")
+devtools::install_github("jiabowang/GAPIT", force=TRUE)
+library(GAPIT)
 ```
 
-- `--file` `plink_data`: Uses plink_data.ped and plink_data.map.
-- `--freq`: Calculates allele frequencies.
-- `--out` `plink_freq`: Output prefix.
+or
 
-2. Check missingness
-```bash
-plink --file plink_data --missing --out plink_missing
+```r
+install.packages("remotes")
+remotes::install_github("jiabowang/GAPIT")
+library(GAPIT)
 ```
-- `--missing`: Calculates missing genotype rates per individual and per SNP.
-- Output: `.imiss` and `.lmiss` files.
 
+### Installation from an archive
+
+
+GAPIT can be installed from an archive such as \*.tar.gz or \*.zip archive.
+An archive can be downloaded from the "releases" page.
+If you would like the latest version of GAPIT from the GitHub site you may want to clone it and then build it (this may require Rtools on Windows).
+
+```bash
+git clone git@github.com:jiabowang/GAPIT.git
+R CMD build GAPIT
+```
+
+Once an archive has been obtained it can be installed from a shell, similar to as follows.
+
+
+```bash
+R CMD INSTALL GAPIT_3.5.0.9000.tar.gz
+```
+
+Or similarly from within R.
+
+```
+install.packages("GAPIT_3.5.0.9000.tar.gz", repos = NULL, type="source")
+```
+
+### In some case of the BiocManager can not be installed
+
+Installation of same packages such as “multtest” and “biobase” can not be intalled from BiocManager directly. These packages can be downloaded in the Bioconductor website and be installed from local source files.
+
+The website of Bioconductor is here:
+
+```
+https://bioconductor.org/packages/3.19/bioc/
+```
+
+More details please check and [ref user manual](https://github.com/jiabowang/GAPIT).
 
 :::
 
 
-
-### Recommended packages 
-Install **ggplot2** package
-
+### 2. Install **ggplot2** & **rrBLUP** packages
+install packs
 ```r
 install.packages("ggplot2")
-
+install.packages("rrBLUP")
+```
+attach the packs
+```r
 library("ggplot2")
+library("rrBLUP")
 ```
 
-### Example R code
 
-See the data structure:
+### 3. Setting a project or working directory
+
+- to know where you are right now, run this `getwd()` function at R Console 
+
+- to set directory at your target directory, run this `setwd()` function at R Console with target path (see example bellow)
+
+example:
+```r
+setwd("C:/Users/auue0001/OneDrive - Sveriges lantbruksuniversitet/path/to/your/folder")`
+```
+### 4. Interacting with R
+Guided tour around the RStudio
+
+### 5. How to import and export data or results
+
+ - How to do that from RStudio? (guided tour)
+ - How to do that with function or command?
+ 
+ Load data table from a website to R 
+```{r}
+# loading data set
+myY=read.table(file="https://github.com/jiabowang/GAPIT/raw/refs/heads/master/Documents/mdp_traits.txt", head = TRUE)
+```
+
+### 6. Data structures
+
+Example R code to see the data structure:
 ```{r}
 str(cars)
-
 ```
 A data frame with 50 observations on 2 variables.
 
@@ -299,18 +425,30 @@ A data frame with 50 observations on 2 variables.
 [,2]	dist	numeric	Stopping distance (ft)
 
 
-### Plotting a figure
+### 7. Housekeeping
+
+Comment, Quarto , R history
+
+### 8. Saving plot
+
+
+### 9. Plotting a figure (extra)
 Speed and Stopping Distances of Cars
 ```{r}
 # ggplot(data = cars, aes (x = speed, y = dist))+
 # geom_point()
 ```
 
-### Load data table in R 
-### How to do that from RStudio?
-### How to do that with function or command?
-```{r}
-# loading data set
-myY=read.table(file="https://github.com/jiabowang/GAPIT/raw/refs/heads/master/Documents/mdp_traits.txt", head = TRUE)
-```
+### 10. R built-in function  
 
+- Directory: `setwd`, `getwd` 
+
+- Upload data to R: `read.table`, `read_table`, `read_csv` 
+
+- See data structure: `str`, `summarize`, `summary`. 
+
+--------------- 
+
+Well done! Congrats!!
+
+END

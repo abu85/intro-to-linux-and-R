@@ -1,17 +1,20 @@
 ## 1. Pre-course materials
 
-Before 1st meeting, please **install or activate** `WS`L or `Unix`(mac users do not need this part), and install `R` and `RStudio` if you do not have them already.
+### Linux, R & RStudio
 
-We strongly recommend for **those not yet familiar with UNIX and/or R to take this opportunity and take the following online tutorials**, since those are pre-requisite for the workshop *but not mandatory*. This will help you to develop your programming skills and we can always learn a few tricks here and there, even if you are already experienced.
+Before 1st meeting, **you must have** `Linux`/`WSL`/`Unix` system (Windows users do need WSL or Unix), `R` and `RStudio` in your laptop. If you do not have them, then install them (see the *Tutorials links*).
+
+We strongly recommend for **those not yet familiar with Shell or R to take this opportunity and take the following online tutorials** [Shell] & [A (very) short introduction to R.pdf], since those are pre-requisite for the workshop *but not mandatory*. This will help you to develop your programming skills and we can always learn a few tricks here and there, even if you are already experienced.
 
 ## 2. `Before 1st meeting`
 ### *Make sure you have activated Unix, R, RStudio in your PC*
 
-## 3. Usefull Tutorials
+## 3. Tutorials
  
 | Task & Tools                      | Note                        | Link               |
 |---------------------------|------------------------------------|----------------|
+| Install & activate `WSL` or `Unix`| *For Windows user only*| [UNIX](https://learn.microsoft.com/en-us/windows/wsl/install)|
+| Install `R` itself and `RStudio` Desktop | all participants | [R](https://cran.r-project.org/mirrors.html) & [RStudio](https://posit.co/download/rstudio-desktop/#download)|
+|Linux Shell tutorial | For beginner | [Shell](https://swcarpentry.github.io/shell-novice/aio.html)|
 | Book Reading (pdf) | chapter 1-9 | [A (very) short introduction to R.pdf](https://github.com/ClaudiaBrauer/A-very-short-introduction-to-R/blob/8cbcfb1faa909b1d1fe044ae664e317ef29d278e/documents/A%20(very)%20short%20introduction%20to%20R.pdf)|
-| Install & activate `WSL` or `Unix`| *For Windows user only*| [UNIX](http://swcarpentry.github.io/shell-novice/)|
-| Install `R` itself and `RStudio` Desktop | all participants | [R & RStudio](https://swcarpentry.github.io/r-novice-inflammation/)|
 

@@ -84,40 +84,6 @@ The website of Bioconductor is here:
 https://bioconductor.org/packages/3.19/bioc/
 ```
 
-   
-Example
-=====
-
-
-```r
-# loading packages for GAPIT and GAPIT functions
-source("https://raw.githubusercontent.com/jiabowang/GAPIT/refs/heads/master/gapit_functions.txt")
-# loading data set
-myY=read.table(file="https://github.com/jiabowang/GAPIT/raw/refs/heads/master/Documents/mdp_traits.txt", head = TRUE)
-myGD=read.table("https://github.com/jiabowang/GAPIT/raw/refs/heads/master/Documents/mdp_numeric.txt",head=T)
-myGM=read.table("https://github.com/jiabowang/GAPIT/raw/refs/heads/master/Documents/mdp_SNP_information.txt",head=T)
-#myG=read.table(file="https://github.com/jiabowang/GAPIT/raw/refs/heads/master/Documents/mdp_genotype_test.hmp.txt", head = FALSE)
-# performing simulation phenotype
-set.seed(198521)
-mysimulation<-GAPIT(h2=0.7,NQTN=20,GD=myGD,GM=myGM)
-myY=mysimulation$Y
-
-
-myGAPIT <- GAPIT(
-  Y=myY[,c(1,2)],
-  GD=myGD,
-  GM=myGM,
-  model=c("GLM","MLM","SUPER","MLMM","FarmCPU","Blink"),# choose model
-  #model=c("FarmCPU"),
-  PCA.total=3,                                          # set total PCAs
-  NJtree.group=4,                                       # set the number of clusting group in Njtree plot
-  QTN.position=mysimulation$QTN.position,
-  Inter.Plot=TRUE,                                      # perform interactive plot
-  Multiple_analysis=TRUE,                               # perform multiple analysis
-  PCA.3d=TRUE,                                          # plot 3d interactive PCA
-  file.output=T
-)
-```
 
 More details please check and [ref user manual](https://github.com/jiabowang/GAPIT).
 
@@ -141,31 +107,18 @@ library("rrBLUP")
 - About R, R vs Rstudio, Timeline
 - Setting a project or working directory
 - Interacting with R
-- Packages
+- Install Packages
 - Assign values or objects
 - Data types, structures
 - How to import and export data or results
-- Handle large data sets
 - Housekeeping
-- Outliers
 
 ## 3. Tasks 
 - set working directory, 
 - print path of the current working directory, 
-- upload data, 
-- subset data, 
-- tidy data
-- transform data, 
-- plot, 
+- upload data, export
+- data structure
 - saving plot
-
-
-### R built-in function  
-- Directory: `setwd, getwd` 
-
-- Upload data to R: `read.table, read_table, read_csv`, 
-
-- See data structure: `str, summarize, summary`. 
 
 
 

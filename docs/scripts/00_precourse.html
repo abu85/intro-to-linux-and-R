@@ -103,8 +103,8 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">R</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href=".././practicals/excercise/data_handling_part_2_v1.html"> 
-<span class="menu-text">Lab</span></a>
+    <a class="nav-link" href=".././practicals/practical_01_intro.html"> 
+<span class="menu-text">Insilico activities(Lab)</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
@@ -135,12 +135,15 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#pre-course-materials" id="toc-pre-course-materials" class="nav-link active" data-scroll-target="#pre-course-materials">1. Pre-course materials</a></li>
+  <li><a href="#pre-course-materials" id="toc-pre-course-materials" class="nav-link active" data-scroll-target="#pre-course-materials">1. Pre-course materials</a>
+  <ul class="collapse">
+  <li><a href="#linux-r-rstudio" id="toc-linux-r-rstudio" class="nav-link" data-scroll-target="#linux-r-rstudio">Linux, R &amp; RStudio</a></li>
+  </ul></li>
   <li><a href="#before-1st-meeting" id="toc-before-1st-meeting" class="nav-link" data-scroll-target="#before-1st-meeting">2. <code>Before 1st meeting</code></a>
   <ul class="collapse">
   <li><a href="#make-sure-you-have-activated-unix-r-rstudio-in-your-pc" id="toc-make-sure-you-have-activated-unix-r-rstudio-in-your-pc" class="nav-link" data-scroll-target="#make-sure-you-have-activated-unix-r-rstudio-in-your-pc"><em>Make sure you have activated Unix, R, RStudio in your PC</em></a></li>
   </ul></li>
-  <li><a href="#usefull-tutorials" id="toc-usefull-tutorials" class="nav-link" data-scroll-target="#usefull-tutorials">3. Usefull Tutorials</a></li>
+  <li><a href="#tutorials" id="toc-tutorials" class="nav-link" data-scroll-target="#tutorials">3. Tutorials</a></li>
   </ul>
 </nav>
     </div>
@@ -152,8 +155,11 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="pre-course-materials" class="level2">
 <h2 class="anchored" data-anchor-id="pre-course-materials">1. Pre-course materials</h2>
-<p>Before 1st meeting, please <strong>install or activate</strong> <code>WS</code>L or <code>Unix</code>(mac users do not need this part), and install <code>R</code> and <code>RStudio</code> if you do not have them already.</p>
-<p>We strongly recommend for <strong>those not yet familiar with UNIX and/or R to take this opportunity and take the following online tutorials</strong>, since those are pre-requisite for the workshop <em>but not mandatory</em>. This will help you to develop your programming skills and we can always learn a few tricks here and there, even if you are already experienced.</p>
+<section id="linux-r-rstudio" class="level3">
+<h3 class="anchored" data-anchor-id="linux-r-rstudio">Linux, R &amp; RStudio</h3>
+<p>Before 1st meeting, <strong>you must have</strong> <code>Linux</code>/<code>WSL</code>/<code>Unix</code> system (Windows users do need WSL or Unix), <code>R</code> and <code>RStudio</code> in your laptop. If you do not have them, then install them (see the <em>Tutorials links</em>).</p>
+<p>We strongly recommend for <strong>those not yet familiar with Shell or R to take this opportunity and take the following online tutorials</strong> [Shell] &amp; [A (very) short introduction to R.pdf], since those are pre-requisite for the workshop <em>but not mandatory</em>. This will help you to develop your programming skills and we can always learn a few tricks here and there, even if you are already experienced.</p>
+</section>
 </section>
 <section id="before-1st-meeting" class="level2">
 <h2 class="anchored" data-anchor-id="before-1st-meeting">2. <code>Before 1st meeting</code></h2>
@@ -161,8 +167,8 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="make-sure-you-have-activated-unix-r-rstudio-in-your-pc"><em>Make sure you have activated Unix, R, RStudio in your PC</em></h3>
 </section>
 </section>
-<section id="usefull-tutorials" class="level2">
-<h2 class="anchored" data-anchor-id="usefull-tutorials">3. Usefull Tutorials</h2>
+<section id="tutorials" class="level2">
+<h2 class="anchored" data-anchor-id="tutorials">3. Tutorials</h2>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -173,19 +179,24 @@ ul.task-list li input[type="checkbox"] {
 </thead>
 <tbody>
 <tr class="odd">
+<td>Install &amp; activate <code>WSL</code> or <code>Unix</code></td>
+<td><em>For Windows user only</em></td>
+<td><a href="https://learn.microsoft.com/en-us/windows/wsl/install">UNIX</a></td>
+</tr>
+<tr class="even">
+<td>Install <code>R</code> itself and <code>RStudio</code> Desktop</td>
+<td>all participants</td>
+<td><a href="https://cran.r-project.org/mirrors.html">R</a> &amp; <a href="https://posit.co/download/rstudio-desktop/#download">RStudio</a></td>
+</tr>
+<tr class="odd">
+<td>Linux Shell tutorial</td>
+<td>For beginner</td>
+<td><a href="https://swcarpentry.github.io/shell-novice/aio.html">Shell</a></td>
+</tr>
+<tr class="even">
 <td>Book Reading (pdf)</td>
 <td>chapter 1-9</td>
 <td><a href="https://github.com/ClaudiaBrauer/A-very-short-introduction-to-R/blob/8cbcfb1faa909b1d1fe044ae664e317ef29d278e/documents/A%20(very)%20short%20introduction%20to%20R.pdf">A (very) short introduction to R.pdf</a></td>
-</tr>
-<tr class="even">
-<td>Install &amp; activate <code>WSL</code> or <code>Unix</code></td>
-<td><em>For Windows user only</em></td>
-<td><a href="http://swcarpentry.github.io/shell-novice/">UNIX</a></td>
-</tr>
-<tr class="odd">
-<td>Install <code>R</code> itself and <code>RStudio</code> Desktop</td>
-<td>all participants</td>
-<td><a href="https://swcarpentry.github.io/r-novice-inflammation/">R &amp; RStudio</a></td>
 </tr>
 </tbody>
 </table>

@@ -138,8 +138,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">R</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="././practicals/excercise/data_handling_part_2_v1.html"> 
-<span class="menu-text">Lab</span></a>
+    <a class="nav-link" href="././practicals/practical_01_intro.html"> 
+<span class="menu-text">Insilico activities(DryLab)</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
@@ -188,65 +188,57 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Welcome to the Day1</p>
+<p>Welcome to the Day1 (2025-10-06)</p>
 <section id="intended-learning-outcomes" class="level2">
 <h2 class="anchored" data-anchor-id="intended-learning-outcomes">Intended Learning Outcomes</h2>
-<p>By the end of this session, participants will be able to:</p>
+<p>By the end of the day1, participants will be able to:</p>
 <p><em>Unix/Linux</em></p>
 <ol type="1">
+<li>Describe CLI, Linux shell, tools</li>
 <li><strong>Install and verify</strong> the functionality of key <strong>genomics tools</strong>: <code>Plink</code>, <code>vcftools</code>, <code>BCFtools</code>, and <code>Bedtools</code>.</li>
-<li><strong>Navigate the Unix/Linux environment</strong>, including creating directories, moving between locations, and managing files. Extra:</li>
-<li>Inspect and interpret VCF files, including understanding key fields and genotype formats.</li>
-<li>Use vcftools and bcftools to filter, summarize, and manipulate VCF data.</li>
+<li><strong>Navigate the Unix/Linux environment</strong>, including creating directories, moving between locations, and managing files.</li>
 </ol>
 <p><em>R</em></p>
 <ol type="1">
 <li><strong>Install and load essential R packages</strong> for genomic analysis: <code>GAPIT3</code>, <code>ggplot2</code>, and <code>rrBLUP</code>.</li>
-<li>Prepare input files for downstream analysis in R, including GAPIT-compatible formats.</li>
-<li><strong>Load and explore data in R</strong>, including reading tables and data frames, and performing basic plotting.</li>
+<li>Set working directories</li>
+<li><strong>Load and explore data in R</strong>, including reading tables and data frames.</li>
 </ol>
 </section>
 <section id="learning-activities" class="level2">
 <h2 class="anchored" data-anchor-id="learning-activities">Learning Activities</h2>
 <p>To achieve the above outcomes, participants will:</p>
-<p><em>Unix/Linux:</em></p>
-<ol type="1">
-<li>Follow guided installation steps for Plink, vcftools, BCFtools, and Bedtools on their systems (see pre-course materials).</li>
-<li>Run basic Unix commands to create directories, navigate folders, and manage files (1st meeting).</li>
-<li>Explore a small VCF file in class to understand its structure and metadata(1st meeting).</li>
-<li>Use vcftools and bcftools to filter variants, calculate allele frequencies, and extract summary statistics (extra).</li>
-<li>Practice using bedtools to intersect VCF data with genomic regions(extra).</li>
-<li>Convert VCF to Plink format and run basic Plink commands to check data quality(extra).</li>
-</ol>
+<p><em>Unix/Linux:</em> 1. Describe Linux, CLI, Shell (pre-course materials, 1st meeting). 1. Follow guided installation steps for Plink, vcftools, BCFtools, and Bedtools on their systems (pre-course, 1st meeting). 1. Run basic Unix commands to create directories, navigate folders, and manage files (1st meeting).</p>
 <p><em>R:</em></p>
 <ol type="1">
+<li>Describe R RStudio, data structure, set working directories(pre-course, 1st meeting).</li>
 <li>Install R packages and verify functionality by loading them in R(1st meeting).</li>
-<li>Load processed data into R, inspect it using <code>str()</code>, <code>summary()</code>, and <code>head()</code>, and visualize it using <code>ggplot2</code>(1st meeting).</li>
-<li>Prepare genotype and phenotype files for GAPIT and run a basic association analysis (demonstrated by instructor).</li>
+<li>Load data into R, inspect it using both from RStudio and by functions (1st meeting).</li>
 </ol>
 </section>
 <section id="before-day-1" class="level2">
 <h2 class="anchored" data-anchor-id="before-day-1">🧰 <code>Before Day 1</code></h2>
-<p>Read the <code>pre-course</code> ⬆️ and be prepared accordingly. You need following <code>tools</code> in the day 1:</p>
+<p>Read the <code>pre-course</code> ⬆️ and install <code>R</code>, <code>RStudio Desktop</code>, <code>Linux/Ubuntu</code> (windows users only), and be prepared accordingly.</p>
+<p>We will need following <code>tools</code> in the day 1:</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-👉Tools
+👉Tools needed at day1
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ul>
-<li><code>WSL</code>/<code>Unix</code>/<code>Ubuntu</code>/<code>Shell</code> <a href="https://learn.microsoft.com/en-us/windows/wsl/install">The Unix Shell</a> for <strong>windows users</strong>.</li>
-<li><code>Plink</code>, <code>vcftools</code>, <code>BCFtools</code>, and <code>Bedtools</code> (see linux chapter).</li>
+<li><code>WSL</code>/<code>Unix</code>/<code>Ubuntu</code>/<code>Shell</code> <a href="https://learn.microsoft.com/en-us/windows/wsl/install">The Unix Shell</a> (for <strong>windows users</strong> only).</li>
+<li>Recommended tools: <code>Plink</code>, <code>vcftools</code>, <code>BCFtools</code>, and <code>Bedtools</code> (see linux chapter).</li>
 <li><code>R</code> (version ≥ 4.0)</li>
 <li><code>RStudio</code></li>
-<li>Recommended packages in RStudio: <code>GAPIT3</code>, <code>ggplot2</code>, and <code>rrBLUP</code>(see linux and R chapter).</li>
-<li><code>Plink</code> at Linux (https://zzz.bwh.harvard.edu/plink/dist/plink-latest.zip)</li>
+<li>Recommended packages in RStudio: <code>GAPIT3</code>, <code>ggplot2</code>, and <code>rrBLUP</code>(see R chapter).</li>
+<li><code>Plink</code> at Linux <a href="https://zzz.bwh.harvard.edu/plink/dist/plink-latest.zip">here</a></li>
 </ul>
 </div>
 </div>
@@ -270,17 +262,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tbody>
 <tr class="odd">
 <td>10.30-11.30</td>
-<td>Unix (CLI)</td>
+<td>Intro on Linux (CLI)</td>
 <td>Abu</td>
 </tr>
 <tr class="even">
-<td>11.45-12.30</td>
-<td>R &amp; R Studio</td>
+<td>11.30-12.00</td>
+<td>Troubleshooting (if needed)</td>
 <td>Abu</td>
 </tr>
 <tr class="odd">
-<td>13.30-15.30</td>
-<td>Lab (practical)</td>
+<td>13.00-15.00</td>
+<td>Lab (Hands on Linux and R)</td>
 <td>Abu</td>
 </tr>
 </tbody>
@@ -288,7 +280,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="at-day-1" class="level2">
 <h2 class="anchored" data-anchor-id="at-day-1">🟢<code>At Day 1</code></h2>
-<p>Linux, R, Lab. See up, bar headers ⬆️</p>
+<p>Linux, R, Lab See up, bar headers ⬆️</p>
 </section>
 <section id="course-materieals" class="level2">
 <h2 class="anchored" data-anchor-id="course-materieals">📚 Course materieals</h2>
@@ -316,7 +308,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span>                        <span class="co"># see the file folder</span></span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> intro-to-linux-and-R   <span class="co"># change and enter into the folder(directory)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Or Clone this repository if you have (git):</p>
+<p>Or Clone this repository (only if you have git tool in linux):</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/YOUR_USERNAME/intro-to-R-genomic-selection.git</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> intro-to-linux-and-R</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
@@ -325,8 +317,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-la</span>         <span class="co"># see the content through linux</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>It will be look like as follows</p>
 <p><code>practicals</code> <code>scripts</code></p>
-<section id="important-folders-for-you" class="level5">
-<h5 class="anchored">Important folders for you</h5>
+<section id="during-dry-lab-activities" class="level5">
+<h5 class="anchored">During Dry Lab activities</h5>
 <ul>
 <li><code>slides/</code>: Lecture slides</li>
 <li><code>scripts/</code>: Lecture R scripts for each topic</li>

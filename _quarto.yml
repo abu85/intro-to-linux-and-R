@@ -18,8 +18,8 @@ website:
         href: ./scripts/01_intro_to_linux.html
       - text: "R"
         href: ./scripts/02_intro_R.html
-      - text: "Lab"
-        href: ./practicals/excercise/data_handling_part_2_v1.html
+      - text: "Insilico activities(DryLab)"
+        href: ./practicals/practical_01_intro.html
     right:
       - icon: softwerecarpentry
         href: https://swcarpentry.github.io/shell-novice/

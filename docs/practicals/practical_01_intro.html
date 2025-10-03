@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Practical 01 — Intro to Linux</title>
+<title>Practical 01 — Intro to Linux and R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -126,7 +126,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
   <li class="nav-item">
     <a class="nav-link" href=".././scripts/00_precourse.html"> 
-<span class="menu-text">Precourse</span></a>
+<span class="menu-text">Pre-course</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href=".././scripts/01_intro_to_linux.html"> 
@@ -137,8 +137,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">R</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href=".././practicals/excercise/data_handling_part_2_v1.html"> 
-<span class="menu-text">Lab</span></a>
+    <a class="nav-link" href=".././practicals/practical_01_intro.html"> 
+<span class="menu-text">Insilico activities(DryLab)</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
@@ -171,28 +171,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#goals" id="toc-goals" class="nav-link active" data-scroll-target="#goals">Goals</a>
   <ul class="collapse">
-  <li><a href="#list-files" id="toc-list-files" class="nav-link" data-scroll-target="#list-files">1. List files</a></li>
-  <li><a href="#where-am-i" id="toc-where-am-i" class="nav-link" data-scroll-target="#where-am-i">2. Where am I?</a></li>
-  <li><a href="#create-a-folderdirectory-in-current-working-directory" id="toc-create-a-folderdirectory-in-current-working-directory" class="nav-link" data-scroll-target="#create-a-folderdirectory-in-current-working-directory">3. Create a folder/directory in current working directory</a></li>
-  <li><a href="#go-in-the-new-directory" id="toc-go-in-the-new-directory" class="nav-link" data-scroll-target="#go-in-the-new-directory">4. Go in the new directory</a></li>
-  <li><a href="#download-the-official-plink-softwere-binary-and-make-it-available" id="toc-download-the-official-plink-softwere-binary-and-make-it-available" class="nav-link" data-scroll-target="#download-the-official-plink-softwere-binary-and-make-it-available">5. Download the official Plink softwere binary and make it available</a></li>
-  </ul></li>
-  <li><a href="#to-do" id="toc-to-do" class="nav-link" data-scroll-target="#to-do">To do:</a>
+  <li><a href="#linux" id="toc-linux" class="nav-link" data-scroll-target="#linux">Linux:</a>
   <ul class="collapse">
-  <li><a href="#create-a-file-and-write-something-in-it" id="toc-create-a-file-and-write-something-in-it" class="nav-link" data-scroll-target="#create-a-file-and-write-something-in-it">6. create a file and write something in it</a></li>
+  <li><a href="#open-linux-terminal-at-your-pc" id="toc-open-linux-terminal-at-your-pc" class="nav-link" data-scroll-target="#open-linux-terminal-at-your-pc">1. Open Linux terminal at your PC</a></li>
+  <li><a href="#list-files" id="toc-list-files" class="nav-link" data-scroll-target="#list-files">2. List files</a></li>
+  <li><a href="#where-am-i" id="toc-where-am-i" class="nav-link" data-scroll-target="#where-am-i">3. Where am I?</a></li>
+  <li><a href="#create-a-folderdirectory" id="toc-create-a-folderdirectory" class="nav-link" data-scroll-target="#create-a-folderdirectory">4. Create a folder/directory</a></li>
+  <li><a href="#go-in-the-new-directory" id="toc-go-in-the-new-directory" class="nav-link" data-scroll-target="#go-in-the-new-directory">5. Go in the new directory</a></li>
+  <li><a href="#to-do-1" id="toc-to-do-1" class="nav-link" data-scroll-target="#to-do-1">TO DO 1:</a></li>
+  <li><a href="#software-instalation-in-linux" id="toc-software-instalation-in-linux" class="nav-link" data-scroll-target="#software-instalation-in-linux">6. Software instalation in Linux</a></li>
+  <li><a href="#create-a-file-and-write-something-in-it" id="toc-create-a-file-and-write-something-in-it" class="nav-link" data-scroll-target="#create-a-file-and-write-something-in-it">7. create a file and write something in it</a></li>
+  <li><a href="#to-do-2-extra" id="toc-to-do-2-extra" class="nav-link" data-scroll-target="#to-do-2-extra">TO DO 2 (extra)</a></li>
+  <li><a href="#word-count-extra" id="toc-word-count-extra" class="nav-link" data-scroll-target="#word-count-extra">8. Word count (extra)</a></li>
+  <li><a href="#to-do-3-extra" id="toc-to-do-3-extra" class="nav-link" data-scroll-target="#to-do-3-extra">TO DO 3 (extra)</a></li>
   </ul></li>
-  <li><a href="#to-do-1" id="toc-to-do-1" class="nav-link" data-scroll-target="#to-do-1">To do</a>
+  <li><a href="#r" id="toc-r" class="nav-link" data-scroll-target="#r">R:</a>
   <ul class="collapse">
-  <li><a href="#word-count" id="toc-word-count" class="nav-link" data-scroll-target="#word-count">Word count</a></li>
+  <li><a href="#packages-needed-for-r-modules" id="toc-packages-needed-for-r-modules" class="nav-link" data-scroll-target="#packages-needed-for-r-modules">1. Packages needed for R modules</a></li>
+  <li><a href="#install-ggplot2-rrblup-packages" id="toc-install-ggplot2-rrblup-packages" class="nav-link" data-scroll-target="#install-ggplot2-rrblup-packages">2. Install <strong>ggplot2</strong> &amp; <strong>rrBLUP</strong> packages</a></li>
+  <li><a href="#setting-a-project-or-working-directory" id="toc-setting-a-project-or-working-directory" class="nav-link" data-scroll-target="#setting-a-project-or-working-directory">3. Setting a project or working directory</a></li>
+  <li><a href="#interacting-with-r" id="toc-interacting-with-r" class="nav-link" data-scroll-target="#interacting-with-r">4. Interacting with R</a></li>
+  <li><a href="#how-to-import-and-export-data-or-results" id="toc-how-to-import-and-export-data-or-results" class="nav-link" data-scroll-target="#how-to-import-and-export-data-or-results">5. How to import and export data or results</a></li>
+  <li><a href="#data-structures" id="toc-data-structures" class="nav-link" data-scroll-target="#data-structures">6. Data structures</a></li>
+  <li><a href="#housekeeping" id="toc-housekeeping" class="nav-link" data-scroll-target="#housekeeping">7. Housekeeping</a></li>
+  <li><a href="#saving-plot" id="toc-saving-plot" class="nav-link" data-scroll-target="#saving-plot">8. Saving plot</a></li>
+  <li><a href="#plotting-a-figure-extra" id="toc-plotting-a-figure-extra" class="nav-link" data-scroll-target="#plotting-a-figure-extra">9. Plotting a figure (extra)</a></li>
+  <li><a href="#r-built-in-function" id="toc-r-built-in-function" class="nav-link" data-scroll-target="#r-built-in-function">10. R built-in function</a></li>
   </ul></li>
-  <li><a href="#to-do-2" id="toc-to-do-2" class="nav-link" data-scroll-target="#to-do-2">To do</a>
-  <ul class="collapse">
-  <li><a href="#recommended-packages" id="toc-recommended-packages" class="nav-link" data-scroll-target="#recommended-packages">Recommended packages</a></li>
-  <li><a href="#example-r-code" id="toc-example-r-code" class="nav-link" data-scroll-target="#example-r-code">Example R code</a></li>
-  <li><a href="#plotting-a-figure" id="toc-plotting-a-figure" class="nav-link" data-scroll-target="#plotting-a-figure">Plotting a figure</a></li>
-  <li><a href="#load-data-table-in-r" id="toc-load-data-table-in-r" class="nav-link" data-scroll-target="#load-data-table-in-r">Load data table in R</a></li>
-  <li><a href="#how-to-do-that-from-rstudio" id="toc-how-to-do-that-from-rstudio" class="nav-link" data-scroll-target="#how-to-do-that-from-rstudio">How to do that from RStudio?</a></li>
-  <li><a href="#how-to-do-that-with-function-or-command" id="toc-how-to-do-that-with-function-or-command" class="nav-link" data-scroll-target="#how-to-do-that-with-function-or-command">How to do that with function or command?</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -202,7 +207,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Practical 01 — Intro to Linux</h1>
+<h1 class="title">Practical 01 — Intro to Linux and R</h1>
 </div>
 
 
@@ -219,93 +224,165 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="goals" class="level2">
-<h2 class="anchored" data-anchor-id="goals">Goals</h2>
+<section id="goals" class="level1">
+<h1>Goals</h1>
 <ul>
-<li>Learn basic shell commands</li>
-<li>Practice editing files</li>
-<li>Practice loading data in R and Plotting</li>
+<li>Learn basic Linux shell commands and practice</li>
+<li>Load and explore data in R and set working directories</li>
 </ul>
-<p><code>ls</code> , <code>cd</code>, <code>mkdir</code>, <code>wget</code> (for plinks tool), <code>tar</code> or <code>unzip</code>,</p>
+<section id="linux" class="level2">
+<h2 class="anchored" data-anchor-id="linux">Linux:</h2>
+<ul>
+<li>open the terminal or wsl command line</li>
+<li>where am I (print working directory)</li>
+<li>list or view (different styles)</li>
+<li>create a directory (folder)</li>
+<li>change working directory to the new directory</li>
+<li>absolute/relative paths of that directory</li>
+<li>include options &amp; arguments</li>
+<li>copy and paste files &amp; folders</li>
+<li>move files &amp; folders</li>
+<li>rename files &amp; folders</li>
+<li>delete files or folders</li>
+<li>download any tools</li>
+<li>unzip or extract</li>
+<li>activate tool</li>
+</ul>
+<section id="open-linux-terminal-at-your-pc" class="level3">
+<h3 class="anchored" data-anchor-id="open-linux-terminal-at-your-pc">1. Open Linux terminal at your PC</h3>
+<p>search <code>terminal</code> or <code>Ubuntu</code> or <code>command prompt</code> and click on the first result</p>
+</section>
 <section id="list-files" class="level3">
-<h3 class="anchored" data-anchor-id="list-files">1. List files</h3>
+<h3 class="anchored" data-anchor-id="list-files">2. List files</h3>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>What else I can do with this command? Options:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">--help</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">man</span> ls </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Note: press on <strong>Q</strong> keyboard button to <strong>exit</strong></p>
 <p>classify list (files or folders):</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-F</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-F</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-F</span> ./</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Here <code>-F</code> is an <em>option</em> and <code>./</code> is an <em>argument</em> <img src="https://swcarpentry.github.io/shell-novice/fig/shell_command_syntax.svg" class="img-fluid"></p>
 <p>list all:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-a</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-a</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>print the author of each file:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-la</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-la</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="where-am-i" class="level3">
-<h3 class="anchored" data-anchor-id="where-am-i">2. Where am I?</h3>
+<h3 class="anchored" data-anchor-id="where-am-i">3. Where am I?</h3>
 <p>What is my present working directory?</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">pwd</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">pwd</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="create-a-folderdirectory-in-current-working-directory" class="level3">
-<h3 class="anchored" data-anchor-id="create-a-folderdirectory-in-current-working-directory">3. Create a folder/directory in current working directory</h3>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> my_tools</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="create-a-folderdirectory" class="level3">
+<h3 class="anchored" data-anchor-id="create-a-folderdirectory">4. Create a folder/directory</h3>
+<p>Do it in home or current working directory</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> my_tools</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>multiple sub folders at once:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> my_tools/plink</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> my_tools/plink</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>list them:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-a</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-a</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="go-in-the-new-directory" class="level3">
-<h3 class="anchored" data-anchor-id="go-in-the-new-directory">4. Go in the new directory</h3>
-<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> my_tools</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<h3 class="anchored" data-anchor-id="go-in-the-new-directory">5. Go in the new directory</h3>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> my_tools</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Or go to another sub directory</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /plink</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /plink</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>How do you know you moved in or not?</p>
 <p>look at the texts before the <code>$</code> sign in the terminal</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">pwd</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>What if you type <code>cd ..</code> or <code>cd -</code> or <code>cd --</code></p>
-<p>How to come back to the place where you were?</p>
+<p>Or execute next command</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="bu">pwd</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Exercise">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercise
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>What if you execute: <code>cd ..</code> or <code>cd -</code> or <code>cd --</code></p>
+<p>What they do?</p>
+<p>How to come back to the place(directory) where you were?</p>
+</div>
+</div>
+</div>
 </section>
-<section id="download-the-official-plink-softwere-binary-and-make-it-available" class="level3">
-<h3 class="anchored" data-anchor-id="download-the-official-plink-softwere-binary-and-make-it-available">5. Download the official Plink softwere binary and make it available</h3>
+<section id="to-do-1" class="level3">
+<h3 class="anchored" data-anchor-id="to-do-1">TO DO 1:</h3>
+<ul>
+<li>Create a <em>folder</em> and a <em>sub-folder</em></li>
+<li>make a file (<em>file.txt</em>) in 1st folder</li>
+<li>move it to the <em>sub-folder</em></li>
+<li>print <em>content</em> of the sub-folder if it is there</li>
+</ul>
+</section>
+<section id="software-instalation-in-linux" class="level3">
+<h3 class="anchored" data-anchor-id="software-instalation-in-linux">6. Software instalation in Linux</h3>
+<p><strong>must for this workshops</strong></p>
+<div class="callout callout-style-default callout-tip callout-titled" title="tools installation in Linux">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+tools installation in Linux
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse show">
+<section id="download-the-official-plink-softwere-binary-and-make-it-available" class="level3 callout-body-container callout-body">
+<h3 class="anchored" data-anchor-id="download-the-official-plink-softwere-binary-and-make-it-available">Download the official Plink softwere binary and make it available</h3>
+<div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> <span class="at">--</span>               <span class="co"># be in your home directory</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> my_tools/plink   <span class="co"># be in your plink directory</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>We use <code>wget</code> command for this see all version <a href="https://www.cog-genomics.org/plink/">here</a></p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://s3.amazonaws.com/plink1-assets/plink_linux_x86_64_20250819.zip</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://s3.amazonaws.com/plink1-assets/plink_linux_x86_64_20250819.zip</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <section id="unzip-the-downloaded-file" class="level4">
 <h4 class="anchored" data-anchor-id="unzip-the-downloaded-file">Unzip the downloaded file</h4>
-<p><code>unzip</code> command</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unzip</span> plink_linux_x86_64.zip</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>use <code>unzip</code> command,</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unzip</span> plink_linux_x86_64.zip</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>to know more <code>unzip --help</code></p>
 </section>
 <section id="make-the-binary-executable-change-the-permision" class="level4">
 <h4 class="anchored" data-anchor-id="make-the-binary-executable-change-the-permision">Make the binary executable: change the permision</h4>
-<div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chmod</span> +x plink</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>use <code>chmod</code> command</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chmod</span> +x plink</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>to know more <code>chmod --help</code></p>
 </section>
 <section id="add-plink-to-your-path" class="level4">
 <h4 class="anchored" data-anchor-id="add-plink-to-your-path">Add Plink to your PATH</h4>
 <p>(<em>optional but recommended</em>)</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">'export PATH=$PATH:~/my_tools/plink'</span> <span class="op">&gt;&gt;</span> ~/.bashrc</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> ~/.bashrc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">'export PATH=$PATH:~/my_tools/plink'</span> <span class="op">&gt;&gt;</span> ~/.bashrc</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> ~/.bashrc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>this command ensures you can run it from anywhere in the terminal just by typing plink, without needing to specify the full path.</p>
+<p>Explanation: - <code>echo</code> = print what is after it</p>
+<ul>
+<li><p><code>&gt;&gt;</code> = is a shell operator used to append text to a file.</p></li>
+<li><p><code>~</code> = <em>home/username</em></p></li>
+<li><p><code>.bashrc</code> is a configuration file in your home directory that runs every time you start a new terminal session (specifically for Bash shell).</p></li>
+</ul>
 </section>
 <section id="test-installation" class="level4">
 <h4 class="anchored" data-anchor-id="test-installation">Test installation</h4>
-<div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">plink</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>check version of the Plink tool</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">plink</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>You will see something printed as like as bellow:</p>
 <blockquote class="blockquote">
 <p>PLINK v1.9.0-b.7.11 64-bit (19 Aug 2025)</p>
 </blockquote>
+<p>If not that means Plink is not activated, we need activate it (repeat and fix <em>Make the binary executable: change the permision</em> step)</p>
 </section>
 </section>
+</div>
+</div>
+<p>Well done!</p>
 </section>
-<section id="to-do" class="level2">
-<h2 class="anchored" data-anchor-id="to-do">To do:</h2>
-<ul>
-<li>Create a folder and a sub folder and</li>
-<li>make a file in 1st folder there and</li>
-<li>move it to the subfolder</li>
-<li>print if it is there</li>
-<li>make it executable</li>
-</ul>
 <section id="create-a-file-and-write-something-in-it" class="level3">
-<h3 class="anchored" data-anchor-id="create-a-file-and-write-something-in-it">6. create a file and write something in it</h3>
-<div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nano</span> test.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<h3 class="anchored" data-anchor-id="create-a-file-and-write-something-in-it">7. create a file and write something in it</h3>
+<div class="sourceCode" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nano</span> test.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>copy and paste following line</p>
 <p><code>This is a file  we like to read it and save it</code></p>
 <p><code>Ctrl</code> + <code>right click</code> mouse</p>
@@ -313,161 +390,179 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><code>Ctrl</code> + <code>o</code> for write out, then <code>Enter</code> to save the name, then <code>Ctrl</code> + <code>x</code> for exit</p>
 </blockquote>
 </section>
-</section>
-<section id="to-do-1" class="level2">
-<h2 class="anchored" data-anchor-id="to-do-1">To do</h2>
+<section id="to-do-2-extra" class="level3">
+<h3 class="anchored" data-anchor-id="to-do-2-extra">TO DO 2 (extra)</h3>
 <ul>
 <li>edit the new file and add the line ‘Today is Monday’ and exit the file or editing</li>
+<li>make it <em>executable</em></li>
 </ul>
-<section id="word-count" class="level3">
-<h3 class="anchored" data-anchor-id="word-count">Word count</h3>
-<div class="sourceCode" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wc</span> <span class="at">-la</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="word-count-extra" class="level3">
+<h3 class="anchored" data-anchor-id="word-count-extra">8. Word count (extra)</h3>
+<p>Print file’s content</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> file.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>count line of the words</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wc</span> <span class="at">-l</span> file.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <section id="print-and-pipe" class="level4">
 <h4 class="anchored" data-anchor-id="print-and-pipe">print and pipe</h4>
-<div class="sourceCode" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> file.txt <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
-</section>
-<section id="to-do-2" class="level2">
-<h2 class="anchored" data-anchor-id="to-do-2">To do</h2>
+<section id="to-do-3-extra" class="level3">
+<h3 class="anchored" data-anchor-id="to-do-3-extra">TO DO 3 (extra)</h3>
 <ul>
-<li>count no. of files or number of lines in a file text file</li>
-<li>see the couple of lines</li>
-<li>open the file with less</li>
+<li>see the couple of lines (use <code>head</code>)</li>
+<li>count number of lines in a <code>file.text</code> file</li>
 <li>use | pipe</li>
-<li>save output to a file</li>
+<li>save output to a file called <code>result.txt</code> (use <code>&gt;</code>)</li>
 </ul>
-<div class="callout callout-style-default callout-tip callout-titled" title="Solution &amp; explanation">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<p>What you have learn so far:</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Linux commands">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solution &amp; explanation
+Linux commands
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
-<section id="file-setup" class="level4">
-<h4 class="anchored" data-anchor-id="file-setup">📁 File Setup</h4>
-<p>Download or place these files (<code>📁 data_4_linux</code>) in your working directory:</p>
-<ul>
-<li><em>example.vcf</em>: VCF file with genotype data</li>
-<li><em>regions.bed</em>: BED file with genomic regions</li>
-<li><em>plink_data.ped</em> and <em>plink_data.map</em>: Input files for Plink</li>
-</ul>
+<section id="workshop-oriented-commands" class="level3">
+<h3 class="anchored" data-anchor-id="workshop-oriented-commands">Workshop oriented commands</h3>
+<p><code>ls</code> ,<code>man</code>, <code>pwd</code>, <code>cd</code>, <code>mkdir</code>, <code>wget</code> (for plinks tool), <code>tar</code> or <code>unzip</code>, <code>nano</code>, <code>less</code>, <code>head</code>, <code>cp</code>, <code>mv</code>, <code>rm</code>, use of <code>\</code>, arguments.</p>
 </section>
-<section id="vcftools" class="level4">
-<h4 class="anchored" data-anchor-id="vcftools">🔹 vcftools</h4>
-<ol type="1">
-<li>Calculate allele frequencies</li>
-</ol>
-<div class="sourceCode" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ex">vcftools</span> <span class="at">--vcf</span> example.vcf <span class="at">--freq</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="more-commands" class="level3">
+<h3 class="anchored" data-anchor-id="more-commands">More commands</h3>
 <ul>
-<li><code>--vcf example.vcf</code>: Specifies the input VCF file.</li>
-<li><code>--freq</code>: Calculates allele frequencies for each variant.</li>
-<li>Output: <code>out.frq</code> (or use <code>--out</code> to name it).</li>
-</ul>
-<ol start="2" type="1">
-<li>Filter variants by minor allele frequency</li>
-</ol>
-<div class="sourceCode" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ex">vcftools</span> <span class="at">--vcf</span> example.vcf <span class="at">--maf</span> 0.05 <span class="at">--recode</span> <span class="at">--out</span> filtered_maf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li><code>--maf</code> <code>0.05</code>: Filters out variants with MAF &lt; 0.05.</li>
-<li><code>--recode</code>: Outputs a new VCF file with only the filtered variants.</li>
-<li><code>--out</code> <code>filtered_maf</code>: Prefix for output files.</li>
-</ul>
-<ol start="3" type="1">
-<li>Count missing data per individual</li>
-</ol>
-<div class="sourceCode" id="cb24"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="ex">vcftools</span> <span class="at">--vcf</span> example.vcf <span class="at">--missing-indv</span> <span class="at">--out</span> missing_data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li><code>--missing-indv</code>: Calculates missing genotype rates per individual.</li>
-<li>Output: <code>missing_data.imiss</code></li>
-</ul>
-</section>
-<section id="bcftools" class="level4">
-<h4 class="anchored" data-anchor-id="bcftools">🔹 bcftools</h4>
-<ol type="1">
-<li>View VCF header</li>
-</ol>
-<div class="sourceCode" id="cb25"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bcftools</span> view <span class="at">-h</span> example.vcf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li><code>-h</code>: Displays only the header lines of the VCF file.</li>
-</ul>
-<ol start="2" type="1">
-<li>Filter variants by quality</li>
-</ol>
-<div class="sourceCode" id="cb26"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bcftools</span> view <span class="at">-i</span> <span class="st">'QUAL&gt;30'</span> example.vcf <span class="at">-o</span> highqual.vcf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li><code>-i 'QUAL&gt;30'</code>: Includes only variants with quality &gt; 30.</li>
-<li><code>-o</code> <code>highqual.vcf</code>: Output file name.</li>
-</ul>
-<ol start="3" type="1">
-<li>Convert VCF to BCF</li>
-</ol>
-<div class="sourceCode" id="cb27"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bcftools</span> view <span class="at">-O</span> b <span class="at">-o</span> output.bcf example.vcf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li><code>-O</code> <code>b</code>: Output format is BCF (binary VCF).</li>
-<li><code>-o</code> <code>output.bcf</code>: Output file name.</li>
-</ul>
-</section>
-<section id="bedtools" class="level4">
-<h4 class="anchored" data-anchor-id="bedtools">🔹 bedtools</h4>
-<ol type="1">
-<li>Intersect VCF with BED regions</li>
-</ol>
-<div class="sourceCode" id="cb28"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bedtools</span> intersect <span class="at">-a</span> example.vcf <span class="at">-b</span> regions.bed <span class="op">&gt;</span> vcf_in_regions.vcf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li><code>-a</code>: First file (VCF) to compare.</li>
-<li><code>-b</code>: Second file (BED) with regions of interest.</li>
-<li><code>&gt;</code>: Redirects output to a new file.</li>
-</ul>
-<ol start="2" type="1">
-<li>Count intersected variants</li>
-</ol>
-<div class="sourceCode" id="cb29"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="at">-v</span> <span class="st">"^#"</span> vcf_in_regions.vcf <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li><code>grep</code> <code>-v</code> <code>"^#"</code>: Removes header lines.</li>
-<li><code>wc</code> <code>-l</code>: Counts the number of remaining lines (i.e., variants).</li>
-</ul>
-</section>
-<section id="plink" class="level4">
-<h4 class="anchored" data-anchor-id="plink">🔹 Plink</h4>
-<ol type="1">
-<li>Calculate allele frequencies</li>
-</ol>
-<div class="sourceCode" id="cb30"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="ex">plink</span> <span class="at">--file</span> plink_data <span class="at">--freq</span> <span class="at">--out</span> plink_freq</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li><code>--file</code> <code>plink_data</code>: Uses plink_data.ped and plink_data.map.</li>
-<li><code>--freq</code>: Calculates allele frequencies.</li>
-<li><code>--out</code> <code>plink_freq</code>: Output prefix.</li>
-</ul>
-<ol start="2" type="1">
-<li>Check missingness</li>
-</ol>
-<div class="sourceCode" id="cb31"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="ex">plink</span> <span class="at">--file</span> plink_data <span class="at">--missing</span> <span class="at">--out</span> plink_missing</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li><code>--missing</code>: Calculates missing genotype rates per individual and per SNP.</li>
-<li>Output: <code>.imiss</code> and <code>.lmiss</code> files.</li>
+<li><code>less</code> – view a file</li>
+<li><code>nano</code> – view and edit a file</li>
+<li><code>head</code> / <code>tail</code></li>
+<li><code>grep</code></li>
+<li><code>find</code></li>
+<li><code>wildcards</code></li>
+<li>tab completion – use it!!!</li>
+<li><code>man</code> – manual pages or</li>
+<li>anycommand <code>--help</code></li>
+<li><code>|</code></li>
 </ul>
 </section>
 </div>
 </div>
 </div>
-<section id="recommended-packages" class="level3">
-<h3 class="anchored" data-anchor-id="recommended-packages">Recommended packages</h3>
-<p>Install <strong>ggplot2</strong> package</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"ggplot2"</span>)</span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"ggplot2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="example-r-code" class="level3">
-<h3 class="anchored" data-anchor-id="example-r-code">Example R code</h3>
-<p>See the data structure:</p>
+</section>
+<section id="r" class="level2">
+<h2 class="anchored" data-anchor-id="r">R:</h2>
+<section id="packages-needed-for-r-modules" class="level3">
+<h3 class="anchored" data-anchor-id="packages-needed-for-r-modules">1. Packages needed for R modules</h3>
+<ul>
+<li><code>GAPIT3</code></li>
+<li><code>ggplot2</code></li>
+<li><code>rrBLUP</code></li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled" title="Packages installation">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Packages installation
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<section id="gapit-is-a-package-that-is-run-in-the-r-software-environment." class="level3">
+<h3 class="anchored" data-anchor-id="gapit-is-a-package-that-is-run-in-the-r-software-environment.">GAPIT is a package that is run in the R software environment.</h3>
+<p>R can be freely downloaded from <a href="http://www.r-project.org">http://www.r-project.org</a>.</p>
+<p>We also recommend the integrated development environment RStudio which is also freely available at <a href="http://www.rstudio.com">http://www.rstudio.com</a>.</p>
+<p><a href="https://github.com/jiabowang/GAPIT">GAPIT</a> can currently be installed in several ways.</p>
+<ul>
+<li>From source on the internet</li>
+<li>From GitHub</li>
+<li>From an archive</li>
+</ul>
+</section>
+<section id="installation-from-source-functions" class="level3">
+<h3 class="anchored" data-anchor-id="installation-from-source-functions">Installation from source functions</h3>
+<p>GAPIT can be loaded with a single funciton.</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"http://zzlab.net/GAPIT/gapit_functions.txt"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Or from GitHub function.</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"https://raw.githubusercontent.com/jiabowang/GAPIT/refs/heads/master/gapit_functions.txt"</span>, <span class="at">encoding =</span> <span class="st">"UTF-8"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="installation-from-github" class="level3">
+<h3 class="anchored" data-anchor-id="installation-from-github">Installation from GitHub</h3>
+<p>Installation can also be made from GitHub when the R package <code>devtools</code> is available.</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"devtools"</span>)</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"jiabowang/GAPIT"</span>, <span class="at">force=</span><span class="cn">TRUE</span>)</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(GAPIT)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>or</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"remotes"</span>)</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"jiabowang/GAPIT"</span>)</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(GAPIT)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="installation-from-an-archive" class="level3">
+<h3 class="anchored" data-anchor-id="installation-from-an-archive">Installation from an archive</h3>
+<p>GAPIT can be installed from an archive such as *.tar.gz or *.zip archive. An archive can be downloaded from the “releases” page. If you would like the latest version of GAPIT from the GitHub site you may want to clone it and then build it (this may require Rtools on Windows).</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone git@github.com:jiabowang/GAPIT.git</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="ex">R</span> CMD build GAPIT</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Once an archive has been obtained it can be installed from a shell, similar to as follows.</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="ex">R</span> CMD INSTALL GAPIT_3.5.0.9000.tar.gz</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Or similarly from within R.</p>
+<pre><code>install.packages("GAPIT_3.5.0.9000.tar.gz", repos = NULL, type="source")</code></pre>
+</section>
+<section id="in-some-case-of-the-biocmanager-can-not-be-installed" class="level3">
+<h3 class="anchored" data-anchor-id="in-some-case-of-the-biocmanager-can-not-be-installed">In some case of the BiocManager can not be installed</h3>
+<p>Installation of same packages such as “multtest” and “biobase” can not be intalled from BiocManager directly. These packages can be downloaded in the Bioconductor website and be installed from local source files.</p>
+<p>The website of Bioconductor is here:</p>
+<pre><code>https://bioconductor.org/packages/3.19/bioc/</code></pre>
+<p>More details please check and <a href="https://github.com/jiabowang/GAPIT">ref user manual</a>.</p>
+</section>
+</div>
+</div>
+</div>
+</section>
+<section id="install-ggplot2-rrblup-packages" class="level3">
+<h3 class="anchored" data-anchor-id="install-ggplot2-rrblup-packages">2. Install <strong>ggplot2</strong> &amp; <strong>rrBLUP</strong> packages</h3>
+<p>install packs</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"ggplot2"</span>)</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"rrBLUP"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>attach the packs</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"ggplot2"</span>)</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"rrBLUP"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="setting-a-project-or-working-directory" class="level3">
+<h3 class="anchored" data-anchor-id="setting-a-project-or-working-directory">3. Setting a project or working directory</h3>
+<ul>
+<li><p>to know where you are right now, run this <code>getwd()</code> function at R Console</p></li>
+<li><p>to set directory at your target directory, run this <code>setwd()</code> function at R Console with target path (see example bellow)</p></li>
+</ul>
+<p>example:</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">"C:/Users/auue0001/OneDrive - Sveriges lantbruksuniversitet/path/to/your/folder"</span>)<span class="st">`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="interacting-with-r" class="level3">
+<h3 class="anchored" data-anchor-id="interacting-with-r">4. Interacting with R</h3>
+<p>Guided tour around the RStudio</p>
+</section>
+<section id="how-to-import-and-export-data-or-results" class="level3">
+<h3 class="anchored" data-anchor-id="how-to-import-and-export-data-or-results">5. How to import and export data or results</h3>
+<ul>
+<li>How to do that from RStudio? (guided tour)</li>
+<li>How to do that with function or command?</li>
+</ul>
+<p>Load data table from a website to R</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(cars)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># loading data set</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>myY<span class="ot">=</span><span class="fu">read.table</span>(<span class="at">file=</span><span class="st">"https://github.com/jiabowang/GAPIT/raw/refs/heads/master/Documents/mdp_traits.txt"</span>, <span class="at">head =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="data-structures" class="level3">
+<h3 class="anchored" data-anchor-id="data-structures">6. Data structures</h3>
+<p>Example R code to see the data structure:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(cars)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>'data.frame':   50 obs. of  2 variables:
  $ speed: num  4 4 7 7 8 9 10 10 10 11 ...
@@ -477,28 +572,34 @@ Solution &amp; explanation
 <p>A data frame with 50 observations on 2 variables.</p>
 <p>[,1] speed numeric Speed (mph) [,2] dist numeric Stopping distance (ft)</p>
 </section>
-<section id="plotting-a-figure" class="level3">
-<h3 class="anchored" data-anchor-id="plotting-a-figure">Plotting a figure</h3>
+<section id="housekeeping" class="level3">
+<h3 class="anchored" data-anchor-id="housekeeping">7. Housekeeping</h3>
+<p>Comment, Quarto , R history</p>
+</section>
+<section id="saving-plot" class="level3">
+<h3 class="anchored" data-anchor-id="saving-plot">8. Saving plot</h3>
+</section>
+<section id="plotting-a-figure-extra" class="level3">
+<h3 class="anchored" data-anchor-id="plotting-a-figure-extra">9. Plotting a figure (extra)</h3>
 <p>Speed and Stopping Distances of Cars</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ggplot(data = cars, aes (x = speed, y = dist))+</span></span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="co"># geom_point()</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ggplot(data = cars, aes (x = speed, y = dist))+</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="co"># geom_point()</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="load-data-table-in-r" class="level3">
-<h3 class="anchored" data-anchor-id="load-data-table-in-r">Load data table in R</h3>
-</section>
-<section id="how-to-do-that-from-rstudio" class="level3">
-<h3 class="anchored" data-anchor-id="how-to-do-that-from-rstudio">How to do that from RStudio?</h3>
-</section>
-<section id="how-to-do-that-with-function-or-command" class="level3">
-<h3 class="anchored" data-anchor-id="how-to-do-that-with-function-or-command">How to do that with function or command?</h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># loading data set</span></span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>myY<span class="ot">=</span><span class="fu">read.table</span>(<span class="at">file=</span><span class="st">"https://github.com/jiabowang/GAPIT/raw/refs/heads/master/Documents/mdp_traits.txt"</span>, <span class="at">head =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<section id="r-built-in-function" class="level3">
+<h3 class="anchored" data-anchor-id="r-built-in-function">10. R built-in function</h3>
+<ul>
+<li><p>Directory: <code>setwd</code>, <code>getwd</code></p></li>
+<li><p>Upload data to R: <code>read.table</code>, <code>read_table</code>, <code>read_csv</code></p></li>
+<li><p>See data structure: <code>str</code>, <code>summarize</code>, <code>summary</code>.</p></li>
+</ul>
+<hr>
+<p>Well done! Congrats!!</p>
+<p>END</p>
 
 
+</section>
 </section>
 </section>
 
