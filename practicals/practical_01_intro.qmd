@@ -4,10 +4,10 @@ title: "Practical 01 — Intro to Linux and R"
 
 # Goals
 
-- Learn basic Linux shell commands and practice
-- Load and explore data in R and set working directories
+A) `Linux`: Learn basic Linux shell commands, practice, load tools.
+B) `R`: Load packages, set working directories, Explore data in R.
 
-## Linux: 
+## A. `Linux`: 
 
 - open the terminal or wsl command line
 - where am I (print working directory)
@@ -117,7 +117,12 @@ Or execute next command
 pwd
 ```
 
-::: {.callout-tip title="Exercise" collapse="true"}
+Make a text file
+```bash
+touch test.txt
+```
+
+::: {.callout-tip title="To Do" collapse="false"}
 
 What if you execute: 
 `cd ..` or 
@@ -135,7 +140,8 @@ How to come back to the place(directory) where you were?
 - Create a *folder* and a *sub-folder*
 - make a file (*file.txt*) in 1st folder
 - move it to the *sub-folder*
-- print *content* of the sub-folder if it is there
+- print *content* of the sub-folder, see if *file.txt* is there
+- rename the file to *file_v1.txt*
 
 
 ### 6. Software instalation in Linux 
@@ -282,7 +288,7 @@ What you have learn so far:
 :::
 
 
-## R:
+## B. `R`:
 
 ### 1. Packages needed for R modules
 
