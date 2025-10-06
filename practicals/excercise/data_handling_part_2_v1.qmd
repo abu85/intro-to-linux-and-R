@@ -4,7 +4,7 @@ format: html
 editor: visual
 ---
 
-::: {.callout-tip collapse=true}
+::: {.callout-tip collapse="true"}
 #### Clen up
 
 Lets clean our environment first
@@ -12,7 +12,7 @@ Lets clean our environment first
 ```{r}
 rm(list = ls())
 ```
-::: 
+:::
 
 ## Packages
 

@@ -1,13 +1,10 @@
 ---
-title: "Practical 01 — Intro to Linux and R"
+title: "Intro to Linux and R (practical)"
 ---
 
-# Goals
+# Goals (to do list)
 
-A) `Linux`: Learn basic Linux shell commands, practice, load tools.
-B) `R`: Load packages, set working directories, Explore data in R.
-
-## A. `Linux`: 
+A) `Linux`: Practice basic Linux shell commands, load tools:
 
 - open the terminal or wsl command line
 - where am I (print working directory)
@@ -20,10 +17,21 @@ B) `R`: Load packages, set working directories, Explore data in R.
 - move files & folders
 - rename files & folders
 - delete files or folders
-- download any tools
+- download tools (Plink, vcftoolf, bcftools etc)
 - unzip or extract
 - activate tool
 
+
+B) `R`: Load packages, set working directories, Explore data in R:
+- Setting a project or working directory
+- Interacting with R
+- Install Packages
+- Assign values or objects
+- Data types, structures
+- How to import and export data or results
+- Housekeeping
+
+## A. `Linux`: 
 
 ### 1. Open Linux terminal at your PC
 
@@ -120,13 +128,31 @@ pwd
 Make a text file
 ```bash
 touch test.txt
+
+ls
 ```
 
-::: {.callout-tip title="To Do" collapse="false"}
+copy and paste the file
+
+```bash
+cp test.txt test_copy.txt
+
+ls
+```
+
+move file to a subfolder 
+```bash
+mv test.txt ./<subfolder>/test.txt
+```
+
+::: {.callout-tip title="TO DO example" collapse="false"}
 
 What if you execute: 
-`cd ..` or 
-`cd -` or 
+
+`cd ..` and 
+
+`cd -` and 
+
 `cd --` 
 
 What they do?
@@ -136,13 +162,14 @@ How to come back to the place(directory) where you were?
 :::
 
 ### TO DO 1:
+::: {.callout-tip title="TO DO 1" collapse="false"}
 
-- Create a *folder* and a *sub-folder*
-- make a file (*file.txt*) in 1st folder
-- move it to the *sub-folder*
+- create a *folder* and a *sub-folder*
+- make a file (name: *file.txt*) in 1st folder
+- move or copy it to the *sub-folder*
 - print *content* of the sub-folder, see if *file.txt* is there
 - rename the file to *file_v1.txt*
-
+:::
 
 ### 6. Software instalation in Linux 
 
@@ -213,6 +240,17 @@ If not that means Plink is not activated, we need activate it (repeat and fix *M
 
 Well done!
 
+### TO DO 2: 
+::: {.callout-tip title="TO DO 2" collapse="false"}
+
+- download today's 'course materials' (it is a repository in github)
+- hints: use `wget` command
+- extract the contents of the file (zip)
+- change the working directory to that folder or directory
+- solution: see codes at 'Course materials' at 'Home page'
+:::
+
+
 ### 7. create a file and write something in it
 
 
@@ -222,9 +260,10 @@ nano test.txt
 
 copy and paste following line
 
-`This is a file 
-we like to read it
-and save it`
+```
+>GCTAGTGCAATTT
+>GTTAGTGCAATTT
+```
 
 `Ctrl` + `right click` mouse
 
@@ -233,10 +272,25 @@ and save it`
 
 
 
-### TO DO 2 (extra)
-- edit the new file and add the line 'Today is Monday' and exit the file or editing
-- make it *executable*
+### TO DO 3
 
+::: {.callout-tip title="TO DO 3" collapse="false"}
+
+- edit the file `file.txt` and add the following lines in the file: 
+
+```
+>CCTAGGGCAATTT
+>CCTAGGGCAATTT
+>CGTAGTGCAATTT
+>ACTAGGAACATTT
+>GCTAGTGCAATTT
+>ACTAGGAACATTT
+>GCTAGTGCAATTT
+```
+
+- exit the file or exit from editing
+- make it *executable*
+:::
 
 ### 8. Word count (extra)
 Print file's content
@@ -257,17 +311,19 @@ cat file.txt | wc -l
 ```
 
 
-### TO DO 3 (extra)
+### TO DO 4 (extra)
+
+::: {.callout-tip title="TO DO 4" collapse="false"}
 
 - see the couple of lines (use `head`) 
 - count number of lines in a `file.text` file
 - use | pipe
 - save output to a file called `result.txt` (use `>`)
-
+:::
 
 What you have learn so far:
 
-::: {.callout-tip title="Linux commands" collapse="false"}
+::: {.callout-tip title="Linux commands" collapse="true"}
 
 ### Workshop oriented commands
 
@@ -296,7 +352,7 @@ What you have learn so far:
 - `ggplot2`
 - `rrBLUP`
 
-::: {.callout-tip title="Packages installation" collapse="false"}
+::: {.callout-tip title="GAPIT3 installation" collapse="false"}
 ### GAPIT is a package that is run in the R software environment.
 R can be freely downloaded from [http://www.r-project.org](http://www.r-project.org). 
 
@@ -397,7 +453,7 @@ library("rrBLUP")
 
 ### 3. Setting a project or working directory
 
-- to know where you are right now, run this `getwd()` function at R Console 
+- to know (print) where you are right now, run this `getwd()` function at R Console 
 
 - to set directory at your target directory, run this `setwd()` function at R Console with target path (see example bellow)
 
@@ -405,19 +461,55 @@ example:
 ```r
 setwd("C:/Users/auue0001/OneDrive - Sveriges lantbruksuniversitet/path/to/your/folder")`
 ```
+### TO DO 5
+
+::: {.callout-tip title="TO DO 5" collapse="false"}
+
+- print location, where you are  (current working directory)
+- set working directories to the 'course materials' at your PC
+:::
+
 ### 4. Interacting with R
 Guided tour around the RStudio
+
 
 ### 5. How to import and export data or results
 
  - How to do that from RStudio? (guided tour)
  - How to do that with function or command?
  
- Load data table from a website to R 
+
+Load a data from the course materials (manually and by code)
+```r
+library(readr)  # we need a library 
+
+allele_freq <- read_delim(
+"excercise/data/data_4_linux/allele_freq.frq", 
+    delim = "\t", 
+    escape_double = FALSE, 
+    trim_ws = TRUE)
+
+```
+View the loaded dataset
+
+```r
+View(allele_freq)
+```
+
+
+Load data table from a website to R 
 ```{r}
 # loading data set
 myY=read.table(file="https://github.com/jiabowang/GAPIT/raw/refs/heads/master/Documents/mdp_traits.txt", head = TRUE)
 ```
+
+### TO DO 6
+::: {.callout-tip title="TO DO 6" collapse="false"}
+
+- upload `example.vcf` data file in RStudio as 'vcf_data' object 
+- have the column headers but not the comments. Hints: data has 'column headers' ( as #) and 'comments' (comments starts with `##`)
+- view the data
+:::
 
 ### 6. Data structures
 
@@ -431,20 +523,64 @@ A data frame with 50 observations on 2 variables.
 [,2]	dist	numeric	Stopping distance (ft)
 
 
+Lets try `help` `?? cars`
+
+Lets see structure of the allele_freq
+
+```r
+str(allele_freq)
+```
+
+
+### TO DO 7
+::: {.callout-tip title="TO DO 7" collapse="false"}
+
+- see & print the structure of the `vcf_data` object
+
+:::
 ### 7. Housekeeping
 
 Comment, Quarto , R history
 
-### 8. Saving plot
+### 8. Export data, results or plot
+
+Export results or data or object
+
+export as a csv file
+
+```r
+write.csv(df , file = "path/to/your/saving/folder/df.csv")
+```
+
+export as a excel file
+```r
+library(writexl)   # we need an extra library for exporting excel
+
+writexl::write_xlsx (test_df, path = "C:/Users/your_username/test_df.xlsx", col_names = TRUE, format_headers = TRUE)
+```
+
 
 
 ### 9. Plotting a figure (extra)
 Speed and Stopping Distances of Cars
-```{r}
-# ggplot(data = cars, aes (x = speed, y = dist))+
-# geom_point()
+```r
+p1 <- ggplot(data = cars, aes (x = speed, y = dist))+
+geom_point()
+
+p1
 ```
 
+#### 9.1 Export plots
+
+to export ggplot: 
+```r 
+ggsave("path/to/your/saving/plots/figure_1a.png", plot = p1, bg ="white")
+```
+to export base r plot: 
+
+```r
+dev.print (device=jpeg, file="path/to/your/saving/plots/figure_1a.jpg", width=par("din")[1]*300, res=300, quality=100)
+```
 ### 10. R built-in function  
 
 - Directory: `setwd`, `getwd` 
@@ -453,6 +589,7 @@ Speed and Stopping Distances of Cars
 
 - See data structure: `str`, `summarize`, `summary`. 
 
+- Session information: `sessionInfo()`
 --------------- 
 
 Well done! Congrats!!

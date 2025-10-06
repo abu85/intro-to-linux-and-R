@@ -1,0 +1,1379 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Intro to Linux and R (practical)</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../images/favicon.ico" rel="icon">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href=".././scripts/00_precourse.html"> 
+<span class="menu-text">Pre-course</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href=".././scripts/01_intro_to_linux.html"> 
+<span class="menu-text">Linux</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href=".././scripts/02_intro_R.html"> 
+<span class="menu-text">R</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href=".././practicals/practical_01_intro.html"> 
+<span class="menu-text">Insilico activities(DryLab)</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://swcarpentry.github.io/shell-novice/"> <i class="bi bi-softwerecarpentry" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="mailto:your.email@example.com"> <i class="bi bi-envelope" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#goals-to-do-list" id="toc-goals-to-do-list" class="nav-link active" data-scroll-target="#goals-to-do-list">Goals (to do list)</a>
+  <ul class="collapse">
+  <li><a href="#a.-linux" id="toc-a.-linux" class="nav-link" data-scroll-target="#a.-linux">A. <code>Linux</code>:</a>
+  <ul class="collapse">
+  <li><a href="#open-linux-terminal-at-your-pc" id="toc-open-linux-terminal-at-your-pc" class="nav-link" data-scroll-target="#open-linux-terminal-at-your-pc">1. Open Linux terminal at your PC</a></li>
+  <li><a href="#list-files" id="toc-list-files" class="nav-link" data-scroll-target="#list-files">2. List files</a></li>
+  <li><a href="#where-am-i" id="toc-where-am-i" class="nav-link" data-scroll-target="#where-am-i">3. Where am I?</a></li>
+  <li><a href="#create-a-folderdirectory" id="toc-create-a-folderdirectory" class="nav-link" data-scroll-target="#create-a-folderdirectory">4. Create a folder/directory</a></li>
+  <li><a href="#go-in-the-new-directory" id="toc-go-in-the-new-directory" class="nav-link" data-scroll-target="#go-in-the-new-directory">5. Go in the new directory</a></li>
+  <li><a href="#to-do-1" id="toc-to-do-1" class="nav-link" data-scroll-target="#to-do-1">TO DO 1:</a></li>
+  <li><a href="#software-instalation-in-linux" id="toc-software-instalation-in-linux" class="nav-link" data-scroll-target="#software-instalation-in-linux">6. Software instalation in Linux</a></li>
+  <li><a href="#to-do-2" id="toc-to-do-2" class="nav-link" data-scroll-target="#to-do-2">TO DO 2:</a></li>
+  <li><a href="#create-a-file-and-write-something-in-it" id="toc-create-a-file-and-write-something-in-it" class="nav-link" data-scroll-target="#create-a-file-and-write-something-in-it">7. create a file and write something in it</a></li>
+  <li><a href="#to-do-3" id="toc-to-do-3" class="nav-link" data-scroll-target="#to-do-3">TO DO 3</a></li>
+  <li><a href="#word-count-extra" id="toc-word-count-extra" class="nav-link" data-scroll-target="#word-count-extra">8. Word count (extra)</a></li>
+  <li><a href="#to-do-4-extra" id="toc-to-do-4-extra" class="nav-link" data-scroll-target="#to-do-4-extra">TO DO 4 (extra)</a></li>
+  </ul></li>
+  <li><a href="#b.-r" id="toc-b.-r" class="nav-link" data-scroll-target="#b.-r">B. <code>R</code>:</a>
+  <ul class="collapse">
+  <li><a href="#packages-needed-for-r-modules" id="toc-packages-needed-for-r-modules" class="nav-link" data-scroll-target="#packages-needed-for-r-modules">1. Packages needed for R modules</a></li>
+  <li><a href="#install-ggplot2-rrblup-packages" id="toc-install-ggplot2-rrblup-packages" class="nav-link" data-scroll-target="#install-ggplot2-rrblup-packages">2. Install <strong>ggplot2</strong> &amp; <strong>rrBLUP</strong> packages</a></li>
+  <li><a href="#setting-a-project-or-working-directory" id="toc-setting-a-project-or-working-directory" class="nav-link" data-scroll-target="#setting-a-project-or-working-directory">3. Setting a project or working directory</a></li>
+  <li><a href="#to-do-5" id="toc-to-do-5" class="nav-link" data-scroll-target="#to-do-5">TO DO 5</a></li>
+  <li><a href="#interacting-with-r" id="toc-interacting-with-r" class="nav-link" data-scroll-target="#interacting-with-r">4. Interacting with R</a></li>
+  <li><a href="#how-to-import-and-export-data-or-results" id="toc-how-to-import-and-export-data-or-results" class="nav-link" data-scroll-target="#how-to-import-and-export-data-or-results">5. How to import and export data or results</a></li>
+  <li><a href="#to-do-6" id="toc-to-do-6" class="nav-link" data-scroll-target="#to-do-6">TO DO 6</a></li>
+  <li><a href="#data-structures" id="toc-data-structures" class="nav-link" data-scroll-target="#data-structures">6. Data structures</a></li>
+  <li><a href="#to-do-7" id="toc-to-do-7" class="nav-link" data-scroll-target="#to-do-7">TO DO 7</a></li>
+  <li><a href="#housekeeping" id="toc-housekeeping" class="nav-link" data-scroll-target="#housekeeping">7. Housekeeping</a></li>
+  <li><a href="#export-data-results-or-plot" id="toc-export-data-results-or-plot" class="nav-link" data-scroll-target="#export-data-results-or-plot">8. Export data, results or plot</a></li>
+  <li><a href="#plotting-a-figure-extra" id="toc-plotting-a-figure-extra" class="nav-link" data-scroll-target="#plotting-a-figure-extra">9. Plotting a figure (extra)</a></li>
+  <li><a href="#r-built-in-function" id="toc-r-built-in-function" class="nav-link" data-scroll-target="#r-built-in-function">10. R built-in function</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Intro to Linux and R (practical)</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="goals-to-do-list" class="level1">
+<h1>Goals (to do list)</h1>
+<ol type="A">
+<li><code>Linux</code>: Practice basic Linux shell commands, load tools:</li>
+</ol>
+<ul>
+<li>open the terminal or wsl command line</li>
+<li>where am I (print working directory)</li>
+<li>list or view (different styles)</li>
+<li>create a directory (folder)</li>
+<li>change working directory to the new directory</li>
+<li>absolute/relative paths of that directory</li>
+<li>include options &amp; arguments</li>
+<li>copy and paste files &amp; folders</li>
+<li>move files &amp; folders</li>
+<li>rename files &amp; folders</li>
+<li>delete files or folders</li>
+<li>download tools (Plink, vcftoolf, bcftools etc)</li>
+<li>unzip or extract</li>
+<li>activate tool</li>
+</ul>
+<ol start="2" type="A">
+<li><code>R</code>: Load packages, set working directories, Explore data in R:</li>
+</ol>
+<ul>
+<li>Setting a project or working directory</li>
+<li>Interacting with R</li>
+<li>Install Packages</li>
+<li>Assign values or objects</li>
+<li>Data types, structures</li>
+<li>How to import and export data or results</li>
+<li>Housekeeping</li>
+</ul>
+<section id="a.-linux" class="level2">
+<h2 class="anchored" data-anchor-id="a.-linux">A. <code>Linux</code>:</h2>
+<section id="open-linux-terminal-at-your-pc" class="level3">
+<h3 class="anchored" data-anchor-id="open-linux-terminal-at-your-pc">1. Open Linux terminal at your PC</h3>
+<p>search <code>terminal</code> or <code>Ubuntu</code> or <code>command prompt</code> and click on the first result</p>
+</section>
+<section id="list-files" class="level3">
+<h3 class="anchored" data-anchor-id="list-files">2. List files</h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>What else I can do with this command? Options:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">--help</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">man</span> ls </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Note: press on <strong>Q</strong> keyboard button to <strong>exit</strong></p>
+<p>classify list (files or folders):</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-F</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-F</span> ./</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Here <code>-F</code> is an <em>option</em> and <code>./</code> is an <em>argument</em> <img src="https://swcarpentry.github.io/shell-novice/fig/shell_command_syntax.svg" class="img-fluid"></p>
+<p>list all:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-a</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>print the author of each file:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-la</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="where-am-i" class="level3">
+<h3 class="anchored" data-anchor-id="where-am-i">3. Where am I?</h3>
+<p>What is my present working directory?</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">pwd</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="create-a-folderdirectory" class="level3">
+<h3 class="anchored" data-anchor-id="create-a-folderdirectory">4. Create a folder/directory</h3>
+<p>Do it in home or current working directory</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> my_tools</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>multiple sub folders at once:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> my_tools/plink</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>list them:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-a</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="go-in-the-new-directory" class="level3">
+<h3 class="anchored" data-anchor-id="go-in-the-new-directory">5. Go in the new directory</h3>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> my_tools</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Or go to another sub directory</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /plink</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>How do you know you moved in or not?</p>
+<p>look at the texts before the <code>$</code> sign in the terminal</p>
+<p>Or execute next command</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="bu">pwd</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Make a text file</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> test.txt</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>copy and paste the file</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> test.txt test_copy.txt</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>move file to a subfolder</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> test.txt ./<span class="op">&lt;</span>subfolder<span class="op">&gt;</span>/test.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-tip callout-titled" title="TO DO example">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+TO DO example
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>What if you execute:</p>
+<p><code>cd ..</code> and</p>
+<p><code>cd -</code> and</p>
+<p><code>cd --</code></p>
+<p>What they do?</p>
+<p>How to come back to the place(directory) where you were?</p>
+</div>
+</div>
+</div>
+</section>
+<section id="to-do-1" class="level3">
+<h3 class="anchored" data-anchor-id="to-do-1">TO DO 1:</h3>
+<div class="callout callout-style-default callout-tip callout-titled" title="TO DO 1">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+TO DO 1
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<ul>
+<li>create a <em>folder</em> and a <em>sub-folder</em></li>
+<li>make a file (name: <em>file.txt</em>) in 1st folder</li>
+<li>move or copy it to the <em>sub-folder</em></li>
+<li>print <em>content</em> of the sub-folder, see if <em>file.txt</em> is there</li>
+<li>rename the file to <em>file_v1.txt</em></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="software-instalation-in-linux" class="level3">
+<h3 class="anchored" data-anchor-id="software-instalation-in-linux">6. Software instalation in Linux</h3>
+<p><strong>must for this workshops</strong></p>
+<div class="callout callout-style-default callout-tip callout-titled" title="tools installation in Linux">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+tools installation in Linux
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse show">
+<section id="download-the-official-plink-softwere-binary-and-make-it-available" class="level3 callout-body-container callout-body">
+<h3 class="anchored" data-anchor-id="download-the-official-plink-softwere-binary-and-make-it-available">Download the official Plink softwere binary and make it available</h3>
+<div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> <span class="at">--</span>               <span class="co"># be in your home directory</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> my_tools/plink   <span class="co"># be in your plink directory</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>We use <code>wget</code> command for this see all version <a href="https://www.cog-genomics.org/plink/">here</a></p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://s3.amazonaws.com/plink1-assets/plink_linux_x86_64_20250819.zip</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="unzip-the-downloaded-file" class="level4">
+<h4 class="anchored" data-anchor-id="unzip-the-downloaded-file">Unzip the downloaded file</h4>
+<p>use <code>unzip</code> command,</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unzip</span> plink_linux_x86_64.zip</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>to know more <code>unzip --help</code></p>
+</section>
+<section id="make-the-binary-executable-change-the-permision" class="level4">
+<h4 class="anchored" data-anchor-id="make-the-binary-executable-change-the-permision">Make the binary executable: change the permision</h4>
+<p>use <code>chmod</code> command</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chmod</span> +x plink</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>to know more <code>chmod --help</code></p>
+</section>
+<section id="add-plink-to-your-path" class="level4">
+<h4 class="anchored" data-anchor-id="add-plink-to-your-path">Add Plink to your PATH</h4>
+<p>(<em>optional but recommended</em>)</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">'export PATH=$PATH:~/my_tools/plink'</span> <span class="op">&gt;&gt;</span> ~/.bashrc</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> ~/.bashrc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>this command ensures you can run it from anywhere in the terminal just by typing plink, without needing to specify the full path.</p>
+<p>Explanation: - <code>echo</code> = print what is after it</p>
+<ul>
+<li><p><code>&gt;&gt;</code> = is a shell operator used to append text to a file.</p></li>
+<li><p><code>~</code> = <em>home/username</em></p></li>
+<li><p><code>.bashrc</code> is a configuration file in your home directory that runs every time you start a new terminal session (specifically for Bash shell).</p></li>
+</ul>
+</section>
+<section id="test-installation" class="level4">
+<h4 class="anchored" data-anchor-id="test-installation">Test installation</h4>
+<p>check version of the Plink tool</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ex">plink</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You will see something printed as like as bellow:</p>
+<blockquote class="blockquote">
+<p>PLINK v1.9.0-b.7.11 64-bit (19 Aug 2025)</p>
+</blockquote>
+<p>If not that means Plink is not activated, we need activate it (repeat and fix <em>Make the binary executable: change the permision</em> step)</p>
+</section>
+</section>
+</div>
+</div>
+<p>Well done!</p>
+</section>
+<section id="to-do-2" class="level3">
+<h3 class="anchored" data-anchor-id="to-do-2">TO DO 2:</h3>
+<div class="callout callout-style-default callout-tip callout-titled" title="TO DO 2">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+TO DO 2
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<ul>
+<li>download today’s ‘course materials’ (it is a repository in github)</li>
+<li>hints: use <code>wget</code> command</li>
+<li>extract the contents of the file (zip)</li>
+<li>change the working directory to that folder or directory</li>
+<li>solution: see codes at ‘Course materials’ at ‘Home page’</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="create-a-file-and-write-something-in-it" class="level3">
+<h3 class="anchored" data-anchor-id="create-a-file-and-write-something-in-it">7. create a file and write something in it</h3>
+<div class="sourceCode" id="cb24"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nano</span> test.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>copy and paste following line</p>
+<pre><code>&gt;GCTAGTGCAATTT
+&gt;GTTAGTGCAATTT</code></pre>
+<p><code>Ctrl</code> + <code>right click</code> mouse</p>
+<blockquote class="blockquote">
+<p><code>Ctrl</code> + <code>o</code> for write out, then <code>Enter</code> to save the name, then <code>Ctrl</code> + <code>x</code> for exit</p>
+</blockquote>
+</section>
+<section id="to-do-3" class="level3">
+<h3 class="anchored" data-anchor-id="to-do-3">TO DO 3</h3>
+<div class="callout callout-style-default callout-tip callout-titled" title="TO DO 3">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+TO DO 3
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<ul>
+<li>edit the file <code>file.txt</code> and add the following lines in the file:</li>
+</ul>
+<pre><code>&gt;CCTAGGGCAATTT
+&gt;CCTAGGGCAATTT
+&gt;CGTAGTGCAATTT
+&gt;ACTAGGAACATTT
+&gt;GCTAGTGCAATTT
+&gt;ACTAGGAACATTT
+&gt;GCTAGTGCAATTT</code></pre>
+<ul>
+<li>exit the file or exit from editing</li>
+<li>make it <em>executable</em></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="word-count-extra" class="level3">
+<h3 class="anchored" data-anchor-id="word-count-extra">8. Word count (extra)</h3>
+<p>Print file’s content</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> file.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>count line of the words</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wc</span> <span class="at">-l</span> file.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="print-and-pipe" class="level4">
+<h4 class="anchored" data-anchor-id="print-and-pipe">print and pipe</h4>
+<div class="sourceCode" id="cb29"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> file.txt <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="to-do-4-extra" class="level3">
+<h3 class="anchored" data-anchor-id="to-do-4-extra">TO DO 4 (extra)</h3>
+<div class="callout callout-style-default callout-tip callout-titled" title="TO DO 4">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+TO DO 4
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<ul>
+<li>see the couple of lines (use <code>head</code>)</li>
+<li>count number of lines in a <code>file.text</code> file</li>
+<li>use | pipe</li>
+<li>save output to a file called <code>result.txt</code> (use <code>&gt;</code>)</li>
+</ul>
+</div>
+</div>
+</div>
+<p>What you have learn so far:</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Linux commands">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Linux commands
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<section id="workshop-oriented-commands" class="level3">
+<h3 class="anchored" data-anchor-id="workshop-oriented-commands">Workshop oriented commands</h3>
+<p><code>ls</code> ,<code>man</code>, <code>pwd</code>, <code>cd</code>, <code>mkdir</code>, <code>wget</code> (for plinks tool), <code>tar</code> or <code>unzip</code>, <code>nano</code>, <code>less</code>, <code>head</code>, <code>cp</code>, <code>mv</code>, <code>rm</code>, use of <code>\</code>, arguments.</p>
+</section>
+<section id="more-commands" class="level3">
+<h3 class="anchored" data-anchor-id="more-commands">More commands</h3>
+<ul>
+<li><code>less</code> – view a file</li>
+<li><code>nano</code> – view and edit a file</li>
+<li><code>head</code> / <code>tail</code></li>
+<li><code>grep</code></li>
+<li><code>find</code></li>
+<li><code>wildcards</code></li>
+<li>tab completion – use it!!!</li>
+<li><code>man</code> – manual pages or</li>
+<li>anycommand <code>--help</code></li>
+<li><code>|</code></li>
+</ul>
+</section>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="b.-r" class="level2">
+<h2 class="anchored" data-anchor-id="b.-r">B. <code>R</code>:</h2>
+<section id="packages-needed-for-r-modules" class="level3">
+<h3 class="anchored" data-anchor-id="packages-needed-for-r-modules">1. Packages needed for R modules</h3>
+<ul>
+<li><code>GAPIT3</code></li>
+<li><code>ggplot2</code></li>
+<li><code>rrBLUP</code></li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled" title="GAPIT3 installation">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+GAPIT3 installation
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<section id="gapit-is-a-package-that-is-run-in-the-r-software-environment." class="level3">
+<h3 class="anchored" data-anchor-id="gapit-is-a-package-that-is-run-in-the-r-software-environment.">GAPIT is a package that is run in the R software environment.</h3>
+<p>R can be freely downloaded from <a href="http://www.r-project.org">http://www.r-project.org</a>.</p>
+<p>We also recommend the integrated development environment RStudio which is also freely available at <a href="http://www.rstudio.com">http://www.rstudio.com</a>.</p>
+<p><a href="https://github.com/jiabowang/GAPIT">GAPIT</a> can currently be installed in several ways.</p>
+<ul>
+<li>From source on the internet</li>
+<li>From GitHub</li>
+<li>From an archive</li>
+</ul>
+</section>
+<section id="installation-from-source-functions" class="level3">
+<h3 class="anchored" data-anchor-id="installation-from-source-functions">Installation from source functions</h3>
+<p>GAPIT can be loaded with a single funciton.</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"http://zzlab.net/GAPIT/gapit_functions.txt"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Or from GitHub function.</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"https://raw.githubusercontent.com/jiabowang/GAPIT/refs/heads/master/gapit_functions.txt"</span>, <span class="at">encoding =</span> <span class="st">"UTF-8"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="installation-from-github" class="level3">
+<h3 class="anchored" data-anchor-id="installation-from-github">Installation from GitHub</h3>
+<p>Installation can also be made from GitHub when the R package <code>devtools</code> is available.</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"devtools"</span>)</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"jiabowang/GAPIT"</span>, <span class="at">force=</span><span class="cn">TRUE</span>)</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(GAPIT)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>or</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"remotes"</span>)</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"jiabowang/GAPIT"</span>)</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(GAPIT)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="installation-from-an-archive" class="level3">
+<h3 class="anchored" data-anchor-id="installation-from-an-archive">Installation from an archive</h3>
+<p>GAPIT can be installed from an archive such as *.tar.gz or *.zip archive. An archive can be downloaded from the “releases” page. If you would like the latest version of GAPIT from the GitHub site you may want to clone it and then build it (this may require Rtools on Windows).</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone git@github.com:jiabowang/GAPIT.git</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="ex">R</span> CMD build GAPIT</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Once an archive has been obtained it can be installed from a shell, similar to as follows.</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="ex">R</span> CMD INSTALL GAPIT_3.5.0.9000.tar.gz</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Or similarly from within R.</p>
+<pre><code>install.packages("GAPIT_3.5.0.9000.tar.gz", repos = NULL, type="source")</code></pre>
+</section>
+<section id="in-some-case-of-the-biocmanager-can-not-be-installed" class="level3">
+<h3 class="anchored" data-anchor-id="in-some-case-of-the-biocmanager-can-not-be-installed">In some case of the BiocManager can not be installed</h3>
+<p>Installation of same packages such as “multtest” and “biobase” can not be intalled from BiocManager directly. These packages can be downloaded in the Bioconductor website and be installed from local source files.</p>
+<p>The website of Bioconductor is here:</p>
+<pre><code>https://bioconductor.org/packages/3.19/bioc/</code></pre>
+<p>More details please check and <a href="https://github.com/jiabowang/GAPIT">ref user manual</a>.</p>
+</section>
+</div>
+</div>
+</div>
+</section>
+<section id="install-ggplot2-rrblup-packages" class="level3">
+<h3 class="anchored" data-anchor-id="install-ggplot2-rrblup-packages">2. Install <strong>ggplot2</strong> &amp; <strong>rrBLUP</strong> packages</h3>
+<p>install packs</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"ggplot2"</span>)</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"rrBLUP"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>attach the packs</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"ggplot2"</span>)</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"rrBLUP"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="setting-a-project-or-working-directory" class="level3">
+<h3 class="anchored" data-anchor-id="setting-a-project-or-working-directory">3. Setting a project or working directory</h3>
+<ul>
+<li><p>to know (print) where you are right now, run this <code>getwd()</code> function at R Console</p></li>
+<li><p>to set directory at your target directory, run this <code>setwd()</code> function at R Console with target path (see example bellow)</p></li>
+</ul>
+<p>example:</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">"C:/Users/auue0001/OneDrive - Sveriges lantbruksuniversitet/path/to/your/folder"</span>)<span class="st">`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="to-do-5" class="level3">
+<h3 class="anchored" data-anchor-id="to-do-5">TO DO 5</h3>
+<div class="callout callout-style-default callout-tip callout-titled" title="TO DO 5">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+TO DO 5
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<ul>
+<li>print location, where you are (current working directory)</li>
+<li>set working directories to the ‘course materials’ at your PC</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="interacting-with-r" class="level3">
+<h3 class="anchored" data-anchor-id="interacting-with-r">4. Interacting with R</h3>
+<p>Guided tour around the RStudio</p>
+</section>
+<section id="how-to-import-and-export-data-or-results" class="level3">
+<h3 class="anchored" data-anchor-id="how-to-import-and-export-data-or-results">5. How to import and export data or results</h3>
+<ul>
+<li>How to do that from RStudio? (guided tour)</li>
+<li>How to do that with function or command?</li>
+</ul>
+<p>Load a data from the course materials (manually and by code)</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)  <span class="co"># we need a library </span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>allele_freq <span class="ot">&lt;-</span> <span class="fu">read_delim</span>(</span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a><span class="st">"excercise/data/data_4_linux/allele_freq.frq"</span>, </span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">delim =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span>, </span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">escape_double =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">trim_ws =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>View the loaded dataset</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(allele_freq)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Load data table from a website to R</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># loading data set</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>myY<span class="ot">=</span><span class="fu">read.table</span>(<span class="at">file=</span><span class="st">"https://github.com/jiabowang/GAPIT/raw/refs/heads/master/Documents/mdp_traits.txt"</span>, <span class="at">head =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="to-do-6" class="level3">
+<h3 class="anchored" data-anchor-id="to-do-6">TO DO 6</h3>
+<div class="callout callout-style-default callout-tip callout-titled" title="TO DO 6">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+TO DO 6
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<ul>
+<li>upload <code>example.vcf</code> data file in RStudio as ‘vcf_data’ object</li>
+<li>have the column headers but not the comments. Hints: data has ‘column headers’ ( as #) and ‘comments’ (comments starts with <code>##</code>)</li>
+<li>view the data</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="data-structures" class="level3">
+<h3 class="anchored" data-anchor-id="data-structures">6. Data structures</h3>
+<p>Example R code to see the data structure:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(cars)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>'data.frame':   50 obs. of  2 variables:
+ $ speed: num  4 4 7 7 8 9 10 10 10 11 ...
+ $ dist : num  2 10 4 22 16 10 18 26 34 17 ...</code></pre>
+</div>
+</div>
+<p>A data frame with 50 observations on 2 variables.</p>
+<p>[,1] speed numeric Speed (mph) [,2] dist numeric Stopping distance (ft)</p>
+<p>Lets try <code>help</code> <code>?? cars</code></p>
+<p>Lets see structure of the allele_freq</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(allele_freq)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="to-do-7" class="level3">
+<h3 class="anchored" data-anchor-id="to-do-7">TO DO 7</h3>
+<div class="callout callout-style-default callout-tip callout-titled" title="TO DO 7">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+TO DO 7
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<ul>
+<li>see &amp; print the structure of the <code>vcf_data</code> object</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="housekeeping" class="level3">
+<h3 class="anchored" data-anchor-id="housekeeping">7. Housekeeping</h3>
+<p>Comment, Quarto , R history</p>
+</section>
+<section id="export-data-results-or-plot" class="level3">
+<h3 class="anchored" data-anchor-id="export-data-results-or-plot">8. Export data, results or plot</h3>
+<p>Export results or data or object</p>
+<p>export as a csv file</p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(df , <span class="at">file =</span> <span class="st">"path/to/your/saving/folder/df.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>export as a excel file</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(writexl)   <span class="co"># we need an extra library for exporting excel</span></span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>writexl<span class="sc">::</span><span class="fu">write_xlsx</span> (test_df, <span class="at">path =</span> <span class="st">"C:/Users/your_username/test_df.xlsx"</span>, <span class="at">col_names =</span> <span class="cn">TRUE</span>, <span class="at">format_headers =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="plotting-a-figure-extra" class="level3">
+<h3 class="anchored" data-anchor-id="plotting-a-figure-extra">9. Plotting a figure (extra)</h3>
+<p>Speed and Stopping Distances of Cars</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> cars, <span class="fu">aes</span> (<span class="at">x =</span> speed, <span class="at">y =</span> dist))<span class="sc">+</span></span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_point</span>()</span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>p1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="export-plots" class="level4">
+<h4 class="anchored" data-anchor-id="export-plots">9.1 Export plots</h4>
+<p>to export ggplot:</p>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"path/to/your/saving/plots/figure_1a.png"</span>, <span class="at">plot =</span> p1, <span class="at">bg =</span><span class="st">"white"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>to export base r plot:</p>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.print</span> (<span class="at">device=</span>jpeg, <span class="at">file=</span><span class="st">"path/to/your/saving/plots/figure_1a.jpg"</span>, <span class="at">width=</span><span class="fu">par</span>(<span class="st">"din"</span>)[<span class="dv">1</span>]<span class="sc">*</span><span class="dv">300</span>, <span class="at">res=</span><span class="dv">300</span>, <span class="at">quality=</span><span class="dv">100</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="r-built-in-function" class="level3">
+<h3 class="anchored">10. R built-in function</h3>
+<ul>
+<li><p>Directory: <code>setwd</code>, <code>getwd</code></p></li>
+<li><p>Upload data to R: <code>read.table</code>, <code>read_table</code>, <code>read_csv</code></p></li>
+<li><p>See data structure: <code>str</code>, <code>summarize</code>, <code>summary</code>.</p></li>
+<li><h2 id="session-information-sessioninfo" class="anchored" data-anchor-id="r-built-in-function">Session information: <code>sessionInfo()</code></h2></li>
+</ul>
+<p>Well done! Congrats!!</p>
+<p>END</p>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/yourdomain\.com");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
