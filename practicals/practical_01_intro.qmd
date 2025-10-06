@@ -234,20 +234,62 @@ You will see something printed as like as bellow:
 >PLINK v1.9.0-b.7.11 64-bit (19 Aug 2025)
 
 
+
+
 If not that means Plink is not activated, we need activate it (repeat and fix *Make the binary executable: change the permision* step)
+
+
+Or install this way:
+
+```bash
+sudo apt install putty-tools
+```
+
+Note: Some mac users may need to install java or update java
+
+
+### Install vcftools, bcftools, bedtools
+first see them if tools are installed already or not
+```bash
+vcftools --version
+bcftools --version
+bedtools --version
+```
+If you see *error* or there is no tools like that, then follow the rest of the commands and execute one by one. It will install tools.
+
+```bash
+sudo apt install vcftools  # install vcftools at your windows wsl or mac
+
+vcftools --version
+```
+
+```bash
+sudo apt install bcftools
+
+bcftools --version
+```
+
+```bash
+sudo apt install bedtools # install vcftools at your windows wsl or mac
+
+bedtools --version
+```
 
 :::
 
 Well done!
 
+
+
+
 ### TO DO 2: 
 ::: {.callout-tip title="TO DO 2" collapse="false"}
 
-- download today's 'course materials' (it is a repository in github)
+- download today's 'course materials' (it is a [repository in github](https://github.com/abu85/intro-to-linux-and-R/archive/refs/heads/main.zip))
 - hints: use `wget` command
 - extract the contents of the file (zip)
 - change the working directory to that folder or directory
-- solution: see codes at 'Course materials' at 'Home page'
+- solutions: see codes at 'Course materials' at ['Home page'](https://abu85.github.io/intro-to-linux-and-R/)
 :::
 
 
@@ -361,7 +403,7 @@ We also recommend the integrated development environment RStudio which is also f
 
 [GAPIT](https://github.com/jiabowang/GAPIT) can currently be installed in several ways.
 
-- From source on the internet
+- From source on the internet (remember you need to run it everytime you open RStudio)
 - From GitHub
 - From an archive
 
@@ -484,7 +526,7 @@ Load a data from the course materials (manually and by code)
 library(readr)  # we need a library 
 
 allele_freq <- read_delim(
-"excercise/data/data_4_linux/allele_freq.frq", 
+"practicals/excercise/data/data_4_linux/allele_freq.frq", 
     delim = "\t", 
     escape_double = FALSE, 
     trim_ws = TRUE)
@@ -589,7 +631,7 @@ dev.print (device=jpeg, file="path/to/your/saving/plots/figure_1a.jpg", width=pa
 
 - See data structure: `str`, `summarize`, `summary`. 
 
-- Session information: `sessionInfo()`
+- Session information: `sessionInfo()`. It summarizes all your used packs
 --------------- 
 
 Well done! Congrats!!
