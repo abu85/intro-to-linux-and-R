@@ -96,6 +96,8 @@ wget https://github.com/abu85/intro-to-linux-and-R/archive/refs/heads/main.zip .
 ##### 2. Extract and enter into the repository folder📁
 ```bash
 
+# sudo apt install unzip  # incase your computer need that packs
+
 unzip main.zip            # extract everything from the zip file to folder
 
 ls                        # see the file folder
